@@ -79,23 +79,17 @@ nav::before {
 }
 
 .nav-logo {
-  font-family: "Fraunces", serif;
-  font-size: 1.3rem;
-  font-weight: 900;
-  color: #fff;
   text-decoration: none;
   position: relative;
   z-index: 1;
-  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
 }
 
-.nav-logo sup {
-  font-size: 0.5rem;
-  color: var(--yellow);
-  font-family: "Instrument Sans", sans-serif;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  vertical-align: super;
+.logo-img {
+  height: 50px;
+  width: auto;
+  display: block;
 }
 
 .nav-right {
@@ -203,6 +197,8 @@ nav::before {
     opacity: 0;
   }
 }
+
+
 
 .hero-content {
   position: relative;
@@ -598,7 +594,7 @@ nav::before {
 /* PROGRAM */
 .program {
   background: var(--black);
-  padding: 140px 72px;
+  padding: 50px 50px;
 }
 
 .program-head {
@@ -612,9 +608,10 @@ nav::before {
   font-family: "Fraunces", serif;
   font-size: clamp(2.4rem, 4.2vw, 4.2rem);
   font-weight: 900;
-  line-height: 0.96;
+  line-height: 0.98;
   letter-spacing: -0.045em;
   color: #fff;
+  max-width: 600px;
 }
 
 .program-h2 i {
@@ -707,8 +704,10 @@ nav::before {
 /* TRANSFORMATION SLIDER */
 .transform-sec {
   position: relative;
-  height: 100vh;
-  min-height: 700px;
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+  min-height: 400px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -723,10 +722,13 @@ nav::before {
 .ts-bg {
   position: absolute;
   inset: 0;
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
   opacity: 0;
-  transition: opacity 0.9s ease;
+  transition: opacity 0.8s ease-in-out;
+  will-change: opacity;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 .ts-bg.ts-active {
@@ -738,15 +740,16 @@ nav::before {
   inset: 0;
   z-index: 1;
   background: linear-gradient(to bottom,
-      rgba(0, 0, 0, 0.45) 0%,
-      rgba(0, 0, 0, 0.05) 40%,
-      rgba(0, 0, 0, 0.78) 100%);
+      rgba(0, 0, 0, 0.3) 0%,
+      transparent 20%,
+      transparent 80%,
+      rgba(0, 0, 0, 0.6) 100%);
 }
 
 .ts-top-area {
   position: relative;
   z-index: 2;
-  padding: 60px 72px 0;
+  padding: 100px 72px 0;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -801,20 +804,20 @@ nav::before {
 }
 
 .ts-weather-card {
-  background: rgba(15, 8, 4, 0.72);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 14px;
-  padding: 22px 28px;
-  min-width: 190px;
-  text-align: right;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 22px 26px;
+  min-width: 180px;
+  text-align: left;
   flex-shrink: 0;
 }
 
 .ts-wc-top {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 9px;
   margin-bottom: 10px;
 }
@@ -843,7 +846,7 @@ nav::before {
 .ts-wc-air {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   gap: 7px;
   font-size: 0.78rem;
   color: rgba(255, 255, 255, 0.5);
@@ -852,14 +855,27 @@ nav::before {
 .ts-bottom-panel {
   position: relative;
   z-index: 2;
-  background: rgba(10, 5, 2, 0.85);
-  backdrop-filter: blur(18px);
-  padding: 26px 72px 36px;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+  padding: 40px 72px 60px;
 }
 
 .ts-slider-area {
   margin-bottom: 24px;
+}
+
+.ts-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 0 26px;
+}
+
+.ts-labels span {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .ts-stage-pill {
@@ -900,7 +916,7 @@ nav::before {
   width: 52px;
   height: 52px;
   border-radius: 50%;
-  background: var(--yellow);
+  background: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -941,10 +957,15 @@ nav::before {
 
 .ts-imp {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
+  align-items: center;
+  gap: 12px;
   flex: 1;
   min-width: 0;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  padding: 12px 16px;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .ts-imp-ico {
@@ -1016,7 +1037,7 @@ nav::before {
 
 /* PARTNERS SECTION */
 .part-sec {
-  padding: 140px 72px;
+  padding: 90px 50px;
   background: var(--white);
 }
 
@@ -1048,7 +1069,7 @@ nav::before {
 
 .part-card {
   position: relative;
-  aspect-ratio: 4/3;
+  aspect-ratio: 1 / 1.2;
   overflow: hidden;
   cursor: none;
 }
@@ -1057,6 +1078,8 @@ nav::before {
   position: absolute;
   inset: 0;
   transition: transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  background-size: cover;
+  background-position: center;
 }
 
 .part-card:hover .pc-bg {
@@ -1064,19 +1087,19 @@ nav::before {
 }
 
 .bg0 {
-  background: linear-gradient(140deg, #0f2310 0%, #1a4a1e 100%);
+  background-image: url('img/Corporate.svg');
 }
 
 .bg1 {
-  background: linear-gradient(140deg, #162810 0%, #3d5a1a 100%);
+  background-image: url('img/Donor-Agency.svg');
 }
 
 .bg2 {
-  background: linear-gradient(140deg, #0f2420 0%, #1a4a3e 100%);
+  background-image: url('img/insitute.jpeg');
 }
 
 .bg3 {
-  background: linear-gradient(140deg, #20150f 0%, #6b3a1a 100%);
+  background-image: url('img/indiviual.jpeg');
 }
 
 .pc-ov {
@@ -1091,17 +1114,24 @@ nav::before {
 .pc-body {
   position: absolute;
   inset: 0;
-  padding: 44px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
 }
 
 .pc-ico {
-  font-size: 2.8rem;
   margin-bottom: auto;
   padding-top: 4px;
   transition: transform 0.4s;
+  display: flex;
+  align-items: center;
+}
+
+.pc-img {
+  height: 56px;
+  width: auto;
+  display: block;
 }
 
 .part-card:hover .pc-ico {
@@ -1147,7 +1177,7 @@ nav::before {
 /* HOW */
 .how-sec {
   background: var(--stone);
-  padding: 140px 72px;
+  padding: 90px 50px;
 }
 
 .how-inner {
@@ -1194,13 +1224,39 @@ nav::before {
   top: 28px;
   left: 8%;
   right: 8%;
-  height: 1px;
-  background: linear-gradient(to right,
-      transparent,
-      rgba(10, 10, 10, 0.13) 20%,
-      rgba(10, 10, 10, 0.13) 80%,
-      transparent);
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.08) 50%, transparent 50%);
+  background-size: 12px 100%;
   z-index: 0;
+}
+
+.how-steps::after {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: 8%;
+  width: 84%;
+  height: 2px;
+  background-image: linear-gradient(to right, rgba(240, 193, 50, 0.4) 50%, transparent 50%);
+  background-size: 12px 100%;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.how-steps.in::after {
+  opacity: 1;
+  animation: moveDots 30s linear infinite;
+}
+
+@keyframes moveDots {
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 500px 0;
+  }
 }
 
 .how-step {
@@ -1392,7 +1448,7 @@ nav::before {
 /* DONATE */
 .donate-sec {
   background: var(--yellow);
-  padding: 120px 72px;
+  padding: 80px 50px;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 64px;
@@ -1471,22 +1527,12 @@ footer {
 }
 
 .foot-logo {
-  font-family: "Fraunces", serif;
-  font-size: 1.5rem;
-  font-weight: 900;
-  color: #fff;
-  letter-spacing: -0.03em;
-  margin-bottom: 14px;
+  margin-bottom: 20px;
   display: block;
 }
 
-.foot-logo sup {
-  font-size: 0.48rem;
-  color: var(--yellow);
-  font-family: "Instrument Sans", sans-serif;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  vertical-align: super;
+.foot-logo .logo-img {
+  height: 40px;
 }
 
 .foot-desc {

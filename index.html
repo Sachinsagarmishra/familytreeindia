@@ -1,300 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Family Tree</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"/>
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet"/>
 
-<link rel="stylesheet" href="style.css"/>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Family Tree</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
 </head>
+
 <body>
 
-<div class="cursor" id="cur"></div>
-<div class="cursor-ring" id="curRing"></div>
+  <div class="cursor" id="cur"></div>
+  <div class="cursor-ring" id="curRing"></div>
 
-<!-- NAV -->
-<nav>
-  <a href="#" class="nav-logo">Family Tree <sup>®</sup></a>
-  <div class="nav-right">
-    <a href="#" class="nav-link">About</a>
-    <a href="#" class="nav-link">Programs</a>
-    <a href="#" class="nav-link">Corporate</a>
-    <a href="#" class="nav-link">Get Involved</a>
-    <a href="#" class="nav-donate">Donate</a>
-  </div>
-</nav>
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <img src="img/logo.png" alt="Family Tree" class="logo-img">
+    </a>
+    <div class="nav-right">
+      <a href="#" class="nav-link">About</a>
+      <a href="#" class="nav-link">Programs</a>
+      <a href="#" class="nav-link">Corporate</a>
+      <a href="#" class="nav-link">Get Involved</a>
+      <a href="#" class="nav-donate">Donate</a>
+    </div>
+  </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-leaf"></div>
-  <div class="hero-particles" id="particles"></div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-leaf"></div>
+    <div class="hero-particles" id="particles"></div>
 
-  <div class="hero-content">
-    <p class="hero-tag">Bachpan Sang Hariyali</p>
-    <h1 class="hero-h1">
-      Planting trees.<br/>
-      <i>Raising</i><br/>
-      guardians.
-    </h1>
-    <div class="hero-bottom">
-      <p class="hero-sub">
-        We don't just plant trees — we assign each one to a student. 50,000 trees. 120 schools. One generation taking responsibility for the next.
-      </p>
-      <div class="hero-btns">
-        <a href="#" class="btn-y">Sponsor a Tree</a>
-        <a href="#" class="btn-w">See Our Work</a>
+    <div class="hero-content">
+      <p class="hero-tag">Bachpan Sang Hariyali</p>
+      <h1 class="hero-h1">
+        Planting trees.<br />
+        <i>Raising</i><br />
+        guardians.
+      </h1>
+      <div class="hero-bottom">
+        <p class="hero-sub">
+          We don't just plant trees — we assign each one to a student. 50,000 trees. 120 schools. One generation taking
+          responsibility for the next.
+        </p>
+        <div class="hero-btns">
+          <a href="#" class="btn-y">Sponsor a Tree</a>
+          <a href="#" class="btn-w">See Our Work</a>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-hint">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- PARTNERS STRIP -->
+  <div class="partners">
+    <span class="partners-lbl">Trusted by</span>
+    <div class="partners-row">
+      <div class="marquee-content">
+        <img src="Icons/biahr-education.png" alt="Bihar Education Project Council" class="partner-logo">
+        <img src="Icons/aiims_patna.png" alt="AIIMS Patna" class="partner-logo">
+        <img src="Icons/ministry-of-education.png" alt="Ministry of Education" class="partner-logo">
+        <img src="Icons/govt-of-bihar.png" alt="Government of Bihar" class="partner-logo">
+        <img src="Icons/CMX-foundation.png" alt="CMX Foundation" class="partner-logo">
+        <!-- Duplicated for loop -->
+        <img src="Icons/biahr-education.png" alt="Bihar Education Project Council" class="partner-logo">
+        <img src="Icons/aiims_patna.png" alt="AIIMS Patna" class="partner-logo">
+        <img src="Icons/ministry-of-education.png" alt="Ministry of Education" class="partner-logo">
+        <img src="Icons/govt-of-bihar.png" alt="Government of Bihar" class="partner-logo">
+        <img src="Icons/CMX-foundation.png" alt="CMX Foundation" class="partner-logo">
       </div>
     </div>
   </div>
-  <div class="scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-line"></div>
-  </div>
-</section>
 
-<!-- PARTNERS STRIP -->
-<div class="partners">
-  <span class="partners-lbl">Trusted by</span>
-  <div class="partners-row">
-    <div class="marquee-content">
-      <img src="Icons/biahr-education.png" alt="Bihar Education Project Council" class="partner-logo">
-      <img src="Icons/aiims_patna.png" alt="AIIMS Patna" class="partner-logo">
-      <img src="Icons/ministry-of-education.png" alt="Ministry of Education" class="partner-logo">
-      <img src="Icons/govt-of-bihar.png" alt="Government of Bihar" class="partner-logo">
-      <img src="Icons/CMX-foundation.png" alt="CMX Foundation" class="partner-logo">
-      <!-- Duplicated for loop -->
-      <img src="Icons/biahr-education.png" alt="Bihar Education Project Council" class="partner-logo">
-      <img src="Icons/aiims_patna.png" alt="AIIMS Patna" class="partner-logo">
-      <img src="Icons/ministry-of-education.png" alt="Ministry of Education" class="partner-logo">
-      <img src="Icons/govt-of-bihar.png" alt="Government of Bihar" class="partner-logo">
-      <img src="Icons/CMX-foundation.png" alt="CMX Foundation" class="partner-logo">
+  <!-- STAT BAND -->
+  <div class="stat-band">
+    <div class="stat-cell reveal">
+      <div class="stat-num" data-val="50000" data-suf="K+">50K+</div>
+      <div class="stat-lbl">Trees Planted</div>
+    </div>
+    <div class="stat-cell reveal d1">
+      <div class="stat-num" data-val="120" data-suf="">120</div>
+      <div class="stat-lbl">Schools Covered</div>
+    </div>
+    <div class="stat-cell reveal d2">
+      <div class="stat-num" data-val="85" data-suf="%">85%</div>
+      <div class="stat-lbl">Survival Rate</div>
+    </div>
+    <div class="stat-cell reveal d3">
+      <div class="stat-num" data-val="18000" data-suf="K+">18K+</div>
+      <div class="stat-lbl">Student Guardians</div>
     </div>
   </div>
-</div>
 
-<!-- STAT BAND -->
-<div class="stat-band">
-  <div class="stat-cell reveal"><div class="stat-num" data-val="50000" data-suf="K+">50K+</div><div class="stat-lbl">Trees Planted</div></div>
-  <div class="stat-cell reveal d1"><div class="stat-num" data-val="120" data-suf="">120</div><div class="stat-lbl">Schools Covered</div></div>
-  <div class="stat-cell reveal d2"><div class="stat-num" data-val="85" data-suf="%">85%</div><div class="stat-lbl">Survival Rate</div></div>
-  <div class="stat-cell reveal d3"><div class="stat-num" data-val="18000" data-suf="K+">18K+</div><div class="stat-lbl">Student Guardians</div></div>
-</div>
-
-<!-- STORY / ABOUT -->
-<div class="story">
-  <div class="story-vis">
-    <div class="story-ghost">10</div>
-    <div class="story-vis-inner">
-      <span class="story-icon">🌳</span>
-      <p class="story-pull">A child who plants<br/>a tree never lets<br/>it <span>die.</span></p>
-    </div>
-  </div>
-  <div class="story-body-col">
-    <p class="eyebrow reveal">Who We Are</p>
-    <h2 class="story-h2 reveal">Built on the<br/><i>belief</i> that nature<br/>needs a champion.</h2>
-    <p class="story-p reveal">Family Tree grew from a simple conviction: that lasting green cover isn't built by organisations — it's built by communities. We began with one school in Bihar. Today, 120 schools across 12 districts are home to student-tended forests that are alive, growing, and tracked in real time.</p>
-    <p class="story-p reveal">We are the only plantation initiative in the region where every single tree has a named guardian — a student responsible for its survival.</p>
-    <a href="#" class="link-arr reveal">Our full story</a>
-  </div>
-</div>
-
-<!-- TRANSFORMATION SLIDER SECTION -->
-<section class="transform-sec" id="transformSec">
-  <div class="ts-bg-wrap">
-    <!-- Stage 0: No Trees — swap image path as needed -->
-    <div class="ts-bg ts-active" style="background-image:url('bg.png')"></div>
-    <!-- Stage 1: Few Trees — replace with your image -->
-    <div class="ts-bg" style="background-image:url('img/5.jpeg')"></div>
-    <!-- Stage 2: Growing Forest — replace with your image -->
-    <div class="ts-bg" style="background-image:url('img/4.jpeg')"></div>
-    <!-- Stage 3: Full Forest — replace with your image -->
-    <div class="ts-bg" style="background-image:url('img/10.jpeg')"></div>
-  </div>
-  <div class="ts-overlay"></div>
-  <div class="ts-top-area">
-    <div class="ts-left-col">
-      <h2 class="ts-h2" id="tsH2">More Trees,<br/>Better Tomorrow</h2>
-      <p class="ts-desc" id="tsDesc">See how a greener school<br/>creates a healthier future.</p>
-      <div class="ts-env-badge">
-        <span class="ts-env-dot" id="tsEnvDot" style="background:#e05a1a"></span>
-        <span class="ts-env-lbl" id="tsEnvLbl">Harsh Environment</span>
+  <!-- STORY / ABOUT -->
+  <div class="story">
+    <div class="story-vis">
+      <div class="story-ghost">10</div>
+      <div class="story-vis-inner">
+        <span class="story-icon">🌳</span>
+        <p class="story-pull">A child who plants<br />a tree never lets<br />it <span>die.</span></p>
       </div>
     </div>
-    <div class="ts-weather-card">
-      <div class="ts-wc-top">
-        <span class="ts-wc-ico" id="tsWIco">☀️</span>
-        <span class="ts-wc-cond" id="tsWCond">Hot &amp; Harsh</span>
-      </div>
-      <div class="ts-wc-temp"><span id="tsTemp">38</span>°C</div>
-      <div class="ts-wc-air">💨 <span id="tsAir">Dusty Air</span></div>
+    <div class="story-body-col">
+      <p class="eyebrow reveal">Who We Are</p>
+      <h2 class="story-h2 reveal">Built on the<br /><i>belief</i> that nature<br />needs a champion.</h2>
+      <p class="story-p reveal">Family Tree grew from a simple conviction: that lasting green cover isn't built by
+        organisations — it's built by communities. We began with one school in Bihar. Today, 120 schools across 12
+        districts are home to student-tended forests that are alive, growing, and tracked in real time.</p>
+      <p class="story-p reveal">We are the only plantation initiative in the region where every single tree has a named
+        guardian — a student responsible for its survival.</p>
+      <a href="#" class="link-arr reveal">Our full story</a>
     </div>
   </div>
-  <div class="ts-bottom-panel">
-    <div class="ts-slider-area">
-      <div><span class="ts-stage-pill" id="tsStagePill">No Trees</span></div>
-      <div class="ts-track-wrap" id="tsTrack">
-        <div class="ts-track-fill" id="tsFill" style="width:0%"></div>
-        <div class="ts-thumb" id="tsThumb" style="left:0%">🌵</div>
-      </div>
-    </div>
-    <div class="ts-impacts-row">
-      <div class="ts-impacts-lbl">IMPACTS</div>
-      <div class="ts-impacts-grid" id="tsImpactsGrid"></div>
-    </div>
-  </div>
-</section>
 
-<!-- PROGRAM -->
-<section class="program">
-  <div class="program-head reveal">
-    <h2 class="program-h2">From your donation<br/>to a <i>living tree.</i></h2>
-    <p class="program-note">Every rupee tracked. Every tree geo-tagged. You see exactly where your money goes — and who's looking after it.</p>
-  </div>
-  <div class="how-steps reveal">
-    <div class="how-step">
-      <div class="how-dot"><span>💳</span></div>
-      <div class="how-sn">Step 01</div>
-      <div class="how-title">You Sponsor</div>
-      <div class="how-desc">Choose trees, tiers, or a school to support</div>
+  <!-- TRANSFORMATION SLIDER SECTION -->
+  <section class="transform-sec" id="transformSec">
+    <div class="ts-bg-wrap">
+      <!-- Stage 0: No Trees — swap image path as needed -->
+      <div class="ts-bg ts-active" style="background-image:url('img/temp/33degree.png')"></div>
+      <div class="ts-bg" style="background-image:url('img/temp/28degree.png')"></div>
+      <div class="ts-bg" style="background-image:url('img/temp/25degree.png')"></div>
+      <div class="ts-bg" style="background-image:url('img/temp/23degree.png')"></div>
     </div>
-    <div class="how-step">
-      <div class="how-dot"><span>📋</span></div>
-      <div class="how-sn">Step 02</div>
-      <div class="how-title">We Plan</div>
-      <div class="how-desc">Site survey and species selection</div>
+    <div class="ts-overlay"></div>
+    <div class="ts-top-area">
+      <div class="ts-left-col">
+        <h2 class="ts-h2" id="tsH2">More Trees,<br />Better Tomorrow</h2>
+        <p class="ts-desc" id="tsDesc">See how a greener school<br />creates a healthier future.</p>
+        <div class="ts-env-badge">
+          <span class="ts-env-dot" id="tsEnvDot" style="background:#e05a1a"></span>
+          <span class="ts-env-lbl" id="tsEnvLbl">Harsh Environment</span>
+        </div>
+      </div>
+      <div class="ts-weather-card">
+        <div class="ts-wc-top">
+          <span class="ts-wc-ico" id="tsWIco">☀️</span>
+          <span class="ts-wc-cond" id="tsWCond">Hot &amp; Harsh</span>
+        </div>
+        <div class="ts-wc-temp"><span id="tsTemp">38</span>°C</div>
+        <div class="ts-wc-air">💨 <span id="tsAir">Dusty Air</span></div>
+      </div>
     </div>
-    <div class="how-step">
-      <div class="how-dot"><span>🌿</span></div>
-      <div class="how-sn">Step 03</div>
-      <div class="how-title">We Plant</div>
-      <div class="how-desc">Community plantation drive happens</div>
+    <div class="ts-bottom-panel">
+      <div class="ts-slider-area">
+        <div class="ts-track-wrap" id="tsTrack">
+          <div class="ts-track-fill" id="tsFill" style="width:0%"></div>
+          <div class="ts-thumb" id="tsThumb" style="left:0%">🌳</div>
+        </div>
+      </div>
+      <div class="ts-impacts-row">
+        <div class="ts-impacts-lbl">IMPACTS</div>
+        <div class="ts-impacts-grid" id="tsImpactsGrid"></div>
+      </div>
     </div>
-    <div class="how-step">
-      <div class="how-dot"><span>🎒</span></div>
-      <div class="how-sn">Step 04</div>
-      <div class="how-title">Assigned</div>
-      <div class="how-desc">Student becomes tree's guardian</div>
+  </section>
+
+  <!-- PROGRAM -->
+  <section class="program">
+    <div class="program-head reveal">
+      <!-- <h2 class="how-h2">How the<br/><i>program</i><br/>works.</h2> -->
+      <h2 class="program-h2">How the<br /><i>program</i> works.</h2>
+      <p class="program-note">Every rupee tracked. Every tree geo-tagged. You see exactly where your money goes — and
+        who's looking after it.</p>
     </div>
-    <div class="how-step">
-      <div class="how-dot"><span>📍</span></div>
-      <div class="how-sn">Step 05</div>
-      <div class="how-title">Monitored</div>
-      <div class="how-desc">Geo-tagged survival tracking begins</div>
+    <div class="how-steps reveal">
+      <div class="how-step">
+        <div class="how-dot"><span>💳</span></div>
+        <div class="how-sn">Step 01</div>
+        <div class="how-title">You Sponsor</div>
+        <div class="how-desc">Choose trees, tiers, or a school to support</div>
+      </div>
+      <div class="how-step">
+        <div class="how-dot"><span>📋</span></div>
+        <div class="how-sn">Step 02</div>
+        <div class="how-title">We Plan</div>
+        <div class="how-desc">Site survey and species selection</div>
+      </div>
+      <div class="how-step">
+        <div class="how-dot"><span>🌿</span></div>
+        <div class="how-sn">Step 03</div>
+        <div class="how-title">We Plant</div>
+        <div class="how-desc">Community plantation drive happens</div>
+      </div>
+      <div class="how-step">
+        <div class="how-dot"><span>🎒</span></div>
+        <div class="how-sn">Step 04</div>
+        <div class="how-title">Assigned</div>
+        <div class="how-desc">Student becomes tree's guardian</div>
+      </div>
+      <div class="how-step">
+        <div class="how-dot"><span>📍</span></div>
+        <div class="how-sn">Step 05</div>
+        <div class="how-title">Monitored</div>
+        <div class="how-desc">Geo-tagged survival tracking begins</div>
+      </div>
+      <div class="how-step">
+        <div class="how-dot"><span>📊</span></div>
+        <div class="how-sn">Step 06</div>
+        <div class="how-title">Reported</div>
+        <div class="how-desc">Quarterly impact report sent to you</div>
+      </div>
     </div>
-    <div class="how-step">
-      <div class="how-dot"><span>📊</span></div>
-      <div class="how-sn">Step 06</div>
-      <div class="how-title">Reported</div>
-      <div class="how-desc">Quarterly impact report sent to you</div>
-    </div>
-  </div>
-</section>
+  </section>
 
 
 
-<!-- PARTNER PATHWAYS -->
-<section class="part-sec">
-  <div class="part-head reveal">
-    <p class="eyebrow">Get Involved</p>
-    <h2 class="part-h2">Every kind of partner<br/>grows something <i>different.</i></h2>
-  </div>
-  <div class="part-grid reveal">
-    <div class="part-card">
-      <div class="pc-bg bg0"></div>
-      <div class="pc-ov"></div>
-      <div class="pc-body">
-        <div class="pc-ico">🏢</div>
-        <div class="pc-title">Corporate</div>
-        <div class="pc-sub">ESG-aligned green impact. Measurable outcomes with employee engagement built in.</div>
-        <span class="pc-link">Partner With Us</span>
+  <!-- PARTNER PATHWAYS -->
+  <section class="part-sec">
+    <div class="part-head reveal">
+      <p class="eyebrow">Get Involved</p>
+      <h2 class="part-h2">Every kind of partner<br />grows something <i>different.</i></h2>
+    </div>
+    <div class="part-grid reveal">
+      <div class="part-card">
+        <div class="pc-bg bg0"></div>
+        <div class="pc-ov"></div>
+        <div class="pc-body">
+          <div class="pc-title">Corporate</div>
+          <div class="pc-sub">ESG-aligned green impact. Measurable outcomes with employee engagement built in.</div>
+          <span class="pc-link">Partner With Us</span>
+        </div>
+      </div>
+      <div class="part-card">
+        <div class="pc-bg bg1"></div>
+        <div class="pc-ov"></div>
+        <div class="pc-body">
+          <div class="pc-title">Donor Agency</div>
+          <div class="pc-sub">Fund verified, geo-tagged plantation with full transparency and quarterly impact reports.
+          </div>
+          <span class="pc-link">Fund a Project</span>
+        </div>
+      </div>
+      <div class="part-card">
+        <div class="pc-bg bg2"></div>
+        <div class="pc-ov"></div>
+        <div class="pc-body">
+          <div class="pc-title">Institution</div>
+          <div class="pc-sub">Schools, hospitals, universities — transform your campus into a living green corridor.
+          </div>
+          <span class="pc-link">Join Program</span>
+        </div>
+      </div>
+      <div class="part-card">
+        <div class="pc-bg bg3"></div>
+        <div class="pc-ov"></div>
+        <div class="pc-body">
+          <div class="pc-title">Individuals</div>
+          <div class="pc-sub">Sponsor a tree. Track it growing. Know your guardian's name.</div>
+          <span class="pc-link">Start Here</span>
+        </div>
       </div>
     </div>
-    <div class="part-card">
-      <div class="pc-bg bg1"></div>
-      <div class="pc-ov"></div>
-      <div class="pc-body">
-        <div class="pc-ico">🤝</div>
-        <div class="pc-title">Donor Agency</div>
-        <div class="pc-sub">Fund verified, geo-tagged plantation with full transparency and quarterly impact reports.</div>
-        <span class="pc-link">Fund a Project</span>
-      </div>
-    </div>
-    <div class="part-card">
-      <div class="pc-bg bg2"></div>
-      <div class="pc-ov"></div>
-      <div class="pc-body">
-        <div class="pc-ico">🏛️</div>
-        <div class="pc-title">Institution</div>
-        <div class="pc-sub">Schools, hospitals, universities — transform your campus into a living green corridor.</div>
-        <span class="pc-link">Join Program</span>
-      </div>
-    </div>
-    <div class="part-card">
-      <div class="pc-bg bg3"></div>
-      <div class="pc-ov"></div>
-      <div class="pc-body">
-        <div class="pc-ico">🌱</div>
-        <div class="pc-title">Individuals</div>
-        <div class="pc-sub">Sponsor a tree. Track it growing. Know your guardian's name.</div>
-        <span class="pc-link">Start Here</span>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<!-- HOW IT WORKS -->
-<section class="how-sec">
-  <div class="how-inner">
-    <div class="how-head reveal">
-      <h2 class="how-h2">How the<br/><i>program</i><br/>works.</h2>
-      <p class="how-note">Our five-step model is what separates us from every other plantation drive. Survival, not just numbers.</p>
+  <!-- HOW IT WORKS -->
+  <section class="how-sec">
+    <div class="how-inner">
+      <div class="how-head reveal">
+        <h2 class="how-h2">From your donation<br />to a <i>living tree.</i></h2>
+        <p class="how-note">Our five-step model is what separates us from every other plantation drive. Survival, not
+          just numbers.</p>
+      </div>
+      <div class="prog-grid reveal">
+        <div class="prog-item">
+          <div class="prog-n">01</div>
+          <span class="prog-ico">📚</span>
+          <div class="prog-title">Awareness in Schools</div>
+          <div class="prog-desc">Students learn ecology, climate, and why urban green cover has collapsed — before a
+            single sapling is touched.</div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-n">02</div>
+          <span class="prog-ico">🗺</span>
+          <div class="prog-title">Plantation Planning</div>
+          <div class="prog-desc">Site surveys, native species selection, soil prep. We plan for survival, not ceremony.
+          </div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-n">03</div>
+          <span class="prog-ico">🌱</span>
+          <div class="prog-title">Tree Plantation</div>
+          <div class="prog-desc">Organised drives with students, teachers, parents and local government — the whole
+            community as stakeholder.</div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-n">04</div>
+          <span class="prog-ico">🎒</span>
+          <div class="prog-title">Student Ownership</div>
+          <div class="prog-desc">Every tree is assigned to one student. Their name, their tree, their responsibility —
+            for years.</div>
+        </div>
+        <div class="prog-item">
+          <div class="prog-n">05</div>
+          <span class="prog-ico">📡</span>
+          <div class="prog-title">Monitor & Report</div>
+          <div class="prog-desc">Geo-tagged trees, survival tracking, quarterly impact reports with photos and real data
+            for every partner.</div>
+        </div>
+      </div>
+      <div class="prog-foot reveal">
+        <a href="#" class="btn-y">Explore the Full Program</a>
+      </div>
     </div>
-    <div class="prog-grid reveal">
-      <div class="prog-item">
-        <div class="prog-n">01</div>
-        <span class="prog-ico">📚</span>
-        <div class="prog-title">Awareness in Schools</div>
-        <div class="prog-desc">Students learn ecology, climate, and why urban green cover has collapsed — before a single sapling is touched.</div>
-      </div>
-      <div class="prog-item">
-        <div class="prog-n">02</div>
-        <span class="prog-ico">🗺</span>
-        <div class="prog-title">Plantation Planning</div>
-        <div class="prog-desc">Site surveys, native species selection, soil prep. We plan for survival, not ceremony.</div>
-      </div>
-      <div class="prog-item">
-        <div class="prog-n">03</div>
-        <span class="prog-ico">🌱</span>
-        <div class="prog-title">Tree Plantation</div>
-        <div class="prog-desc">Organised drives with students, teachers, parents and local government — the whole community as stakeholder.</div>
-      </div>
-      <div class="prog-item">
-        <div class="prog-n">04</div>
-        <span class="prog-ico">🎒</span>
-        <div class="prog-title">Student Ownership</div>
-        <div class="prog-desc">Every tree is assigned to one student. Their name, their tree, their responsibility — for years.</div>
-      </div>
-      <div class="prog-item">
-        <div class="prog-n">05</div>
-        <span class="prog-ico">📡</span>
-        <div class="prog-title">Monitor & Report</div>
-        <div class="prog-desc">Geo-tagged trees, survival tracking, quarterly impact reports with photos and real data for every partner.</div>
-      </div>
-    </div>
-    <div class="prog-foot reveal">
-      <a href="#" class="btn-y">Explore the Full Program</a>
-    </div>
-  </div>
-</section>
+  </section>
 
 
 
-<!-- UPDATES -->
-<!-- 
+  <!-- UPDATES -->
+  <!-- 
 <section class="updates-sec">
   <div class="upd-head reveal">
     <h2 class="upd-h2">Stories from<br/>the <i>field.</i></h2>
@@ -329,72 +354,77 @@
 </section>
 -->
 
-<!-- DONATE -->
-<div class="donate-sec">
-  <div>
-    <h2 class="donate-h2 reveal">Help grow<br/>the next<br/><i>school forest.</i></h2>
-    <p class="donate-sub reveal">₹500 plants and monitors a tree for a full year. ₹5,000 funds an entire classroom's guardian programme. Every amount counts — and every rupee is accounted for.</p>
-  </div>
-  <div class="donate-right reveal">
-    <a href="#" class="btn-b">Donate Now</a>
-    <span class="donate-tiers">₹500 · ₹1,000 · ₹5,000 · Custom</span>
-    <a href="#" class="link-arr" style="font-size:0.73rem;color:rgba(0,0,0,0.45);border-color:rgba(0,0,0,0.18)">Or sponsor a school</a>
-  </div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="foot-top">
+  <!-- DONATE -->
+  <div class="donate-sec">
     <div>
-      <span class="foot-logo">Family Tree <sup>®</sup></span>
-      <p class="foot-desc">Building permanent green cover through schools and communities. Every tree has a name. Every guardian has a story.</p>
-      <div class="foot-soc">
-        <a href="#" class="fsoc">𝕏</a>
-        <a href="#" class="fsoc">in</a>
-        <a href="#" class="fsoc">▶</a>
-        <a href="#" class="fsoc">◎</a>
+      <h2 class="donate-h2 reveal">Help grow<br />the next<br /><i>school forest.</i></h2>
+      <p class="donate-sub reveal">₹500 plants and monitors a tree for a full year. ₹5,000 funds an entire classroom's
+        guardian programme. Every amount counts — and every rupee is accounted for.</p>
+    </div>
+    <div class="donate-right reveal">
+      <a href="#" class="btn-b">Donate Now</a>
+      <span class="donate-tiers">₹500 · ₹1,000 · ₹5,000 · Custom</span>
+      <a href="#" class="link-arr" style="font-size:0.73rem;color:rgba(0,0,0,0.45);border-color:rgba(0,0,0,0.18)">Or
+        sponsor a school</a>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot-top">
+      <div>
+        <span class="foot-logo">
+          <img src="img/logo.png" alt="Family Tree" class="logo-img">
+        </span>
+        <p class="foot-desc">Building permanent green cover through schools and communities. Every tree has a name.
+          Every guardian has a story.</p>
+        <div class="foot-soc">
+          <a href="https://www.facebook.com/share/1Cm7Tczmy6/" class="fsoc" target="_blank">FB</a>
+          <a href="https://www.instagram.com/familytreeindia?igsh=MTVjcHVhZmo0aGJiYg==" class="fsoc"
+            target="_blank">IG</a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Organisation</h5>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Leadership</a></li>
+          <li><a href="#">Annual Reports</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Programs</h5>
+        <ul>
+          <li><a href="#">School Plantation</a></li>
+          <li><a href="#">Community Greening</a></li>
+          <li><a href="#">Urban Greening</a></li>
+          <li><a href="#">Carbon Projects</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Get Involved</h5>
+        <ul>
+          <li><a href="#">Donate</a></li>
+          <li><a href="#">Volunteer</a></li>
+          <li><a href="#">Corporate CSR</a></li>
+          <li><a href="#">Partner With Us</a></li>
+          <li><a href="#">Media & Press</a></li>
+        </ul>
       </div>
     </div>
-    <div class="foot-col">
-      <h5>Organisation</h5>
-      <ul>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Our Story</a></li>
-        <li><a href="#">Leadership</a></li>
-        <li><a href="#">Annual Reports</a></li>
-      </ul>
+    <div class="foot-btm">
+      <span class="foot-copy">© 2025 Family Tree. Registered under Section 8. 80G Certified. FCRA Registered.</span>
+      <div class="foot-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">80G</a>
+        <a href="#">FCRA</a>
+      </div>
     </div>
-    <div class="foot-col">
-      <h5>Programs</h5>
-      <ul>
-        <li><a href="#">School Plantation</a></li>
-        <li><a href="#">Community Greening</a></li>
-        <li><a href="#">Urban Greening</a></li>
-        <li><a href="#">Carbon Projects</a></li>
-      </ul>
-    </div>
-    <div class="foot-col">
-      <h5>Get Involved</h5>
-      <ul>
-        <li><a href="#">Donate</a></li>
-        <li><a href="#">Volunteer</a></li>
-        <li><a href="#">Corporate CSR</a></li>
-        <li><a href="#">Partner With Us</a></li>
-        <li><a href="#">Media & Press</a></li>
-      </ul>
-    </div>
-  </div>
-  <div class="foot-btm">
-    <span class="foot-copy">© 2025 Family Tree. Registered under Section 8. 80G Certified. FCRA Registered.</span>
-    <div class="foot-legal">
-      <a href="#">Privacy</a>
-      <a href="#">Terms</a>
-      <a href="#">80G</a>
-      <a href="#">FCRA</a>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
+
 </html>

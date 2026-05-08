@@ -26,14 +26,38 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
 // TRANSFORMATION SLIDER
 const tsData=[
-  {title:'More Trees,<br/>Better Tomorrow',desc:'See how a greener school<br/>creates a healthier future.',envLbl:'Harsh Environment',envColor:'#e05a1a',wIco:'☀️',wCond:'Hot & Harsh',temp:38,air:'Dusty Air',stage:'No Trees',thumb:'🌵',
-   impacts:[{i:'🌡️',t:'Higher Temperature',d:'Hotter environment makes learning difficult.'},{i:'💨',t:'Poor Air Quality',d:'More dust, less oxygen, more pollution.'},{i:'☁️',t:'More CO₂',d:'Less trees mean more carbon and poor air quality.'},{i:'🌿',t:'Less Biodiversity',d:'Fewer birds, insects and natural life around.'},{i:'😟',t:'Poor Well-being',d:'Heat, stress and discomfort affect health and focus.'}]},
-  {title:'First Steps,<br/>Saplings Planted',desc:'Young saplings take root,<br/>a change begins.',envLbl:'Early Recovery',envColor:'#8a7a2a',wIco:'🌤️',wCond:'Still Warm',temp:34,air:'Improving',stage:'Few Trees',thumb:'🌱',
-   impacts:[{i:'🌡️',t:'Slightly Cooler',d:'Young shade trees begin reducing ground heat.'},{i:'💨',t:'Less Dust',d:'Roots hold soil, reducing dust in the air.'},{i:'☁️',t:'CO₂ Reducing',d:'Saplings begin absorbing carbon dioxide.'},{i:'🦋',t:'Wildlife Returns',d:'Insects and small birds start to appear.'},{i:'😊',t:'Better Mood',d:'Green spaces improve focus and mood.'}]},
-  {title:'Growing Green,<br/>Thriving Campus',desc:'Trees grow, shade spreads,<br/>life returns to the school.',envLbl:'Green Recovery',envColor:'#3a7a42',wIco:'⛅',wCond:'Comfortable',temp:30,air:'Cleaner Air',stage:'Growing Forest',thumb:'🌳',
-   impacts:[{i:'🌡️',t:'Natural Cooling',d:'Dense canopy reduces ambient temperature.'},{i:'💨',t:'Fresh Air',d:'Trees purify air, increasing oxygen levels.'},{i:'☁️',t:'Carbon Stored',d:'Significant CO₂ absorbed and locked in biomass.'},{i:'🦅',t:'Biodiversity',d:'Birds, butterflies and insects thrive here.'},{i:'😄',t:'Healthy Students',d:'Children focus better, play outdoors more.'}]},
-  {title:'Full Forest,<br/>Transformed School',desc:'A living forest shades<br/>every corner of the campus.',envLbl:'Thriving Ecosystem',envColor:'#1a6a28',wIco:'🌿',wCond:'Cool & Green',temp:26,air:'Pure Air',stage:'Full Forest',thumb:'🌲',
-   impacts:[{i:'🌡️',t:'Cool Microclimate',d:'10°C cooler than surrounding bare areas.'},{i:'💨',t:'Pure Air',d:'Air quality rivals open countryside.'},{i:'☁️',t:'Net Carbon Sink',d:'This forest actively fights climate change.'},{i:'🦜',t:'Rich Biodiversity',d:'A complete urban ecosystem flourishes.'},{i:'🌟',t:'Thriving Community',d:'Students, teachers, families all benefit.'}]}
+  {title:'More Trees,<br/>Better Tomorrow',desc:'See how a greener school<br/>creates a healthier future.',envLbl:'Moderate Environment',envColor:'#f0c132',wIco:'☀️',wCond:'Warm & Dry',temp:33,air:'Moderate Air',stage:'33°C',thumb:'🌳',
+   impacts:[
+     {i:'🌡️',t:'Slightly Higher Temperature',d:'Warmer environment affects focus and comfort.'},
+     {i:'💨',t:'Moderate Air Quality',d:'Some dust and less oxygen. Room for improvement.'},
+     {i:'☁️',t:'Moderate CO₂',d:'Fewer trees mean moderate carbon absorption.'},
+     {i:'🦋',t:'Limited Biodiversity',d:'Fewer birds and insects. Less natural life around.'},
+     {i:'🙁',t:'Average Well-being',d:'Comfort is okay, but more trees can improve health.'}
+   ]},
+  {title:'More Trees,<br/>Better Tomorrow',desc:'See how a greener school<br/>creates a healthier future.',envLbl:'Moderate Environment',envColor:'#f0c132',wIco:'⛅',wCond:'Warm & Pleasant',temp:28,air:'Good Air Quality',stage:'28°C',thumb:'🌳',
+   impacts:[
+     {i:'🌡️',t:'Moderate Temperature',d:'Comfortable environment for better learning.'},
+     {i:'💨',t:'Good Air Quality',d:'Better air with more oxygen. Less dust and pollution.'},
+     {i:'☁️',t:'Lower CO₂',d:'Some trees absorb carbon and improve air quality.'},
+     {i:'🕊️',t:'Moderate Biodiversity',d:'Some birds and insects with limited natural life around.'},
+     {i:'😊',t:'Better Well-being',d:'Good comfort and focus. More positivity for students.'}
+   ]},
+  {title:'More Trees,<br/>Better Tomorrow',desc:'See how a greener school<br/>creates a healthier future.',envLbl:'Moderate Environment',envColor:'#f0c132',wIco:'🌤️',wCond:'Warm & Pleasant',temp:25,air:'Good Air Quality',stage:'25°C',thumb:'🌳',
+   impacts:[
+     {i:'🌡️',t:'Better Temperature',d:'Increasing shade starts to balance the campus heat.'},
+     {i:'💨',t:'Improving Air',d:'Growing canopy filters more dust and pollutants.'},
+     {i:'☁️',t:'Carbon Storage',d:'Larger trees begin capturing significant CO₂.'},
+     {i:'🦋',t:'Healthy Ecosystem',d:'More varieties of birds and insects are spotted.'},
+     {i:'😄',t:'Positive Outlook',d:'A greener view boosts student morale and focus.'}
+   ]},
+  {title:'More Trees,<br/>Better Tomorrow',desc:'See how a greener school<br/>creates a healthier future.',envLbl:'Great Environment',envColor:'#4a9e55',wIco:'🍃',wCond:'Cool & Pleasant',temp:23,air:'Clean Air',stage:'23°C',thumb:'🌳',
+   impacts:[
+     {i:'🌡️',t:'Lower Temperature',d:'Cooler environment for better learning.'},
+     {i:'💨',t:'Cleaner Air',d:'More oxygen, less pollution.'},
+     {i:'☁️',t:'Less CO₂',d:'Trees absorb carbon and reduce emissions.'},
+     {i:'🌿',t:'More Biodiversity',d:'Birds, butterflies & more bring life around.'},
+     {i:'😁',t:'Better Well-being',d:'Better health, focus and happiness.'}
+   ]}
 ];
 const tsBgs=document.querySelectorAll('.ts-bg');
 const tsH2=document.getElementById('tsH2'),tsDesc=document.getElementById('tsDesc');
@@ -51,7 +75,7 @@ function tsApply(idx){
   tsEnvDot.style.background=d.envColor;tsEnvLbl.textContent=d.envLbl;
   tsWIco.textContent=d.wIco;tsWCond.textContent=d.wCond;
   tsTemp.textContent=d.temp;tsAir.textContent=d.air;
-  tsStagePill.textContent=d.stage;tsThumb.textContent=d.thumb;
+  tsThumb.textContent=d.thumb;
   const pct=(idx/(tsData.length-1)*100).toFixed(1);
   tsFill.style.width=pct+'%';tsThumb.style.left=pct+'%';
   tsImpactsGrid.innerHTML=d.impacts.map(x=>`<div class="ts-imp"><div class="ts-imp-ico">${x.i}</div><div><div class="ts-imp-title">${x.t}</div><div class="ts-imp-desc">${x.d}</div></div></div>`).join('');
