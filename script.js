@@ -101,3 +101,16 @@ tsThumb.addEventListener('touchstart',e=>{
   document.addEventListener('touchmove',move,{passive:false});document.addEventListener('touchend',up);
 },{passive:false});
 tsApply(0);
+
+// MOBILE MENU
+const mobBtn = document.getElementById('mobBtn'),
+  mobMenu = document.getElementById('mobMenu'),
+  mmClose = document.getElementById('mmClose');
+
+if (mobBtn && mobMenu && mmClose) {
+  mobBtn.onclick = () => mobMenu.classList.add('active');
+  mmClose.onclick = () => mobMenu.classList.remove('active');
+  mobMenu.querySelectorAll('.mm-link, .mm-donate').forEach(link => {
+    link.onclick = () => mobMenu.classList.remove('active');
+  });
+}
