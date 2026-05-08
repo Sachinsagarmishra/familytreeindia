@@ -1994,7 +1994,7 @@ footer {
     font-size: 0.65rem;
     letter-spacing: 0.1em;
     background: rgba(74, 158, 85, 0.2);
-    color: #4a9e55;
+    color: #ffffff;
     padding: 4px 12px;
     border-radius: 4px;
     margin-bottom: 20px;
@@ -2005,7 +2005,7 @@ footer {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 0;
+    gap: 10px;
   }
 
   .ts-imp {
@@ -2034,7 +2034,7 @@ footer {
 
   .ts-imp-title {
     font-size: 0.95rem;
-    color: #4a9e55;
+    color: #ffffff;
     margin-bottom: 2px;
   }
 
