@@ -13,13 +13,11 @@ document.querySelectorAll('a,button,.part-card,.upd-card,.prog-item,.stat-cell,.
 
 // PARTICLES
 const pc=document.getElementById('particles');
-if (pc) {
-  for(let i=0;i<20;i++){
-    const p=document.createElement('div');p.className='particle';
-    const s=Math.random()*5+3;
-    p.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;animation-duration:${Math.random()*14+10}s;animation-delay:${Math.random()*10}s`;
-    pc.appendChild(p);
-  }
+for(let i=0;i<20;i++){
+  const p=document.createElement('div');p.className='particle';
+  const s=Math.random()*5+3;
+  p.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;animation-duration:${Math.random()*14+10}s;animation-delay:${Math.random()*10}s`;
+  pc.appendChild(p);
 }
 
 // SCROLL REVEAL
@@ -81,22 +79,20 @@ function tsFromPct(pct){
   tsFill.style.width=pct+'%';tsThumb.style.left=pct+'%';
 }
 function tsPctFromEvent(e,rect){return((e.clientX-rect.left)/rect.width)*100;}
-if (tsTrack) {
-  tsTrack.addEventListener('click',e=>{const r=tsTrack.getBoundingClientRect();tsFromPct(tsPctFromEvent(e,r));});
-  tsThumb.addEventListener('mousedown',e=>{
-    e.preventDefault();
-    const move=mv=>{const r=tsTrack.getBoundingClientRect();tsFromPct(tsPctFromEvent(mv,r));};
-    const up=()=>{document.removeEventListener('mousemove',move);document.removeEventListener('mouseup',up);};
-    document.addEventListener('mousemove',move);document.addEventListener('mouseup',up);
-  });
-  tsThumb.addEventListener('touchstart',e=>{
-    e.preventDefault();
-    const move=mv=>{const r=tsTrack.getBoundingClientRect();const t=mv.touches[0];tsFromPct(((t.clientX-r.left)/r.width)*100);};
-    const up=()=>{document.removeEventListener('touchmove',move);document.removeEventListener('touchend',up);};
-    document.addEventListener('touchmove',move,{passive:false});document.addEventListener('touchend',up);
-  },{passive:false});
-  tsApply(0);
-}
+tsTrack.addEventListener('click',e=>{const r=tsTrack.getBoundingClientRect();tsFromPct(tsPctFromEvent(e,r));});
+tsThumb.addEventListener('mousedown',e=>{
+  e.preventDefault();
+  const move=mv=>{const r=tsTrack.getBoundingClientRect();tsFromPct(tsPctFromEvent(mv,r));};
+  const up=()=>{document.removeEventListener('mousemove',move);document.removeEventListener('mouseup',up);};
+  document.addEventListener('mousemove',move);document.addEventListener('mouseup',up);
+});
+tsThumb.addEventListener('touchstart',e=>{
+  e.preventDefault();
+  const move=mv=>{const r=tsTrack.getBoundingClientRect();const t=mv.touches[0];tsFromPct(((t.clientX-r.left)/r.width)*100);};
+  const up=()=>{document.removeEventListener('touchmove',move);document.removeEventListener('touchend',up);};
+  document.addEventListener('touchmove',move,{passive:false});document.addEventListener('touchend',up);
+},{passive:false});
+tsApply(0);
 
 // MOBILE MENU
 const mobBtn = document.getElementById('mobBtn'),
