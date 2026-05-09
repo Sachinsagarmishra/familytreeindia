@@ -204,3 +204,134 @@
     font-size: 3.2rem;
   }
 }
+
+/* VISIT SECTION */
+.cnt-visit {
+  background: var(--stone);
+  padding: 100px 72px;
+}
+
+.cnt-visit-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.cnt-visit-head {
+  text-align: center;
+  margin-bottom: 64px;
+}
+
+.cnt-visit-h2 {
+  font-family: "Fraunces", serif;
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin-bottom: 20px;
+}
+
+.cnt-visit-p {
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.5);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.cnt-visit-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+}
+
+.cnt-map {
+  height: 400px;
+  background: #fff;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.cnt-map-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.cnt-map-inner i {
+  font-size: 2.5rem;
+}
+
+.cnt-hours {
+  background: var(--black);
+  padding: 48px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 32px;
+}
+
+.cnt-hour-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 20px;
+}
+
+.cnt-hour-item:last-child {
+  border: none;
+}
+
+.cnt-day {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--yellow);
+}
+
+.cnt-time {
+  font-family: "Fraunces", serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* FAQ SECTION */
+.cnt-faq {
+  padding: 100px 72px;
+  background: #fff;
+}
+
+.cnt-faq-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+
+.cnt-faq-q {
+  font-family: "Fraunces", serif;
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin-bottom: 16px;
+}
+
+.cnt-faq-a {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+@media (max-width: 900px) {
+  .cnt-visit { padding: 80px 28px; }
+  .cnt-visit-grid { grid-template-columns: 1fr; }
+  .cnt-visit-h2 { font-size: 2.5rem; }
+  .cnt-faq { padding: 80px 28px; }
+  .cnt-faq-inner { grid-template-columns: 1fr; gap: 40px; }
+}
