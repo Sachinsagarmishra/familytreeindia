@@ -26,37 +26,29 @@ document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 
 // TRANSFORMATION SLIDER
 const tsData=[
-  {title:'More Trees,<br/>Better Tomorrow',desc:'See how a greener school<br/>creates a healthier future.',envLbl:'Moderate Environment',envColor:'#f0c132',wIco:'☀️',wCond:'Warm & Dry',temp:33,air:'Moderate Air',stage:'33°C',thumb:'🌳',
+  {title:'More Trees,<br/>Better Tomorrow',desc:'See how a greener school<br/>creates a healthier future.',envLbl:'Harsh Environment',envColor:'#e05a1a',wIco:'☀️',wCond:'Extreme Heat',temp:44,air:'Dusty Air',stage:'44°C',thumb:'🌳',
    impacts:[
-     {i:'🌡️',t:'Slightly Higher Temperature',d:'Warmer environment affects focus and comfort.'},
-     {i:'💨',t:'Moderate Air Quality',d:'Some dust and less oxygen. Room for improvement.'},
-     {i:'☁️',t:'Moderate CO₂',d:'Fewer trees mean moderate carbon absorption.'},
-     {i:'🦋',t:'Limited Biodiversity',d:'Fewer birds and insects. Less natural life around.'},
-     {i:'🙁',t:'Average Well-being',d:'Comfort is okay, but more trees can improve health.'}
+     {i:'🌡️',t:'Extreme Temperature',d:'44°C makes outdoor activity nearly impossible for students.'},
+     {i:'💨',t:'Poor Air Quality',d:'High dust concentration and very low humidity.'},
+     {i:'☁️',t:'No Carbon Sink',d:'Barren land contributes to the local heat island effect.'},
+     {i:'🦋',t:'No Biodiversity',d:'Zero shade means no birds or local fauna can survive.'},
+     {i:'😫',t:'High Heat Stress',d:'Students face fatigue and severe lack of concentration.'}
    ]},
-  {title:'More Trees,<br/>Better Tomorrow',desc:'See how a greener school<br/>creates a healthier future.',envLbl:'Moderate Environment',envColor:'#f0c132',wIco:'⛅',wCond:'Warm & Pleasant',temp:28,air:'Good Air Quality',stage:'28°C',thumb:'🌳',
+  {title:'More Trees,<br/>Better Tomorrow',desc:'See how a greener school<br/>creates a healthier future.',envLbl:'Moderate Environment',envColor:'#f0c132',wIco:'⛅',wCond:'Hot & Dry',temp:42,air:'Moderate Air',stage:'42°C',thumb:'🌳',
    impacts:[
-     {i:'🌡️',t:'Moderate Temperature',d:'Comfortable environment for better learning.'},
-     {i:'💨',t:'Good Air Quality',d:'Better air with more oxygen. Less dust and pollution.'},
-     {i:'☁️',t:'Lower CO₂',d:'Some trees absorb carbon and improve air quality.'},
-     {i:'🕊️',t:'Moderate Biodiversity',d:'Some birds and insects with limited natural life around.'},
-     {i:'😊',t:'Better Well-being',d:'Good comfort and focus. More positivity for students.'}
+     {i:'🌡️',t:'Partial Cooling',d:'Early growth starts to bring the temperature down to 42°C.'},
+     {i:'💨',t:'Reduced Dust',d:'Young saplings begin filtering some wind-borne dust.'},
+     {i:'☁️',t:'Early Carbon Fix',d:'Small trees begin their journey of carbon absorption.'},
+     {i:'🕊️',t:'Signs of Life',d:'A few insects and hardy birds start visiting the campus.'},
+     {i:'😊',t:'Growing Comfort',d:'The presence of green starts to improve student morale.'}
    ]},
-  {title:'More Trees,<br/>Better Tomorrow',desc:'See how a greener school<br/>creates a healthier future.',envLbl:'Moderate Environment',envColor:'#f0c132',wIco:'🌤️',wCond:'Warm & Pleasant',temp:25,air:'Good Air Quality',stage:'25°C',thumb:'🌳',
+  {title:'More Trees,<br/>Better Tomorrow',desc:'See how a greener school<br/>creates a healthier future.',envLbl:'Balanced Environment',envColor:'#4a9e55',wIco:'🍃',wCond:'Warm & Shady',temp:39,air:'Cleaner Air',stage:'39°C',thumb:'🌳',
    impacts:[
-     {i:'🌡️',t:'Better Temperature',d:'Increasing shade starts to balance the campus heat.'},
-     {i:'💨',t:'Improving Air',d:'Growing canopy filters more dust and pollutants.'},
-     {i:'☁️',t:'Carbon Storage',d:'Larger trees begin capturing significant CO₂.'},
-     {i:'🦋',t:'Healthy Ecosystem',d:'More varieties of birds and insects are spotted.'},
-     {i:'😄',t:'Positive Outlook',d:'A greener view boosts student morale and focus.'}
-   ]},
-  {title:'More Trees,<br/>Better Tomorrow',desc:'See how a greener school<br/>creates a healthier future.',envLbl:'Great Environment',envColor:'#4a9e55',wIco:'🍃',wCond:'Cool & Pleasant',temp:23,air:'Clean Air',stage:'23°C',thumb:'🌳',
-   impacts:[
-     {i:'🌡️',t:'Lower Temperature',d:'Cooler environment for better learning.'},
-     {i:'💨',t:'Cleaner Air',d:'More oxygen, less pollution.'},
-     {i:'☁️',t:'Less CO₂',d:'Trees absorb carbon and reduce emissions.'},
-     {i:'🌿',t:'More Biodiversity',d:'Birds, butterflies & more bring life around.'},
-     {i:'😁',t:'Better Well-being',d:'Better health, focus and happiness.'}
+     {i:'🌡️',t:'Significant Cooling',d:'Full canopy reduces ground temperature significantly to 39°C.'},
+     {i:'💨',t:'Filtered Fresh Air',d:'Mature trees provide much cleaner, oxygen-rich air.'},
+     {i:'☁️',t:'Active Carbon Sink',d:'The mini-forest effectively offsets local emissions.'},
+     {i:'🌿',t:'Rich Biodiversity',d:'A thriving ecosystem with birds, butterflies, and shade.'},
+     {i:'😁',t:'Healthy Learning',d:'Improved focus, better health, and a happier school life.'}
    ]}
 ];
 const tsBgs=document.querySelectorAll('.ts-bg');

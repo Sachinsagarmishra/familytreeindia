@@ -739,6 +739,111 @@ nav::before {
   content: "→";
 }
 
+/* HARIT BIHAR MISSION */
+.hbm-sec {
+  background: var(--green-dark);
+  padding: 100px 72px;
+  overflow: hidden;
+}
+
+.hbm-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: start;
+}
+
+.hbm-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 100px;
+  padding: 8px 18px;
+  margin-bottom: 32px;
+}
+
+.hbm-badge-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--green-light);
+  box-shadow: 0 0 10px rgba(74, 158, 85, 0.5);
+}
+
+.hbm-badge-txt {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.hbm-h2 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(2.2rem, 3.8vw, 3.8rem);
+  font-weight: 900;
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+  color: #fff;
+}
+
+.hbm-h2 i {
+  font-style: italic;
+  font-weight: 300;
+  color: var(--yellow);
+}
+
+.hbm-subtitle {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.35);
+  letter-spacing: 0.04em;
+  margin-top: 20px;
+  line-height: 1.6;
+}
+
+.hbm-right {
+  padding-top: 12px;
+}
+
+.hbm-line {
+  width: 48px;
+  height: 3px;
+  background: var(--yellow);
+  margin-bottom: 32px;
+}
+
+.hbm-p {
+  font-size: 1.02rem;
+  line-height: 1.88;
+  color: rgba(255, 255, 255, 0.48);
+  margin-bottom: 16px;
+}
+
+.hbm-highlight {
+  font-size: 1rem;
+  line-height: 1.82;
+  color: rgba(255, 255, 255, 0.7);
+  font-weight: 600;
+  padding: 20px 24px;
+  background: rgba(74, 158, 85, 0.08);
+  border-left: 3px solid var(--green-light);
+  margin-bottom: 32px;
+  margin-top: 8px;
+}
+
+.hbm-sec .link-arr {
+  color: var(--yellow);
+  border-bottom-color: rgba(240, 193, 50, 0.3);
+}
+
+.hbm-sec .link-arr:hover {
+  border-bottom-color: var(--yellow);
+}
+
 /* PROGRAM */
 .program {
   background: var(--black);
@@ -1945,6 +2050,24 @@ footer {
 
   .story-body-col {
     padding: 60px 28px;
+  }
+
+  .hbm-sec {
+    padding: 64px 28px;
+  }
+
+  .hbm-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .hbm-h2 {
+    font-size: clamp(1.8rem, 7vw, 2.4rem);
+  }
+
+  .hbm-highlight {
+    padding: 16px 20px;
+    font-size: 0.92rem;
   }
 
   .transform-sec {

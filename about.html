@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About Us — Family Tree Foundation</title>
+  <meta name="description"
+    content="Family Tree Foundation is a non-profit building permanent green cover through schools and communities across Bihar. Every tree has a name. Every guardian has a story." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="about.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <link rel="icon" type="image/png" href="img/favicon.png" />
+</head>
+
+<body>
+
+  <div class="cursor" id="cur"></div>
+  <div class="cursor-ring" id="curRing"></div>
+
+  <!-- NAV -->
+  <nav class="abt-nav">
+    <a href="/" class="nav-logo">
+      <img src="img/logo.png" alt="Family Tree" class="logo-img">
+    </a>
+    <div class="nav-right">
+      <div class="nav-item has-dropdown">
+        <a href="/" class="nav-link">Take Action <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
+        <div class="dropdown-menu">
+          <div class="dropdown-inner">
+            <a href="#" class="dropdown-link">
+              <span class="dl-title">Sponsor a Tree</span>
+              <span class="dl-desc">Direct environmental impact</span>
+            </a>
+            <a href="#" class="dropdown-link">
+              <span class="dl-title">Volunteer</span>
+              <span class="dl-desc">Join our ground team</span>
+            </a>
+            <a href="corporate" class="dropdown-link">
+              <span class="dl-title">Corporate CSR</span>
+              <span class="dl-desc">ESG aligned partnerships</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="nav-item has-dropdown">
+        <a href="about" class="nav-link">About Us <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
+        <div class="dropdown-menu">
+          <div class="dropdown-inner">
+            <a href="about" class="dropdown-link">
+              <span class="dl-title">Our Story</span>
+              <span class="dl-desc">From one school to many</span>
+            </a>
+            <a href="#" class="dropdown-link">
+              <span class="dl-title">Leadership</span>
+              <span class="dl-desc">Meet the visionaries</span>
+            </a>
+            <a href="#" class="dropdown-link">
+              <span class="dl-title">Impact Reports</span>
+              <span class="dl-desc">Transparency in action</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <a href="#" class="nav-link">Why Tree?</a>
+    </div>
+    <a href="#" class="nav-donate">Donate</a>
+    <button class="nav-mob-btn" id="mobBtn">
+      <div class="mob-line"></div>
+      <div class="mob-line"></div>
+    </button>
+  </nav>
+
+  <div class="mob-menu" id="mobMenu">
+    <div class="mm-head">
+      <img src="img/logo.png" alt="Family Tree" class="logo-img">
+      <button class="mm-close" id="mmClose">✕</button>
+    </div>
+    <div class="mm-links">
+      <a href="/" class="mm-link">Home</a>
+      <a href="about" class="mm-link">About Us</a>
+      <a href="corporate" class="mm-link">Corporate CSR</a>
+      <a href="#" class="mm-link">Why Tree?</a>
+      <a href="#" class="mm-donate">Donate Now</a>
+    </div>
+  </div>
+
+  <!-- SECTION 1: ABOUT INTRO + 3 PHOTOS -->
+  <section class="abt-intro">
+    <div class="abt-intro-inner">
+      <p class="abt-eyebrow abt-reveal">ABOUT US</p>
+      <h1 class="abt-intro-h1 abt-reveal">Family Tree Foundation is a<br />non-profit organisation
+        building<br /><i>permanent green cover</i> through<br />schools and communities.</h1>
+      <div class="abt-photos abt-reveal">
+        <div class="abt-photos-track">
+          <div class="abt-photo">
+            <img src="img/4.jpeg" alt="Student reading with a plant" loading="lazy" />
+          </div>
+          <div class="abt-photo abt-photo-tall">
+            <img src="img/8.jpeg" alt="Students gathered for plantation" loading="lazy" />
+          </div>
+          <div class="abt-photo">
+            <img src="img/11.jpeg" alt="Student smiling at school campus" loading="lazy" />
+          </div>
+          <!-- Mobile only marquee images -->
+          <div class="abt-photo abt-photo-mob">
+            <img src="img/1.jpeg" alt="Plantation Activity" loading="lazy" />
+          </div>
+          <div class="abt-photo abt-photo-mob">
+            <img src="img/3.jpeg" alt="School Garden" loading="lazy" />
+          </div>
+          <div class="abt-photo abt-photo-mob">
+            <img src="img/9.jpeg" alt="Student Guardian" loading="lazy" />
+          </div>
+          <div class="abt-photo abt-photo-mob">
+            <img src="img/10.jpeg" alt="Green Campus" loading="lazy" />
+          </div>
+          <div class="abt-photo abt-photo-mob">
+            <img src="img/12.jpeg" alt="Community Support" loading="lazy" />
+          </div>
+          <!-- Duplicates for loop -->
+          <div class="abt-photo abt-photo-mob">
+            <img src="img/4.jpeg" alt="Student reading" loading="lazy" />
+          </div>
+          <div class="abt-photo abt-photo-mob">
+            <img src="img/8.jpeg" alt="Students gathered" loading="lazy" />
+          </div>
+          <div class="abt-photo abt-photo-mob">
+            <img src="img/11.jpeg" alt="Student smiling" loading="lazy" />
+          </div>
+          <div class="abt-photo abt-photo-mob">
+            <img src="img/1.jpeg" alt="Plantation Activity" loading="lazy" />
+          </div>
+          <div class="abt-photo abt-photo-mob">
+            <img src="img/3.jpeg" alt="School Garden" loading="lazy" />
+          </div>
+          <div class="abt-photo abt-photo-mob">
+            <img src="img/9.jpeg" alt="Student Guardian" loading="lazy" />
+          </div>
+          <div class="abt-photo abt-photo-mob">
+            <img src="img/10.jpeg" alt="Green Campus" loading="lazy" />
+          </div>
+          <div class="abt-photo abt-photo-mob">
+            <img src="img/12.jpeg" alt="Community Support" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: MISSION + STATS -->
+  <section class="abt-mission">
+    <div class="abt-mission-inner abt-reveal">
+      <h2 class="abt-mission-h2">Together, we can build a<br /><i>greener</i> Bihar</h2>
+      <p class="abt-mission-p">Since Family Tree Foundation began, we've been chasing one ambitious goal: ensuring every
+        government school in Bihar has a thriving green campus. And while the environmental crisis is massive, we're
+        optimistic. We know how to solve the problem, and we make progress every day thanks to the dedication of student
+        guardians, local communities, and generous supporters. If we work together, we believe every child will grow up
+        surrounded by trees within our lifetime.</p>
+    </div>
+  </section>
+
+  <section class="abt-stats">
+    <div class="abt-stats-inner">
+      <p class="abt-stats-tag abt-reveal">FAMILY TREE'S IMPACT TO DATE</p>
+      <div class="abt-stats-grid abt-reveal">
+        <div class="abt-stat">
+          <div class="abt-stat-num" data-target="120">0</div>
+          <div class="abt-stat-lbl">SCHOOLS COVERED</div>
+        </div>
+        <div class="abt-stat">
+          <div class="abt-stat-num" data-target="12">0</div>
+          <div class="abt-stat-lbl">DISTRICTS</div>
+        </div>
+        <div class="abt-stat">
+          <div class="abt-stat-num" data-target="15000">0</div>
+          <div class="abt-stat-lbl">STUDENT GUARDIANS</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: LEADERSHIP WITH IMPACT -->
+  <section class="abt-promise">
+    <div class="abt-promise-inner">
+      <div class="abt-promise-img abt-reveal">
+        <img src="img/WhatsApp Image 2026-05-07 at 20.02.45 (2).jpeg" alt="Founder of Family Tree Foundation"
+          loading="lazy" />
+        <div class="abt-promise-badge">🌿</div>
+      </div>
+      <div class="abt-promise-body abt-reveal">
+        <p class="abt-eyebrow">LEADERSHIP</p>
+        <h2 class="abt-promise-h2">Leadership with<br /><i>Impact</i></h2>
+        <p class="abt-promise-p">Family Tree Foundation was founded with a single, powerful conviction — that
+          <strong>lasting green cover</strong> isn't built by organisations alone, it's built by communities. What
+          started as a vision to plant trees in one government school in Bihar has grown into a movement spanning 120
+          schools across 12 districts.</p>
+        <p class="abt-promise-p">Under our founder's leadership, we pioneered the <strong>student guardianship
+            model</strong> — where every tree planted is assigned to a named student, making them personally responsible
+          for its survival. This approach has achieved an 85% survival rate, more than double the national average.</p>
+        <div class="abt-founder-meta">
+          <div class="abt-founder-name">Founder & Director</div>
+          <div class="abt-founder-org">Family Tree Foundation</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- SECTION 5: PARTNERS -->
+  <section class="abt-partners">
+    <div class="abt-partners-inner">
+      <div class="abt-partners-head abt-reveal">
+        <p class="abt-eyebrow">OUR PARTNERS & SUPPORTERS</p>
+        <h2 class="abt-partners-h2">Backed by institutions<br />that <i>matter.</i></h2>
+      </div>
+      <div class="abt-partners-logos abt-reveal">
+        <div class="abt-partner-logo">
+          <img src="Icons/black/Bihar-Education-Project-Council.svg" alt="Bihar Education Project Council" />
+        </div>
+        <div class="abt-partner-logo">
+          <img src="Icons/black/aiims patna.svg" alt="AIIMS Patna" />
+        </div>
+        <div class="abt-partner-logo">
+          <img src="Icons/black/ministry of education.svg" alt="Ministry of Education" />
+        </div>
+        <div class="abt-partner-logo">
+          <img src="Icons/black/Government-of-Bihar.svg" alt="Government of Bihar" />
+        </div>
+        <div class="abt-partner-logo">
+          <img src="Icons/black/cmx-foundation.svg" alt="CMX Foundation" />
+        </div>
+        <div class="abt-partner-logo">
+          <div class="abt-partner-text-logo">
+            <span class="abt-ptl-main">DARPAN</span>
+            <span class="abt-ptl-sub">NITI Aayog Registration</span>
+          </div>
+        </div>
+        <div class="abt-partner-logo">
+          <div class="abt-partner-text-logo">
+            <span class="abt-ptl-main">80G</span>
+            <span class="abt-ptl-sub">Tax Exemption Certified</span>
+          </div>
+        </div>
+        <div class="abt-partner-logo">
+          <div class="abt-partner-text-logo">
+            <span class="abt-ptl-main">CSR-1</span>
+            <span class="abt-ptl-sub">Companies Act, 2013</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="foot-top">
+      <div>
+        <span class="foot-logo">
+          <img src="img/logo.png" alt="Family Tree" class="logo-img">
+        </span>
+        <p class="foot-desc">Building permanent green cover through schools and communities. Every tree has a name.
+          Every guardian has a story.</p>
+        <div class="foot-soc">
+          <a href="https://www.facebook.com/share/1Cm7Tczmy6/" class="fsoc" target="_blank" aria-label="Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+          <a href="https://www.instagram.com/familytreeindia?igsh=MTVjcHVhZmo0aGJiYg==" class="fsoc" target="_blank"
+            aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Organisation</h5>
+        <ul>
+          <li><a href="about">About Us</a></li>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Leadership</a></li>
+          <li><a href="#">Annual Reports</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Programs</h5>
+        <ul>
+          <li><a href="#">School Plantation</a></li>
+          <li><a href="#">Community Greening</a></li>
+          <li><a href="#">Urban Greening</a></li>
+          <li><a href="#">Carbon Projects</a></li>
+        </ul>
+      </div>
+      <div class="foot-col">
+        <h5>Get Involved</h5>
+        <ul>
+          <li><a href="#">Donate</a></li>
+          <li><a href="#">Volunteer</a></li>
+          <li><a href="corporate">Corporate CSR</a></li>
+          <li><a href="#">Partner With Us</a></li>
+          <li><a href="#">Media & Press</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-btm">
+      <span class="foot-copy">© 2026 Family Tree. Registered under Section 8. 80G Certified. FCRA Registered.</span>
+      <div class="foot-legal">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="#">80G</a>
+        <a href="#">FCRA</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="about.js"></script>
+</body>
+
+</html>
