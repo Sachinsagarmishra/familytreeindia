@@ -390,7 +390,7 @@ nav::before {
 
 .hero-h1 i {
   font-style: italic;
-  font-weight: 300;
+  font-weight: 800 !important;
   color: var(--yellow);
 }
 
@@ -784,7 +784,7 @@ nav::before {
 
 .hbm-h2 {
   font-family: "Fraunces", serif;
-  font-size: clamp(2.2rem, 3.8vw, 3.8rem);
+  font-size: clamp(2.4rem, 4.2vw, 4.2rem);
   font-weight: 900;
   line-height: 1.02;
   letter-spacing: -0.04em;
@@ -793,7 +793,7 @@ nav::before {
 
 .hbm-h2 i {
   font-style: italic;
-  font-weight: 300;
+  font-weight: 800;
   color: var(--yellow);
 }
 
