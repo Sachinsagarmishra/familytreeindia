@@ -1960,6 +1960,10 @@ footer {
     display: none;
   }
 
+  .hero-bg {
+    background-position: 55% center;
+  }
+
   .hero-content {
     padding: 0 28px 72px;
   }
