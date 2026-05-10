@@ -141,21 +141,38 @@
         <form class="cont-form" action="mailto:info@familytreeindia.org" method="post" enctype="text/plain">
           <div class="form-row">
             <div class="form-group">
-              <label for="name">Your Name</label>
+              <label for="name">Names</label>
               <input type="text" id="name" name="name" placeholder="John Doe" required>
             </div>
             <div class="form-group">
-              <label for="email">Email Address</label>
+              <label for="email">Email ID</label>
               <input type="email" id="email" name="email" placeholder="john@example.com" required>
             </div>
           </div>
-          <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="Partnership Inquiry" required>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone number</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+            </div>
+            <div class="form-group">
+              <label for="company">Company name</label>
+              <input type="text" id="company" name="company" placeholder="Your Organization">
+            </div>
           </div>
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="How can we help you?" required></textarea>
+            <label for="interest">Interested in</label>
+            <select id="interest" name="interest" required>
+              <option value="" disabled selected>Select an option</option>
+              <option value="CSR">CSR</option>
+              <option value="Employee Engagement">Employee Engagement</option>
+              <option value="Volunteer program">Volunteer program</option>
+              <option value="Partnership">Partnership</option>
+              <option value="Others">Others</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Comments (optional)</label>
+            <textarea id="message" name="message" rows="4" placeholder="How can we help you?"></textarea>
           </div>
           <button type="submit" class="btn-y">Send Message</button>
         </form>
