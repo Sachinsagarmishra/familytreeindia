@@ -595,9 +595,9 @@ nav::before {
 }
 
 .stat-num small {
-  font-size: 0.35em;
+  font-size: 16px;
   letter-spacing: 0;
-  margin-left: 2px;
+  margin-left: 4px;
   vertical-align: middle;
   font-weight: 700;
 }
