@@ -602,6 +602,22 @@ nav::before {
   color: rgba(0, 0, 0, 0.5);
 }
 
+.stat-footnote {
+  background: var(--yellow);
+  padding: 0 72px 52px;
+  text-align: center;
+}
+
+.stat-footnote p {
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: rgba(0, 0, 0, 0.5);
+  max-width: 860px;
+  margin: 0 auto;
+  font-weight: 500;
+  font-style: italic;
+}
+
 /* STORY */
 .story {
   display: grid;
@@ -1975,6 +1991,14 @@ footer {
 
   .stat-band {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .stat-footnote {
+    padding: 0 28px 52px;
+  }
+
+  .stat-footnote p {
+    font-size: 0.7rem;
   }
 
   .partners {
