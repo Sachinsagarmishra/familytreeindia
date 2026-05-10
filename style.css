@@ -1984,7 +1984,8 @@ footer {
   }
 
   .hero-bg {
-    background-position: 55% center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 40%, transparent 70%), 
+                url('img/herobg.svg') 55% center/cover no-repeat;
   }
 
   .hero-content {
