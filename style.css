@@ -594,6 +594,14 @@ nav::before {
   margin-bottom: 8px;
 }
 
+.stat-num small {
+  font-size: 0.35em;
+  letter-spacing: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  font-weight: 700;
+}
+
 .stat-lbl {
   font-size: 0.78rem;
   font-weight: 600;
