@@ -1984,8 +1984,8 @@ footer {
   }
 
   .hero-bg {
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 40%, transparent 70%), 
-                url('img/herobg.svg') 55% center/cover no-repeat;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 40%, transparent 70%),
+      url('img/herobg.svg') 55% center/cover no-repeat;
   }
 
   .hero-content {
@@ -2250,7 +2250,7 @@ footer {
 
   .ts-imp {
     flex-direction: row;
-    padding: 16px 0;
+    padding: 16px 10px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     text-align: left;
     gap: 16px;
