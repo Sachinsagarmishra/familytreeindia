@@ -131,6 +131,7 @@
     text-decoration: none;
     transition: color 0.3s;
     letter-spacing: -0.02em;
+    word-break: break-all;
 }
 
 .info-link:hover {
@@ -328,3 +329,38 @@
         font-size: 1.4rem;
     }
 }
+
+@media (max-width: 600px) {
+    .cont-h1 {
+        font-size: 1.9rem;
+    }
+
+    .cont-sub {
+        font-size: 0.95rem;
+    }
+
+    .info-link {
+        font-size: 1.15rem;
+    }
+
+    .info-text {
+        font-size: 0.9rem;
+    }
+
+    .cont-form-col {
+        padding: 32px 20px;
+    }
+
+    .cont-map {
+        padding: 0 20px 60px;
+    }
+
+    .map-placeholder {
+        padding: 20px;
+    }
+
+    .map-overlay p {
+        font-size: 1.2rem;
+    }
+}
+
