@@ -613,7 +613,7 @@ nav::before {
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('img/4.jpeg') center/cover no-repeat;
+    url('img/who_we_are.png') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -846,7 +846,7 @@ nav::before {
 
 /* PROGRAM */
 .program {
-  background: var(--black);
+  background: #0f2310;
   padding: 50px 50px;
 }
 
@@ -1108,7 +1108,7 @@ nav::before {
 .ts-bottom-panel {
   position: relative;
   z-index: 2;
-  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+  background: linear-gradient(to top, rgb(15 35 16) 0%, transparent 100%);
   padding: 40px 72px 60px;
 }
 

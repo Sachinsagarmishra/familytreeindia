@@ -155,32 +155,87 @@
   margin-bottom: 48px;
 }
 
-.abt-stats-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
-}
-
 .abt-stat {
   text-align: center;
 }
 
 .abt-stat-num {
   font-family: "Fraunces", serif;
-  font-size: clamp(2.5rem, 4.5vw, 4.2rem);
+  font-size: clamp(2.2rem, 4vw, 3.8rem);
   font-weight: 900;
-  color: #fff;
   line-height: 1;
   letter-spacing: -0.045em;
   margin-bottom: 12px;
 }
 
 .abt-stat-lbl {
-  font-size: 0.68rem;
+  font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
+}
+
+.abt-comp-sec {
+  background: var(--white);
+}
+
+.abt-comp-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.abt-comp-col {
+  padding: 100px 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.target-col {
+  background: var(--stone);
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.completed-col {
+  background: var(--black);
+}
+
+.abt-comp-inner {
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+}
+
+.comp-stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px 20px;
+}
+
+.target-col .abt-stat-num {
+  color: var(--black);
+}
+
+.target-col .abt-stat-lbl {
+  color: var(--green-mid);
+}
+
+.completed-col .abt-stat-num {
+  color: #fff;
+}
+
+.completed-col .abt-stat-lbl {
   color: var(--yellow);
+}
+
+@media (max-width: 900px) {
+  .abt-comp-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .abt-comp-col {
+    padding: 64px 28px;
+  }
 }
 
 /* =====================
@@ -218,19 +273,34 @@
   transform: scale(1.03);
 }
 
-.abt-promise-badge {
+.abt-promise-overlay {
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 64px;
-  height: 64px;
-  background: var(--yellow);
-  border-radius: 50%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 80px 30px 30px;
+  background: linear-gradient(to top, rgba(10, 15, 10, 0.9) 0%, transparent 100%);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  pointer-events: none;
+}
+
+.abt-promise-overlay .abt-founder-name {
+  font-family: "Fraunces", serif;
   font-size: 1.8rem;
-  box-shadow: 0 6px 24px rgba(240, 193, 50, 0.3);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+  margin-bottom: 4px;
+}
+
+.abt-promise-overlay .abt-founder-org {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--yellow);
 }
 
 .abt-promise-h2 {
@@ -277,28 +347,7 @@
   border-color: var(--black);
 }
 
-.abt-founder-meta {
-  margin-top: 32px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-}
 
-.abt-founder-name {
-  font-family: "Fraunces", serif;
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--black);
-  letter-spacing: -0.02em;
-  margin-bottom: 4px;
-}
-
-.abt-founder-org {
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--green-mid);
-}
 
 /* =====================
    SECTION 4: VALUES

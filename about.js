@@ -42,8 +42,9 @@ const statObs = new IntersectionObserver(entries => {
   });
 }, { threshold: 0.3 });
 
-const statsGrid = document.querySelector('.abt-stats-grid');
-if (statsGrid) statObs.observe(statsGrid);
+document.querySelectorAll('.abt-stats-grid, .comp-stats-grid').forEach(grid => {
+  if (grid) statObs.observe(grid);
+});
 
 // MOBILE MENU
 const mobBtn = document.getElementById('mobBtn'),

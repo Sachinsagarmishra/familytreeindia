@@ -52,22 +52,22 @@
         <a href="about" class="nav-link">About Us <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
         <div class="dropdown-menu">
           <div class="dropdown-inner">
-            <a href="about" class="dropdown-link">
+            <a href="about#story" class="dropdown-link">
               <span class="dl-title">Our Story</span>
               <span class="dl-desc">From one school to many</span>
             </a>
-            <a href="about" class="dropdown-link">
+            <a href="about#leadership" class="dropdown-link">
               <span class="dl-title">Leadership</span>
               <span class="dl-desc">Meet the visionaries</span>
             </a>
-            <a href="about" class="dropdown-link">
+            <a href="about#impact" class="dropdown-link">
               <span class="dl-title">Impact Reports</span>
               <span class="dl-desc">Transparency in action</span>
             </a>
           </div>
         </div>
       </div>
-      <a href="about" class="nav-link">Why Tree?</a>
+      <a href="contact" class="nav-link">Contact</a>
     </div>
     <a href="mailto:info@familytreeindia.org?subject=Donation Inquiry" class="nav-donate">Donate</a>
     <button class="nav-mob-btn" id="mobBtn">
@@ -83,9 +83,10 @@
     </div>
     <div class="mm-links">
       <a href="/" class="mm-link">Home</a>
-      <a href="about" class="mm-link">About Us</a>
-      <a href="corporate" class="mm-link">Take Action</a>
-      <a href="about" class="mm-link">Why Tree?</a>
+      <a href="about#story" class="mm-link">Our Story</a>
+      <a href="about#leadership" class="mm-link">Leadership</a>
+      <a href="about#impact" class="mm-link">Impact</a>
+      <a href="contact" class="mm-link">Contact Us</a>
       <a href="mailto:info@familytreeindia.org?subject=Donation Inquiry" class="mm-donate">Donate Now</a>
     </div>
   </div>
@@ -154,7 +155,7 @@
   </section>
 
   <!-- SECTION 2: MISSION + STATS -->
-  <section class="abt-mission">
+  <section class="abt-mission" id="story">
     <div class="abt-mission-inner abt-reveal">
       <h2 class="abt-mission-h2">Together, we can build a<br /><i>greener</i> Bihar</h2>
       <p class="abt-mission-p">Since Family Tree Foundation began, we've been chasing one ambitious goal: ensuring every
@@ -165,48 +166,83 @@
     </div>
   </section>
 
-  <section class="abt-stats">
-    <div class="abt-stats-inner">
-      <p class="abt-stats-tag abt-reveal">FAMILY TREE'S IMPACT TO DATE</p>
-      <div class="abt-stats-grid abt-reveal">
-        <div class="abt-stat">
-          <div class="abt-stat-num" data-target="120">0</div>
-          <div class="abt-stat-lbl">SCHOOLS COVERED</div>
+  <!-- SECTION: COMPARISON STATS -->
+  <section class="abt-comp-sec" id="impact">
+    <div class="abt-comp-grid">
+      <!-- TARGET COLUMN -->
+      <div class="abt-comp-col target-col">
+        <div class="abt-comp-inner">
+          <p class="abt-stats-tag abt-reveal">Our Mission Target</p>
+          <div class="comp-stats-grid abt-reveal">
+            <div class="abt-stat">
+              <div class="abt-stat-num" data-target="10">0</div>
+              <div class="abt-stat-lbl">DISTRICTS</div>
+            </div>
+            <div class="abt-stat">
+              <div class="abt-stat-num" data-target="149">0</div>
+              <div class="abt-stat-lbl">BLOCKS</div>
+            </div>
+            <div class="abt-stat">
+              <div class="abt-stat-num" data-target="15402">0</div>
+              <div class="abt-stat-lbl">SCHOOLS</div>
+            </div>
+            <div class="abt-stat">
+              <div class="abt-stat-num" data-target="770100">0</div>
+              <div class="abt-stat-lbl">PLANTS</div>
+            </div>
+          </div>
         </div>
-        <div class="abt-stat">
-          <div class="abt-stat-num" data-target="12">0</div>
-          <div class="abt-stat-lbl">DISTRICTS</div>
-        </div>
-        <div class="abt-stat">
-          <div class="abt-stat-num" data-target="15000">0</div>
-          <div class="abt-stat-lbl">STUDENT GUARDIANS</div>
+      </div>
+      <!-- COMPLETED COLUMN -->
+      <div class="abt-comp-col completed-col">
+        <div class="abt-comp-inner">
+          <p class="abt-stats-tag abt-reveal">COMPLETED PLANTATION</p>
+          <div class="comp-stats-grid abt-reveal">
+            <div class="abt-stat">
+              <div class="abt-stat-num" data-target="4">0</div>
+              <div class="abt-stat-lbl">DISTRICTS</div>
+            </div>
+            <div class="abt-stat">
+              <div class="abt-stat-num" data-target="13">0</div>
+              <div class="abt-stat-lbl">BLOCKS</div>
+            </div>
+            <div class="abt-stat">
+              <div class="abt-stat-num" data-target="125">0</div>
+              <div class="abt-stat-lbl">SCHOOLS</div>
+            </div>
+            <div class="abt-stat">
+              <div class="abt-stat-num" data-target="10500">0</div>
+              <div class="abt-stat-lbl">STUDENT GUARDIANS</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
   <!-- SECTION 3: LEADERSHIP WITH IMPACT -->
-  <section class="abt-promise">
+  <section class="abt-promise" id="leadership">
     <div class="abt-promise-inner">
       <div class="abt-promise-img abt-reveal">
-        <img src="img/WhatsApp Image 2026-05-07 at 20.02.45 (2).jpeg" alt="Founder of Family Tree Foundation"
-          loading="lazy" />
-        <div class="abt-promise-badge">🌿</div>
+        <img src="img/founderimage.jpg" alt="Founder of Family Tree Foundation" loading="lazy" />
+        <div class="abt-promise-overlay">
+          <div class="abt-founder-name">Riya Kriti</div>
+          <div class="abt-founder-org">Co-Founder & Director</div>
+        </div>
       </div>
       <div class="abt-promise-body abt-reveal">
         <p class="abt-eyebrow">LEADERSHIP</p>
         <h2 class="abt-promise-h2">Leadership with<br /><i>Impact</i></h2>
         <p class="abt-promise-p">Family Tree Foundation was founded with a single, powerful conviction — that
           <strong>lasting green cover</strong> isn't built by organisations alone, it's built by communities. What
-          started as a vision to plant trees in one government school in Bihar has grown into a movement spanning 120
-          schools across 12 districts.</p>
-        <p class="abt-promise-p">Under our founder's leadership, we pioneered the <strong>student guardianship
-            model</strong> — where every tree planted is assigned to a named student, making them personally responsible
-          for its survival. This approach has achieved an 85% survival rate, more than double the national average.</p>
-        <div class="abt-founder-meta">
-          <div class="abt-founder-name">Founder & Director</div>
-          <div class="abt-founder-org">Family Tree Foundation</div>
-        </div>
+          started as a vision to plant trees in a single school has grown into a proven model that has already
+          transformed <strong>125 government schools</strong> across <strong>4 districts</strong> and <strong>13 blocks</strong>.
+        </p>
+        <p class="abt-promise-p">Under our leadership, we pioneered the <strong>student guardianship
+            model</strong> — assigning each tree to one of our <strong>10,500 student guardians</strong>. With an
+          ambitious target to reach <strong>15,402 schools</strong> and plant <strong>7,70,100 trees</strong> across
+          <strong>10 districts</strong>, we are building a generation of environmental stewards.</p>
+
       </div>
     </div>
   </section>
