@@ -22,8 +22,8 @@ include_once 'includes/header.php';
           responsibility for the next.
         </p>
         <div class="hero-btns">
-          <a href="corporate.php" class="btn-y">Sponsor a Tree</a>
-          <a href="about.php" class="btn-w">See Our Work</a>
+          <a href="<?php echo SITE_URL; ?>/corporate" class="btn-y">Sponsor a Tree</a>
+          <a href="<?php echo SITE_URL; ?>/about" class="btn-w">See Our Work</a>
         </div>
       </div>
     </div>
@@ -38,17 +38,17 @@ include_once 'includes/header.php';
     <span class="partners-lbl">Trusted by</span>
     <div class="partners-row">
       <div class="marquee-content">
-        <img src="Icons/biahr-education.png" alt="Bihar Education Project Council" class="partner-logo">
-        <img src="Icons/aiims-delhi.png" alt="AIIMS Delhi" class="partner-logo">
-        <img src="Icons/ministry-of-education.png" alt="Ministry of Education" class="partner-logo">
-        <img src="Icons/govt-of-bihar.png" alt="Government of Bihar" class="partner-logo">
-        <img src="Icons/CMX-foundation.png" alt="CMX Foundation" class="partner-logo">
+        <img src="<?php echo SITE_URL; ?>/Icons/biahr-education.png" alt="Bihar Education Project Council" class="partner-logo">
+        <img src="<?php echo SITE_URL; ?>/Icons/aiims-delhi.png" alt="AIIMS Delhi" class="partner-logo">
+        <img src="<?php echo SITE_URL; ?>/Icons/ministry-of-education.png" alt="Ministry of Education" class="partner-logo">
+        <img src="<?php echo SITE_URL; ?>/Icons/govt-of-bihar.png" alt="Government of Bihar" class="partner-logo">
+        <img src="<?php echo SITE_URL; ?>/Icons/CMX-foundation.png" alt="CMX Foundation" class="partner-logo">
         <!-- Duplicated for loop -->
-        <img src="Icons/biahr-education.png" alt="Bihar Education Project Council" class="partner-logo">
-        <img src="Icons/aiims-delhi.png" alt="AIIMS Delhi" class="partner-logo">
-        <img src="Icons/ministry-of-education.png" alt="Ministry of Education" class="partner-logo">
-        <img src="Icons/govt-of-bihar.png" alt="Government of Bihar" class="partner-logo">
-        <img src="Icons/CMX-foundation.png" alt="CMX Foundation" class="partner-logo">
+        <img src="<?php echo SITE_URL; ?>/Icons/biahr-education.png" alt="Bihar Education Project Council" class="partner-logo">
+        <img src="<?php echo SITE_URL; ?>/Icons/aiims-delhi.png" alt="AIIMS Delhi" class="partner-logo">
+        <img src="<?php echo SITE_URL; ?>/Icons/ministry-of-education.png" alt="Ministry of Education" class="partner-logo">
+        <img src="<?php echo SITE_URL; ?>/Icons/govt-of-bihar.png" alt="Government of Bihar" class="partner-logo">
+        <img src="<?php echo SITE_URL; ?>/Icons/CMX-foundation.png" alt="CMX Foundation" class="partner-logo">
       </div>
     </div>
   </div>
@@ -93,7 +93,7 @@ include_once 'includes/header.php';
         districts are home to student-tended forests that are alive, growing, and tracked in real time.</p>
       <p class="story-p reveal">We are the only plantation initiative in the region where every single tree has a named
         guardian — a student responsible for its survival.</p>
-      <a href="about.php" class="link-arr reveal">Our full story</a>
+      <a href="<?php echo SITE_URL; ?>/about" class="link-arr reveal">Our full story</a>
     </div>
   </div>
 
@@ -118,7 +118,7 @@ include_once 'includes/header.php';
         <p class="hbm-highlight">Through this public-private partnership, we work towards a single goal — to transform
           government school campuses across the state through a shared vision of survival-first plantation and
           sustainable campus greening.</p>
-        <a href="corporate.php" class="link-arr">Learn About Corporate Partnerships</a>
+        <a href="<?php echo SITE_URL; ?>/corporate" class="link-arr">Learn About Corporate Partnerships</a>
       </div>
     </div>
   </section>
@@ -126,9 +126,9 @@ include_once 'includes/header.php';
   <!-- TRANSFORMATION SLIDER SECTION -->
   <section class="transform-sec" id="transformSec">
     <div class="ts-bg-wrap">
-      <div class="ts-bg ts-active" style="background-image:url('img/temp/44degree.png')"></div>
-      <div class="ts-bg" style="background-image:url('img/temp/42degree.png')"></div>
-      <div class="ts-bg" style="background-image:url('img/temp/39degree.png')"></div>
+      <div class="ts-bg ts-active" style="background-image:url('<?php echo SITE_URL; ?>/img/temp/44degree.png')"></div>
+      <div class="ts-bg" style="background-image:url('<?php echo SITE_URL; ?>/img/temp/42degree.png')"></div>
+      <div class="ts-bg" style="background-image:url('<?php echo SITE_URL; ?>/img/temp/39degree.png')"></div>
     </div>
     <div class="ts-overlay"></div>
     <div class="ts-top-area">
@@ -304,7 +304,7 @@ include_once 'includes/header.php';
         </div>
       </div>
       <div class="prog-foot reveal">
-        <a href="about.php" class="btn-y">Explore the Full Program</a>
+        <a href="<?php echo SITE_URL; ?>/about" class="btn-y">Explore the Full Program</a>
       </div>
     </div>
   </section>
@@ -319,7 +319,7 @@ include_once 'includes/header.php';
     </div>
     <div class="donate-right reveal">
       <a href="mailto:info@familytreeindia.org?subject=Donation Inquiry" class="btn-b">Donate Now</a>
-      <a href="corporate.php" class="link-arr"
+      <a href="<?php echo SITE_URL; ?>/corporate" class="link-arr"
         style="font-size:0.73rem;color:rgba(0,0,0,0.45);border-color:rgba(0,0,0,0.18);margin-top:20px;display:inline-block">Or
         sponsor a school</a>
     </div>

@@ -4,7 +4,12 @@
  * Contains Database and System settings
  */
 
-// Database Configuration
+// Enable Error Reporting for Debugging (Disable in production)
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
+// Database Configuration 
+// IMPORTANT: Update these with your Hostinger DB details
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '');
@@ -19,17 +24,20 @@ define('SMTP_FROM_EMAIL', 'info@familytreeindia.org');
 define('SMTP_FROM_NAME', 'Family Tree India');
 
 // System Constants
-define('SITE_URL', 'http://localhost/familytree/family');
+// IMPORTANT: Update this to your live URL (e.g., https://mediumseagreen-reindeer-145910.hostingersite.com/family)
+// Do NOT include a trailing slash at the end
+define('SITE_URL', rtrim('http://localhost/familytree/family', '/'));
 
 // Establish Connection
 $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
 
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+    die("Database Connection Error: " . $conn->connect_error . ". Please check your credentials in config.php");
 }
 
 // Set Charset
 $conn->set_charset("utf8mb4");
 
-session_start();
-?>
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}

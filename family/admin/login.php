@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="login-container">
   <div class="login-card">
     <div class="login-logo">
-      <img src="../img/logo.png" alt="Family Tree">
+      <img src="../img/favicon.png" alt="Family Tree" style="height: 80px; width: auto;">
     </div>
     <h1 class="login-h1">Welcome back</h1>
     <p class="login-sub">Enter your credentials to access the dashboard</p>

@@ -307,7 +307,7 @@ nav::before {
 .hero-bg {
   position: absolute;
   inset: 0;
-  background: url('img/herobg.svg') center/cover no-repeat;
+  background: url('../img/herobg.svg') center/cover no-repeat;
 }
 
 
@@ -1363,19 +1363,19 @@ nav::before {
 }
 
 .bg0 {
-  background-image: url('img/Corporate.svg');
+  background-image: url('../img/Corporate.svg');
 }
 
 .bg1 {
-  background-image: url('img/Donor-Agency.svg');
+  background-image: url('../img/Donor-Agency.svg');
 }
 
 .bg2 {
-  background-image: url('img/insitute.jpeg');
+  background-image: url('../img/insitute.jpeg');
 }
 
 .bg3 {
-  background-image: url('img/indi.png');
+  background-image: url('../img/indi.png');
 }
 
 .pc-ov {
@@ -1985,7 +1985,7 @@ footer {
 
   .hero-bg {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.3) 40%, transparent 70%),
-      url('img/herobg.svg') 55% center/cover no-repeat;
+      url('../img/herobg.svg') 55% center/cover no-repeat;
   }
 
   .hero-content {

@@ -15,54 +15,54 @@ include_once 'includes/header.php';
       <div class="abt-photos abt-reveal">
         <div class="abt-photos-track">
           <div class="abt-photo">
-            <img src="img/4.jpeg" alt="Student reading with a plant" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/4.jpeg" alt="Student reading with a plant" loading="lazy" />
           </div>
           <div class="abt-photo abt-photo-tall">
-            <img src="img/twogirlplanting.jpeg" alt="Students gathered for plantation" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/twogirlplanting.jpeg" alt="Students gathered for plantation" loading="lazy" />
           </div>
           <div class="abt-photo">
-            <img src="img/11.jpeg" alt="Student smiling at school campus" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/11.jpeg" alt="Student smiling at school campus" loading="lazy" />
           </div>
           <!-- Mobile only marquee images -->
           <div class="abt-photo abt-photo-mob">
-            <img src="img/1.jpeg" alt="Plantation Activity" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/1.jpeg" alt="Plantation Activity" loading="lazy" />
           </div>
           <div class="abt-photo abt-photo-mob">
-            <img src="img/3.jpeg" alt="School Garden" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/3.jpeg" alt="School Garden" loading="lazy" />
           </div>
           <div class="abt-photo abt-photo-mob">
-            <img src="img/insitute.jpeg" alt="Student Guardian" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/insitute.jpeg" alt="Student Guardian" loading="lazy" />
           </div>
           <div class="abt-photo abt-photo-mob">
-            <img src="img/indi.png" alt="Green Campus" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/indi.png" alt="Green Campus" loading="lazy" />
           </div>
           <div class="abt-photo abt-photo-mob">
-            <img src="img/12.jpeg" alt="Community Support" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/12.jpeg" alt="Community Support" loading="lazy" />
           </div>
           <!-- Duplicates for loop -->
           <div class="abt-photo abt-photo-mob">
-            <img src="img/4.jpeg" alt="Student reading" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/4.jpeg" alt="Student reading" loading="lazy" />
           </div>
           <div class="abt-photo abt-photo-mob">
-            <img src="img/8.jpeg" alt="Students gathered" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/8.jpeg" alt="Students gathered" loading="lazy" />
           </div>
           <div class="abt-photo abt-photo-mob">
-            <img src="img/11.jpeg" alt="Student smiling" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/11.jpeg" alt="Student smiling" loading="lazy" />
           </div>
           <div class="abt-photo abt-photo-mob">
-            <img src="img/1.jpeg" alt="Plantation Activity" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/1.jpeg" alt="Plantation Activity" loading="lazy" />
           </div>
           <div class="abt-photo abt-photo-mob">
-            <img src="img/3.jpeg" alt="School Garden" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/3.jpeg" alt="School Garden" loading="lazy" />
           </div>
           <div class="abt-photo abt-photo-mob">
-            <img src="img/insitute.jpeg" alt="Student Guardian" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/insitute.jpeg" alt="Student Guardian" loading="lazy" />
           </div>
           <div class="abt-photo abt-photo-mob">
-            <img src="img/indi.png" alt="Green Campus" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/indi.png" alt="Green Campus" loading="lazy" />
           </div>
           <div class="abt-photo abt-photo-mob">
-            <img src="img/12.jpeg" alt="Community Support" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/12.jpeg" alt="Community Support" loading="lazy" />
           </div>
         </div>
       </div>
@@ -154,7 +154,7 @@ include_once 'includes/header.php';
         </div>
       </div>
       <div class="abt-promise-img abt-reveal">
-        <img src="img/ajay-sinha-founder.jpeg" alt="Dr. Ajay Sinha — Founder" loading="lazy" />
+        <img src="<?php echo SITE_URL; ?>/img/ajay-sinha-founder.jpeg" alt="Dr. Ajay Sinha — Founder" loading="lazy" />
       </div>
     </div>
   </section>
@@ -163,7 +163,7 @@ include_once 'includes/header.php';
   <section class="abt-promise" id="leadership">
     <div class="abt-promise-inner">
       <div class="abt-promise-img abt-reveal">
-        <img src="img/founderimage.jpg" alt="Founder of Family Tree Foundation" loading="lazy" />
+        <img src="<?php echo SITE_URL; ?>/img/founderimage.jpg" alt="Founder of Family Tree Foundation" loading="lazy" />
         <div class="abt-promise-overlay">
           <div class="abt-founder-name">Riya Kriti</div>
           <div class="abt-founder-org">Executive Director</div>
@@ -196,19 +196,19 @@ include_once 'includes/header.php';
       </div>
       <div class="abt-partners-logos abt-reveal">
         <div class="abt-partner-logo">
-          <img src="Icons/black/Bihar-Education-Project-Council.svg" alt="Bihar Education Project Council" />
+          <img src="<?php echo SITE_URL; ?>/Icons/black/Bihar-Education-Project-Council.svg" alt="Bihar Education Project Council" />
         </div>
         <div class="abt-partner-logo">
-          <img src="Icons/black/aiims-delhi.svg" alt="AIIMS Delhi" />
+          <img src="<?php echo SITE_URL; ?>/Icons/black/aiims-delhi.svg" alt="AIIMS Delhi" />
         </div>
         <div class="abt-partner-logo">
-          <img src="Icons/black/ministry of education.svg" alt="Ministry of Education" />
+          <img src="<?php echo SITE_URL; ?>/Icons/black/ministry of education.svg" alt="Ministry of Education" />
         </div>
         <div class="abt-partner-logo">
-          <img src="Icons/black/Government-of-Bihar.svg" alt="Government of Bihar" />
+          <img src="<?php echo SITE_URL; ?>/Icons/black/Government-of-Bihar.svg" alt="Government of Bihar" />
         </div>
         <div class="abt-partner-logo">
-          <img src="Icons/black/cmx-foundation.svg" alt="CMX Foundation" />
+          <img src="<?php echo SITE_URL; ?>/Icons/black/cmx-foundation.svg" alt="CMX Foundation" />
         </div>
       </div>
     </div>

@@ -1,70 +1,10 @@
 <?php
 include_once '../includes/config.php';
-
-// Check if logged in
-if (!isset($_SESSION['admin_id'])) {
-    header("Location: login.php");
-    exit();
-}
-
-$admin_user = $_SESSION['admin_user'];
+$pageTitle = "Dashboard";
+$activePage = "dashboard";
+include_once 'includes/header.php';
+include_once 'includes/sidebar.php';
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard — Admin Panel</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-</head>
-<body>
-
-<div class="admin-wrapper">
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-    <div class="sidebar-brand">
-      <img src="../img/logo.png" alt="Family Tree">
-    </div>
-    <ul class="nav-menu">
-      <li class="nav-item-admin">
-        <a href="dashboard.php" class="nav-link-admin active">
-          <i class="fa-solid fa-gauge"></i>
-          <span>Dashboard</span>
-        </a>
-      </li>
-      <li class="nav-item-admin">
-        <a href="#" class="nav-link-admin">
-          <i class="fa-solid fa-tree"></i>
-          <span>Tree Records</span>
-        </a>
-      </li>
-      <li class="nav-item-admin">
-        <a href="#" class="nav-link-admin">
-          <i class="fa-solid fa-school"></i>
-          <span>Schools</span>
-        </a>
-      </li>
-      <li class="nav-item-admin">
-        <a href="#" class="nav-link-admin">
-          <i class="fa-solid fa-users"></i>
-          <span>Guardians</span>
-        </a>
-      </li>
-      <li class="nav-item-admin">
-        <a href="#" class="nav-link-admin">
-          <i class="fa-solid fa-newspaper"></i>
-          <span>News & Field Field Stories</span>
-        </a>
-      </li>
-      <li class="nav-item-admin">
-        <a href="#" class="nav-link-admin">
-          <i class="fa-solid fa-gear"></i>
-          <span>Site Settings</span>
-        </a>
-      </li>
-    </ul>
-  </aside>
 
   <!-- MAIN CONTENT -->
   <main class="main-content">
@@ -110,7 +50,5 @@ $admin_user = $_SESSION['admin_user'];
     </div>
 
   </main>
-</div>
 
-</body>
-</html>
+<?php include_once 'includes/footer.php'; ?>
