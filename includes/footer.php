@@ -90,9 +90,12 @@
         <div class="form-group">
           <label>Interest</label>
           <select name="interest" required>
-            <option value="Donation">Direct Donation</option>
-            <option value="Sponsorship">Tree Sponsorship</option>
-            <option value="CSR">CSR Partnership</option>
+            <option value="" disabled selected>Select an option</option>
+            <option value="CSR">CSR</option>
+            <option value="Employee Engagement">Employee Engagement</option>
+            <option value="Volunteer program">Volunteer program</option>
+            <option value="Partnership">Partnership</option>
+            <option value="Others">Others</option>
           </select>
         </div>
         <div class="form-group">
