@@ -18,76 +18,7 @@
       ring.style.left = rx + 'px';
       ring.style.top = ry + 'px';
       requestAnimationFrame(tick);
-    
-  // DONATE MODAL LOGIC
-  const donateModal = document.getElementById("donateModal");
-  const closeDonate = document.getElementById("closeDonate");
-  const donateForm = document.getElementById("donateForm");
-  const donateFeedback = document.getElementById("donateFeedback");
-
-  document.querySelectorAll("a[href*="Donate"], a[href*="donate"], .btn-donate").forEach(btn => {
-    btn.addEventListener("click", (e) => {
-      const href = btn.getAttribute("href");
-      if (href && (href.includes("mailto") || href === "#" || href === "")) {
-        e.preventDefault();
-        if (donateModal) donateModal.classList.add("active");
-      }
-    });
-  });
-
-  if (closeDonate) {
-    closeDonate.onclick = () => donateModal.classList.remove("active");
-  }
-
-  window.addEventListener("click", (e) => {
-    if (e.target === donateModal) donateModal.classList.remove("active");
-  });
-
-  if (donateForm) {
-    donateForm.addEventListener("submit", async (e) => {
-      e.preventDefault();
-      const submitBtn = donateForm.querySelector("button[type="submit"]");
-      const originalBtnText = submitBtn.innerText;
-      submitBtn.innerText = "Processing...";
-      submitBtn.disabled = true;
-
-      const formData = new FormData(donateForm);
-
-      try {
-        const response = await fetch("includes/process_lead.php", {
-          method: "POST",
-          body: formData
-        });
-        const result = await response.json();
-
-        if (donateFeedback) {
-          donateFeedback.style.display = "block";
-          donateFeedback.innerText = result.message;
-          donateFeedback.style.background = result.status === "success" ? "#dcfce7" : "#fee2e2";
-          donateFeedback.style.color = result.status === "success" ? "#166534" : "#991b1b";
-        }
-
-        if (result.status === "success") {
-          donateForm.reset();
-          setTimeout(() => {
-            if (donateModal) donateModal.classList.remove("active");
-            if (donateFeedback) donateFeedback.style.display = "none";
-          }, 3000);
-        }
-      } catch (err) {
-        if (donateFeedback) {
-          donateFeedback.style.display = "block";
-          donateFeedback.innerText = "Error connecting to server.";
-          donateFeedback.style.background = "#fee2e2";
-          donateFeedback.style.color = "#991b1b";
-        }
-      } finally {
-        submitBtn.innerText = originalBtnText;
-        submitBtn.disabled = false;
-      }
-    });
-  }
-})();
+    })();
     
     document.querySelectorAll('a, button, .part-card, .upd-card, .prog-item, .stat-cell, .imp-card, .abt-value-card, .abt-partner-logo, .abt-photo').forEach(el => {
       el.addEventListener('mouseenter', () => {
@@ -129,7 +60,6 @@
     });
   }, { threshold: 0.1 });
   
-  // Observe everything that should reveal
   document.querySelectorAll('.reveal, .abt-reveal, .cont-reveal, .corp-reveal').forEach(el => obs.observe(el));
 
   // TRANSFORMATION SLIDER (Homepage only)
@@ -146,7 +76,6 @@
         temp: 44,
         air: 'Dusty Air',
         stage: '44°C',
-        thumb: '🌳',
         impacts: [
           { i: '🌡️', t: 'Extreme Temperature', d: '44°C makes outdoor activity nearly impossible for students.' },
           { i: '💨', t: 'Poor Air Quality', d: 'High dust concentration and very low humidity.' },
@@ -165,7 +94,6 @@
         temp: 42,
         air: 'Moderate Air',
         stage: '42°C',
-        thumb: '🌳',
         impacts: [
           { i: '🌡️', t: 'Partial Cooling', d: 'Early growth starts to bring the temperature down to 42°C.' },
           { i: '💨', t: 'Reduced Dust', d: 'Young saplings begin filtering some wind-borne dust.' },
@@ -184,7 +112,6 @@
         temp: 39,
         air: 'Cleaner Air',
         stage: '39°C',
-        thumb: '🌳',
         impacts: [
           { i: '🌡️', t: 'Significant Cooling', d: 'Full canopy reduces ground temperature significantly to 39°C.' },
           { i: '💨', t: 'Filtered Fresh Air', d: 'Mature trees provide much cleaner, oxygen-rich air.' },
@@ -221,7 +148,6 @@
       if (tsWCond) tsWCond.textContent = d.wCond;
       if (tsTemp) tsTemp.textContent = d.temp;
       if (tsAir) tsAir.textContent = d.air;
-      if (tsThumb) tsThumb.textContent = d.thumb;
       
       const pct = (idx / (tsData.length - 1) * 100).toFixed(1);
       if (tsFill) tsFill.style.width = pct + '%';
@@ -282,7 +208,7 @@
   const donateForm = document.getElementById("donateForm");
   const donateFeedback = document.getElementById("donateFeedback");
 
-  document.querySelectorAll("a[href*="Donate"], a[href*="donate"], .btn-donate").forEach(btn => {
+  document.querySelectorAll('a[href*="Donate"], a[href*="donate"], .btn-donate').forEach(btn => {
     btn.addEventListener("click", (e) => {
       const href = btn.getAttribute("href");
       if (href && (href.includes("mailto") || href === "#" || href === "")) {
@@ -303,7 +229,7 @@
   if (donateForm) {
     donateForm.addEventListener("submit", async (e) => {
       e.preventDefault();
-      const submitBtn = donateForm.querySelector("button[type="submit"]");
+      const submitBtn = donateForm.querySelector('button[type="submit"]');
       const originalBtnText = submitBtn.innerText;
       submitBtn.innerText = "Processing...";
       submitBtn.disabled = true;

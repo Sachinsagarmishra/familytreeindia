@@ -26,7 +26,7 @@ define('SMTP_FROM_NAME', 'Family Tree India');
 // System Constants
 // IMPORTANT: Update this to your live URL (e.g., https://mediumseagreen-reindeer-145910.hostingersite.com/family)
 // Do NOT include a trailing slash at the end
-define('SITE_URL', rtrim('https://mediumseagreen-reindeer-145910.hostingersite.com', '/'));
+define('SITE_URL', rtrim('https://familytreeindia.org', '/'));
 
 // Establish Connection
 $conn = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME);
