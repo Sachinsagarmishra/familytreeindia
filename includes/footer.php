@@ -111,31 +111,32 @@
   <style>
     .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(15,35,16,0.9); backdrop-filter: blur(12px); align-items: center; justify-content: center; padding: 20px; }
     .modal.active { display: flex; }
-    .modal-content { background: #fff; width: 100%; max-width: 600px; padding: 60px 48px; border-radius: 24px; position: relative; max-height: 90vh; overflow-y: auto; box-shadow: 0 32px 64px rgba(0,0,0,0.4); }
-    .modal-close { position: absolute; right: 28px; top: 28px; background: rgba(0,0,0,0.05); border: none; font-size: 1.5rem; cursor: pointer; color: #000; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+    .modal-content { background: #fff; width: 100%; max-width: 580px; padding: 48px 40px; border-radius: 24px; position: relative; max-height: 90vh; overflow-y: auto; box-shadow: 0 32px 64px rgba(0,0,0,0.4); }
+    .modal-close { position: absolute; right: 24px; top: 24px; background: rgba(0,0,0,0.05); border: none; font-size: 1.2rem; cursor: pointer; color: #000; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; z-index: 10; }
     .modal-close:hover { background: rgba(0,0,0,0.1); transform: rotate(90deg); }
-    .modal-header { margin-bottom: 40px; text-align: center; }
-    .modal-header h2 { font-family: 'Fraunces', serif; font-size: 2.5rem; font-weight: 900; margin-bottom: 12px; color: #0f2310; letter-spacing: -0.02em; }
-    .modal-header p { color: rgba(0,0,0,0.5); font-size: 1rem; line-height: 1.6; max-width: 400px; margin: 0 auto; }
+    .modal-header { margin-bottom: 28px; text-align: center; }
+    .modal-header h2 { font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 900; margin-bottom: 8px; color: #0f2310; letter-spacing: -0.02em; }
+    .modal-header p { color: rgba(0,0,0,0.5); font-size: 0.95rem; line-height: 1.5; max-width: 400px; margin: 0 auto; }
     
     /* FORM STYLES */
-    .modal .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
-    .modal .form-group { margin-bottom: 20px; display: flex; flex-direction: column; gap: 8px; }
-    .modal .form-group label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #0f2310; opacity: 0.6; }
+    .modal .cont-form { gap: 16px !important; }
+    .modal .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 0; }
+    .modal .form-group { margin-bottom: 0; display: flex; flex-direction: column; gap: 6px; }
+    .modal .form-group label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #0f2310; opacity: 0.5; }
     .modal .form-group input, 
     .modal .form-group select, 
-    .modal .form-group textarea { width: 100%; padding: 14px 18px; border: 1.5px solid rgba(0,0,0,0.08); border-radius: 10px; font-family: inherit; font-size: 0.95rem; background: #f9f9f9; transition: all 0.3s; color: #000; }
+    .modal .form-group textarea { width: 100%; padding: 12px 16px; border: 1.5px solid rgba(0,0,0,0.08); border-radius: 10px; font-family: inherit; font-size: 0.95rem; background: #f9f9f9; transition: all 0.3s; color: #000; }
     .modal .form-group input:focus, 
     .modal .form-group select:focus, 
     .modal .form-group textarea:focus { outline: none; border-color: #2d6b35; background: #fff; box-shadow: 0 0 0 4px rgba(45, 107, 53, 0.1); }
-    .modal .btn-y { background: #f0c132; color: #000; border: none; padding: 18px; border-radius: 10px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: 0.3s; margin-top: 10px; }
+    .modal .btn-y { background: #f0c132; color: #000; border: none; padding: 16px; border-radius: 10px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: 0.3s; margin-top: 8px; }
     .modal .btn-y:hover { background: #e0b020; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(240, 193, 50, 0.3); }
 
     @media (max-width: 600px) {
-      .modal-content { padding: 40px 24px; border-radius: 16px; }
+      .modal-content { padding: 36px 20px; border-radius: 16px; }
       .modal-header h2 { font-size: 1.8rem; }
       .modal-header p { font-size: 0.88rem; }
-      .modal .form-row { grid-template-columns: 1fr; gap: 0; }
+      .modal .form-row { grid-template-columns: 1fr; gap: 16px; }
     }
   </style>
 
