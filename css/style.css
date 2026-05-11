@@ -636,7 +636,7 @@ nav::before {
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url('img/who_we_are.png') center/cover no-repeat;
+    url('../img/who_we_are.png') center/cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;

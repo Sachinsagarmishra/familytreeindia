@@ -22,7 +22,7 @@
 .corp-hero-bg {
   position: absolute;
   inset: 0;
-  background: url('img/Corporate.svg') center/cover no-repeat;
+  background: url('../img/Corporate.svg') center/cover no-repeat;
 }
 
 .corp-hero-overlay {

@@ -3,7 +3,7 @@
     <div class="foot-top">
       <div>
         <span class="foot-logo">
-          <img src="img/logo.png" alt="Family Tree" class="logo-img">
+          <img src="<?php echo SITE_URL; ?>/img/logo.png" alt="Family Tree" class="logo-img">
         </span>
         <p class="foot-desc">Building permanent green cover through schools and communities. Every tree has a name.
           Every guardian has a story.</p>
