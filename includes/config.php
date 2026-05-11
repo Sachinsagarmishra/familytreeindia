@@ -11,9 +11,9 @@ ini_set('display_errors', 1);
 // Database Configuration 
 // IMPORTANT: Update these with your Hostinger DB details
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-define('DB_NAME', 'family_tree');
+define('DB_USER', 'u829703776_familytree');
+define('DB_PASS', 'Mercedes@001');
+define('DB_NAME', 'u829703776_familytree');
 
 // SMTP Configuration (For future use)
 define('SMTP_HOST', 'smtp.gmail.com');
