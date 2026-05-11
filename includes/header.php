@@ -72,7 +72,7 @@
       </div>
       <a href="<?php echo SITE_URL; ?>/contact" class="nav-link">Contact</a>
     </div>
-    <a href="mailto:info@familytreeindia.org?subject=Donation Inquiry" class="nav-donate">Donate</a>
+    <a href="mailto:info@familytreeindia.org?subject=Donation Inquiry" class="nav-donate btn-donate">Donate</a>
     <button class="nav-mob-btn" id="mobBtn">
       <div class="mob-line"></div>
       <div class="mob-line"></div>
@@ -88,6 +88,6 @@
       <a href="<?php echo SITE_URL; ?>/corporate" class="mm-link">Take Action</a>
       <a href="<?php echo SITE_URL; ?>/about" class="mm-link">About Us</a>
       <a href="<?php echo SITE_URL; ?>/contact" class="mm-link">Contact Us</a>
-      <a href="mailto:info@familytreeindia.org?subject=Donation Inquiry" class="mm-donate">Donate Now</a>
+      <a href="mailto:info@familytreeindia.org?subject=Donation Inquiry" class="mm-donate btn-donate">Donate Now</a>
     </div>
   </div>

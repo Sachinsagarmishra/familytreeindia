@@ -38,7 +38,7 @@
       <div class="foot-col">
         <h5>Get Involved</h5>
         <ul>
-          <li><a href="mailto:info@familytreeindia.org?subject=Donation Inquiry">Donate</a></li>
+          <li><a href="mailto:info@familytreeindia.org?subject=Donation Inquiry" class="btn-donate">Donate</a></li>
           <li><a href="mailto:info@familytreeindia.org">Volunteer</a></li>
           <li><a href="<?php echo SITE_URL; ?>/corporate">Corporate CSR</a></li>
           <li><a href="<?php echo SITE_URL; ?>/corporate">Partner With Us</a></li>
