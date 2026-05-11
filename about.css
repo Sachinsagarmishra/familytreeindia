@@ -236,7 +236,7 @@
   .abt-comp-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .abt-comp-col {
     padding: 64px 28px;
   }
@@ -319,6 +319,40 @@
 
 .abt-promise-h2 i {
   font-style: italic;
+  color: var(--green-mid);
+}
+
+.founder-h2 {
+  font-family: "Fraunces", serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  font-weight: 900;
+  color: var(--black);
+  margin-bottom: 24px;
+  letter-spacing: -0.04em;
+}
+
+.founder-sign {
+  margin-top: 32px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 24px;
+  display: inline-block;
+}
+
+.fs-name {
+  font-family: "Fraunces", serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--black);
+  margin-bottom: 2px;
+  letter-spacing: -0.02em;
+}
+
+.fs-title {
+  font-family: "Instrument Sans", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
   color: var(--green-mid);
 }
 
@@ -656,6 +690,11 @@
   .abt-ptl-main {
     font-size: 1.1rem;
   }
+
+  .founder-inner {
+    display: flex !important;
+    flex-direction: column-reverse;
+  }
 }
 
 @keyframes abtMarquee {
@@ -667,4 +706,3 @@
     transform: translateX(-50%);
   }
 }
-
