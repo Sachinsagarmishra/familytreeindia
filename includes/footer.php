@@ -25,7 +25,7 @@
           <?php endif; ?>
         </div>
       </div>
-      <div class="foot-col">
+      <nav class="foot-col" aria-label="Organization links">
         <h5>Organisation</h5>
         <ul>
           <li><a href="<?php echo SITE_URL; ?>/about">About Us</a></li>
@@ -33,8 +33,8 @@
           <li><a href="<?php echo SITE_URL; ?>/about">Leadership</a></li>
           <li><a href="<?php echo SITE_URL; ?>/about">Annual Reports</a></li>
         </ul>
-      </div>
-      <div class="foot-col">
+      </nav>
+      <nav class="foot-col" aria-label="Program links">
         <h5>Programs</h5>
         <ul>
           <li><a href="<?php echo SITE_URL; ?>/corporate">School Plantation</a></li>
@@ -42,8 +42,8 @@
           <li><a href="<?php echo SITE_URL; ?>/corporate">Urban Greening</a></li>
           <li><a href="<?php echo SITE_URL; ?>/corporate">Carbon Projects</a></li>
         </ul>
-      </div>
-      <div class="foot-col">
+      </nav>
+      <nav class="foot-col" aria-label="Involvement links">
         <h5>Get Involved</h5>
         <ul>
           <li><a href="mailto:<?php echo $site['contact_email']; ?>?subject=Donation Inquiry" class="btn-donate">Donate</a></li>
@@ -52,7 +52,7 @@
           <li><a href="<?php echo SITE_URL; ?>/corporate">Partner With Us</a></li>
           <li><a href="mailto:<?php echo $site['contact_email']; ?>">Media & Press</a></li>
         </ul>
-      </div>
+      </nav>
     </div>
     <div class="foot-btm">
       <span class="foot-copy">© <?php echo date('Y'); ?> Family Tree. Registered under Section 8. 80G Certified. FCRA Registered.</span>
