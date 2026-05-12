@@ -33,6 +33,15 @@ $res = $conn->query("SELECT * FROM site_settings");
 while($row = $res->fetch_assoc()) {
     $settings[$row['setting_key']] = $row['setting_value'];
 }
+
+// Auto-insert missing keys for social/SEO if they don't exist
+$required_keys = ['facebook_url', 'instagram_url', 'linkedin_url', 'twitter_url', 'meta_description'];
+foreach($required_keys as $key) {
+    if(!isset($settings[$key])) {
+        $conn->query("INSERT INTO site_settings (setting_key, setting_value) VALUES ('$key', '')");
+        $settings[$key] = '';
+    }
+}
 ?>
 
   <main class="main-content">
@@ -52,22 +61,52 @@ while($row = $res->fetch_assoc()) {
     <form method="POST" action="" class="settings-form-grid">
       
       <div class="settings-card">
-        <h3 style="margin-bottom: 24px;">General Settings</h3>
+        <h3 style="margin-bottom: 24px;">General & SEO Settings</h3>
         <div class="form-group">
           <label>Site Title</label>
           <input type="text" name="settings[site_title]" class="form-control" value="<?php echo isset($settings['site_title']) ? htmlspecialchars($settings['site_title']) : ''; ?>">
         </div>
         <div class="form-group">
-          <label>Contact Email (Public)</label>
-          <input type="email" name="settings[contact_email]" class="form-control" value="<?php echo isset($settings['contact_email']) ? htmlspecialchars($settings['contact_email']) : ''; ?>">
+          <label>Meta Description (SEO)</label>
+          <textarea name="settings[meta_description]" class="form-control" rows="3"><?php echo isset($settings['meta_description']) ? htmlspecialchars($settings['meta_description']) : ''; ?></textarea>
+        </div>
+        <div class="form-row-grid">
+          <div class="form-group">
+            <label>Contact Email (Public)</label>
+            <input type="email" name="settings[contact_email]" class="form-control" value="<?php echo isset($settings['contact_email']) ? htmlspecialchars($settings['contact_email']) : ''; ?>">
+          </div>
+          <div class="form-group">
+            <label>Contact Phone</label>
+            <input type="text" name="settings[contact_phone]" class="form-control" value="<?php echo isset($settings['contact_phone']) ? htmlspecialchars($settings['contact_phone']) : ''; ?>">
+          </div>
         </div>
         <div class="form-group">
-          <label>Contact Phone</label>
-          <input type="text" name="settings[contact_phone]" class="form-control" value="<?php echo isset($settings['contact_phone']) ? htmlspecialchars($settings['contact_phone']) : ''; ?>">
+          <label>Office Address</label>
+          <textarea name="settings[address]" class="form-control" rows="2"><?php echo isset($settings['address']) ? htmlspecialchars($settings['address']) : ''; ?></textarea>
         </div>
-        <div class="form-group">
-          <label>Address</label>
-          <textarea name="settings[address]" class="form-control" rows="3"><?php echo isset($settings['address']) ? htmlspecialchars($settings['address']) : ''; ?></textarea>
+      </div>
+
+      <div class="settings-card">
+        <h3 style="margin-bottom: 24px;">Social Media Links</h3>
+        <div class="form-row-grid">
+          <div class="form-group">
+            <label><i class="fa-brands fa-facebook"></i> Facebook URL</label>
+            <input type="url" name="settings[facebook_url]" class="form-control" value="<?php echo isset($settings['facebook_url']) ? htmlspecialchars($settings['facebook_url']) : ''; ?>" placeholder="https://facebook.com/...">
+          </div>
+          <div class="form-group">
+            <label><i class="fa-brands fa-instagram"></i> Instagram URL</label>
+            <input type="url" name="settings[instagram_url]" class="form-control" value="<?php echo isset($settings['instagram_url']) ? htmlspecialchars($settings['instagram_url']) : ''; ?>" placeholder="https://instagram.com/...">
+          </div>
+        </div>
+        <div class="form-row-grid">
+          <div class="form-group">
+            <label><i class="fa-brands fa-linkedin"></i> LinkedIn URL</label>
+            <input type="url" name="settings[linkedin_url]" class="form-control" value="<?php echo isset($settings['linkedin_url']) ? htmlspecialchars($settings['linkedin_url']) : ''; ?>" placeholder="https://linkedin.com/...">
+          </div>
+          <div class="form-group">
+            <label><i class="fa-brands fa-x-twitter"></i> X (Twitter) URL</label>
+            <input type="url" name="settings[twitter_url]" class="form-control" value="<?php echo isset($settings['twitter_url']) ? htmlspecialchars($settings['twitter_url']) : ''; ?>" placeholder="https://twitter.com/...">
+          </div>
         </div>
       </div>
 

@@ -8,13 +8,21 @@
         <p class="foot-desc">Building permanent green cover through schools and communities. Every tree has a name.
           Every guardian has a story.</p>
         <div class="foot-soc">
-          <a href="https://www.facebook.com/share/1Cm7Tczmy6/" class="fsoc" target="_blank" aria-label="Facebook">
+          <?php if(!empty($site['facebook_url'])): ?>
+          <a href="<?php echo $site['facebook_url']; ?>" class="fsoc" target="_blank" aria-label="Facebook">
             <i class="fa-brands fa-facebook-f"></i>
           </a>
-          <a href="https://www.instagram.com/familytreeindia?igsh=MTVjcHVhZmo0aGJiYg==" class="fsoc" target="_blank"
-            aria-label="Instagram">
+          <?php endif; ?>
+          <?php if(!empty($site['instagram_url'])): ?>
+          <a href="<?php echo $site['instagram_url']; ?>" class="fsoc" target="_blank" aria-label="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
+          <?php endif; ?>
+          <?php if(!empty($site['linkedin_url'])): ?>
+          <a href="<?php echo $site['linkedin_url']; ?>" class="fsoc" target="_blank" aria-label="LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <?php endif; ?>
         </div>
       </div>
       <div class="foot-col">
@@ -38,11 +46,11 @@
       <div class="foot-col">
         <h5>Get Involved</h5>
         <ul>
-          <li><a href="mailto:info@familytreeindia.org?subject=Donation Inquiry" class="btn-donate">Donate</a></li>
-          <li><a href="mailto:info@familytreeindia.org">Volunteer</a></li>
+          <li><a href="mailto:<?php echo $site['contact_email']; ?>?subject=Donation Inquiry" class="btn-donate">Donate</a></li>
+          <li><a href="mailto:<?php echo $site['contact_email']; ?>">Volunteer</a></li>
           <li><a href="<?php echo SITE_URL; ?>/corporate">Corporate CSR</a></li>
           <li><a href="<?php echo SITE_URL; ?>/corporate">Partner With Us</a></li>
-          <li><a href="mailto:info@familytreeindia.org">Media & Press</a></li>
+          <li><a href="mailto:<?php echo $site['contact_email']; ?>">Media & Press</a></li>
         </ul>
       </div>
     </div>

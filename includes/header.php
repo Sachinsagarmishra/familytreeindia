@@ -5,7 +5,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title><?php echo isset($pageTitle) ? $pageTitle . " — Family Tree" : "Family Tree"; ?></title>
+  <meta name="description" content="<?php echo htmlspecialchars($site['meta_description']); ?>" />
+  <title><?php echo isset($pageTitle) ? $pageTitle . " — " . $site['site_title'] : $site['site_title']; ?></title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -40,7 +41,7 @@
               <span class="dl-title">Sponsor a Tree</span>
               <span class="dl-desc">Direct environmental impact</span>
             </a>
-            <a href="mailto:info@familytreeindia.org" class="dropdown-link">
+            <a href="mailto:<?php echo $site['contact_email']; ?>" class="dropdown-link">
               <span class="dl-title">Volunteer</span>
               <span class="dl-desc">Join our ground team</span>
             </a>
@@ -72,7 +73,7 @@
       </div>
       <a href="<?php echo SITE_URL; ?>/contact" class="nav-link">Contact</a>
     </div>
-    <a href="mailto:info@familytreeindia.org?subject=Donation Inquiry" class="nav-donate btn-donate">Donate</a>
+    <a href="mailto:<?php echo $site['contact_email']; ?>?subject=Donation Inquiry" class="nav-donate btn-donate">Donate</a>
     <button class="nav-mob-btn" id="mobBtn">
       <div class="mob-line"></div>
       <div class="mob-line"></div>
@@ -88,6 +89,6 @@
       <a href="<?php echo SITE_URL; ?>/corporate" class="mm-link">Take Action</a>
       <a href="<?php echo SITE_URL; ?>/about" class="mm-link">About Us</a>
       <a href="<?php echo SITE_URL; ?>/contact" class="mm-link">Contact Us</a>
-      <a href="mailto:info@familytreeindia.org?subject=Donation Inquiry" class="mm-donate btn-donate">Donate Now</a>
+      <a href="mailto:<?php echo $site['contact_email']; ?>?subject=Donation Inquiry" class="mm-donate btn-donate">Donate Now</a>
     </div>
   </div>

@@ -22,11 +22,5 @@
           <span>Site Settings</span>
         </a>
       </li>
-      <li class="nav-item-admin">
-        <a href="#" class="nav-link-admin <?php echo ($activePage == 'news') ? 'active' : ''; ?>">
-          <i class="fa-solid fa-newspaper"></i>
-          <span>News & Stories</span>
-        </a>
-      </li>
     </ul>
   </aside>

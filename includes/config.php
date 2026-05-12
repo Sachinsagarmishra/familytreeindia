@@ -41,3 +41,17 @@ $conn->set_charset("utf8mb4");
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
+
+// Global Site Settings Loader
+$site = [];
+$settings_res = $conn->query("SELECT setting_key, setting_value FROM site_settings");
+if ($settings_res) {
+    while($srow = $settings_res->fetch_assoc()) {
+        $site[$srow['setting_key']] = $srow['setting_value'];
+    }
+}
+
+// Fallbacks for critical keys
+if(!isset($site['site_title'])) $site['site_title'] = 'Family Tree';
+if(!isset($site['meta_description'])) $site['meta_description'] = '';
+if(!isset($site['contact_email'])) $site['contact_email'] = 'info@familytreeindia.org';

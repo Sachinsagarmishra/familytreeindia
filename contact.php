@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_form'])) {
                  <p><strong>Interest:</strong> $interest</p>
                  <p><strong>Message:</strong> $message</p>";
         
-        $mailResult = MailHelper::send('info@familytreeindia.org', $subject, $body);
+        $mailResult = MailHelper::send($site['contact_email'], $subject, $body);
         
         $msg = "Thank you! Your message has been sent successfully.";
         $status = "success";
@@ -63,7 +63,7 @@ include_once 'includes/header.php';
           <span class="info-ico">📧</span>
           <div class="info-body">
             <h5>Email ID</h5>
-            <a href="mailto:info@familytreeindia.org" class="info-link">info@familytreeindia.org</a>
+            <a href="mailto:<?php echo $site['contact_email']; ?>" class="info-link"><?php echo $site['contact_email']; ?></a>
           </div>
         </div>
         
@@ -71,7 +71,7 @@ include_once 'includes/header.php';
           <span class="info-ico">📞</span>
           <div class="info-body">
             <h5>Mobile</h5>
-            <a href="tel:+919136256411" class="info-link">+91 91362 56411</a>
+            <a href="tel:<?php echo str_replace(' ', '', $site['contact_phone']); ?>" class="info-link"><?php echo $site['contact_phone']; ?></a>
           </div>
         </div>
 
@@ -79,15 +79,22 @@ include_once 'includes/header.php';
           <span class="info-ico">📍</span>
           <div class="info-body">
             <h5>Head office</h5>
-            <p class="info-text">Landmark Premisies, Near One8 Commune,<br>Juhu Tara Road, Santacruz West,<br>Mumbai 400049</p>
+            <p class="info-text"><?php echo nl2br(htmlspecialchars($site['address'])); ?></p>
           </div>
         </div>
 
         <div class="cont-socials">
           <p class="soc-label">Follow our journey</p>
           <div class="soc-links">
-            <a href="https://www.facebook.com/share/1Cm7Tczmy6/" target="_blank" class="soc-item"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.instagram.com/familytreeindia?igsh=MTVjcHVhZmo0aGJiYg==" target="_blank" class="soc-item"><i class="fa-brands fa-instagram"></i></a>
+            <?php if(!empty($site['facebook_url'])): ?>
+            <a href="<?php echo $site['facebook_url']; ?>" target="_blank" class="soc-item"><i class="fa-brands fa-facebook-f"></i></a>
+            <?php endif; ?>
+            <?php if(!empty($site['instagram_url'])): ?>
+            <a href="<?php echo $site['instagram_url']; ?>" target="_blank" class="soc-item"><i class="fa-brands fa-instagram"></i></a>
+            <?php endif; ?>
+            <?php if(!empty($site['linkedin_url'])): ?>
+            <a href="<?php echo $site['linkedin_url']; ?>" target="_blank" class="soc-item"><i class="fa-brands fa-linkedin-in"></i></a>
+            <?php endif; ?>
           </div>
         </div>
       </div>
