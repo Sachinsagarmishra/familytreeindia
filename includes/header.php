@@ -99,7 +99,7 @@
   <div class="cursor-ring" id="curRing"></div>
 
   <!-- NAV -->
-  <nav class="<?php echo isset($navClass) ? $navClass : ''; ?>">
+  <nav class="main-nav <?php echo isset($navClass) ? $navClass : ''; ?>">
     <a href="<?php echo SITE_URL; ?>" class="nav-logo">
       <img src="<?php echo SITE_URL; ?>/img/logo.png" alt="Family Tree" class="logo-img">
     </a>

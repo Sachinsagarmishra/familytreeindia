@@ -57,7 +57,7 @@ body {
 }
 
 /* NAV */
-nav {
+.main-nav {
   position: absolute;
   top: 0;
   left: 0;
@@ -70,7 +70,7 @@ nav {
   height: 84px;
 }
 
-nav::before {
+.main-nav::before {
   content: "";
   position: absolute;
   inset: 0;
