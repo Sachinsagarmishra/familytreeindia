@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Admin Login — Family Tree</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
 
@@ -62,12 +63,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
       <div class="form-group">
         <label for="password">Password</label>
-        <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required>
+        <div class="password-wrapper">
+          <input type="password" id="password" name="password" class="form-control" placeholder="••••••••" required>
+          <button type="button" id="togglePassword" class="toggle-password">
+            <i class="fa-regular fa-eye" id="eyeIcon"></i>
+          </button>
+        </div>
       </div>
       <button type="submit" class="btn-login">Sign In</button>
     </form>
   </div>
 </div>
 
+<script>
+const togglePassword = document.querySelector('#togglePassword');
+const password = document.querySelector('#password');
+const eyeIcon = document.querySelector('#eyeIcon');
+
+togglePassword.addEventListener('click', function (e) {
+    const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+    password.setAttribute('type', type);
+    
+    // Toggle icon
+    if (type === 'password') {
+        eyeIcon.classList.remove('fa-eye-slash');
+        eyeIcon.classList.add('fa-eye');
+    } else {
+        eyeIcon.classList.remove('fa-eye');
+        eyeIcon.classList.add('fa-eye-slash');
+    }
+});
+</script>
 </body>
 </html>
