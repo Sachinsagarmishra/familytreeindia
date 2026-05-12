@@ -60,7 +60,7 @@ include_once 'includes/header.php';
       <div class="stat-lbl">SAPLINGS PLANTED</div>
     </div>
     <div class="stat-cell reveal d1">
-      <div class="stat-num">89%</div>
+      <div class="stat-num">74%</div>
       <div class="stat-lbl">AVERAGE SURVIVAL RATE</div>
     </div>
     <div class="stat-cell reveal d2">
