@@ -79,11 +79,11 @@ include_once 'includes/header.php';
     <div class="cont-hero-inner">
       <p class="cont-eyebrow cont-reveal"><?php echo isset($site['contact_hero_eyebrow']) ? htmlspecialchars($site['contact_hero_eyebrow']) : 'GET IN TOUCH'; ?></p>
       <h1 class="cont-h1 cont-reveal">
-        <?php echo htmlspecialchars($site['contact_hero_title_main'] ?? 'Let\'s grow something'); ?> 
-        <i><?php echo htmlspecialchars($site['contact_hero_title_highlight'] ?? 'meaningful'); ?></i> 
-        <?php echo htmlspecialchars($site['contact_hero_title_end'] ?? 'together.'); ?>
+        <?php echo ($site['contact_hero_title_main'] ?? 'Let\'s grow something'); ?> 
+        <i><?php echo ($site['contact_hero_title_highlight'] ?? 'meaningful'); ?></i> 
+        <?php echo ($site['contact_hero_title_end'] ?? 'together.'); ?>
       </h1>
-      <p class="cont-sub cont-reveal"><?php echo isset($site['contact_hero_subtext']) ? htmlspecialchars($site['contact_hero_subtext']) : "Whether you're a corporate partner, a donor agency, or a volunteer, we'd love to hear from you. Reach out and help us build a greener Bihar."; ?></p>
+      <div class="cont-sub cont-reveal"><?php echo ($site['contact_hero_subtext'] ?? "Whether you're a corporate partner, a donor agency, or a volunteer, we'd love to hear from you. Reach out and help us build a greener Bihar."); ?></div>
     </div>
   </section>
 
