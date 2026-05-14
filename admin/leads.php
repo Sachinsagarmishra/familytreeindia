@@ -245,53 +245,7 @@ $result = $conn->query($sql);
   <?php endif; ?>
 </main>
 
-<script>
   <!-- DETAILS MODAL -->
-  <div class="lead-modal" id="leadModal">
-    <div class="lead-modal-content">
-      <button class="lead-modal-close" onclick="closeModal()">✕</button>
-      <div class="lead-modal-header">
-        <h3 id="m-name">Lead Details</h3>
-        <p style="font-size: 0.85rem; color: #888; margin-top: 5px;" id="m-date"></p>
-      </div>
-      <div class="lead-detail-grid">
-        <div class="detail-item">
-          <div class="detail-label">Email ID</div>
-          <div class="detail-val" id="m-email"></div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">Phone Number</div>
-          <div class="detail-val" id="m-phone"></div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">Organization</div>
-          <div class="detail-val" id="m-company"></div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">Interest</div>
-          <div class="detail-val" id="m-interest"></div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">Location (State)</div>
-          <div class="detail-val" id="m-state" style="color: #e05a1a;"></div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">Source</div>
-          <div id="m-source"></div>
-        </div>
-        <div class="detail-item">
-          <div class="detail-label">IP Address</div>
-          <div class="detail-val" id="m-ip" style="font-family: monospace; font-size: 0.8rem;"></div>
-        </div>
-        <div class="detail-item detail-full">
-          <div class="detail-label">Message</div>
-          <div class="detail-val" id="m-message" style="background: #f9f9f9; padding: 15px; border-radius: 10px; font-weight: 400; line-height: 1.6;"></div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-    <!-- DETAILS MODAL -->
   <div class="lead-modal" id="leadModal">
     <div class="lead-modal-content">
       <button class="lead-modal-close" onclick="closeModal()">✕</button>
