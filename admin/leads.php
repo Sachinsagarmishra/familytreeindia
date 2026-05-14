@@ -171,8 +171,7 @@ $result = $conn->query($sql);
                   <input type="checkbox" name="lead_ids[]" value="<?php echo $row['id']; ?>" class="lead-checkbox lead-item-check">
                 </td>
                 <td style="padding: 16px; border-bottom: 1px solid rgba(0,0,0,0.05); color: rgba(0,0,0,0.5);">
-                  <?php echo date('d M, Y', strtotime($row['created_at'])); ?><br>
-                  <small><?php echo date('H:i', strtotime($row['created_at'])); ?></small>
+                  <?php echo date('d M, Y', strtotime($row['created_at'])); ?>
                 </td>
                 <td style="padding: 16px; border-bottom: 1px solid rgba(0,0,0,0.05);">
                   <div style="font-weight: 700; margin-bottom: 4px;"><?php echo htmlspecialchars($row['name']); ?></div>
@@ -298,7 +297,9 @@ $result = $conn->query($sql);
         const data = JSON.parse(this.getAttribute('data-lead'));
         
         document.getElementById('m-name').innerText = data.name;
-        document.getElementById('m-date').innerText = "Submitted on " + data.created_at;
+        const dateObj = new Date(data.created_at);
+        const options = { day: 'numeric', month: 'short', year: 'numeric' };
+        document.getElementById('m-date').innerText = "Submitted on " + dateObj.toLocaleDateString('en-GB', options);
         document.getElementById('m-email').innerText = data.email;
         document.getElementById('m-phone').innerText = data.phone;
         document.getElementById('m-company').innerText = data.company || "N/A";
