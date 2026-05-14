@@ -589,7 +589,7 @@
   }
 
   .abt-photos {
-    width: 100vw;
+    width: calc(100% + 56px);
     margin-left: -28px;
     padding: 20px 0;
   }

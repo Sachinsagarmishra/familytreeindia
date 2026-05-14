@@ -18,15 +18,20 @@
   --warm-white: #f5f2ec;
 }
 
-html {
-  scroll-behavior: smooth;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  position: relative;
 }
 
 body {
   font-family: "Instrument Sans", sans-serif;
   background: var(--white);
   color: var(--black);
-  overflow-x: hidden;
   cursor: none;
 }
 
@@ -2376,6 +2381,15 @@ footer {
   .stat-cell {
     padding-left: 28px;
     padding-right: 28px;
+  }
+
+  .cursor,
+  .cursor-ring {
+    display: none !important;
+  }
+
+  body {
+    cursor: auto !important;
   }
 }
 
