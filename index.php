@@ -327,8 +327,8 @@ include_once 'includes/header.php';
       <p class="donate-sub reveal"><?php echo htmlspecialchars($site['home_donate_sub'] ?? "Your support helps us reach more schools and empower more student guardians. Every contribution ensures a lasting green legacy for the next generation, where every tree is cared for and tracked for life."); ?></p>
     </div>
     <div class="donate-right reveal">
-      <a href="mailto:info@familytreeindia.org?subject=Donation Inquiry" class="btn-b">Donate Now</a>
-      <a href="<?php echo SITE_URL; ?>/corporate" class="link-arr"
+      <a href="<?php echo SITE_URL; ?>/contact" class="btn-b">Donate Now</a>
+      <a href="<?php echo SITE_URL; ?>/contact" class="link-arr"
         style="font-size:0.73rem;color:rgba(0,0,0,0.45);border-color:rgba(0,0,0,0.18);margin-top:20px;display:inline-block">Or
         sponsor a school</a>
     </div>
