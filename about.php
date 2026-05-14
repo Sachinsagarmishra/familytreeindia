@@ -9,61 +9,31 @@ include_once 'includes/header.php';
   <!-- SECTION 1: ABOUT INTRO + 3 PHOTOS -->
   <section class="abt-intro">
     <div class="abt-intro-inner">
-      <p class="abt-eyebrow abt-reveal">ABOUT US</p>
-      <h1 class="abt-intro-h1 abt-reveal">Family Tree Foundation is a<br />non-profit organisation
-        building<br /><i>permanent green cover</i> through<br />schools and communities.</h1>
+      <p class="abt-eyebrow abt-reveal"><?php echo htmlspecialchars($site['about_intro_eyebrow'] ?? 'ABOUT US'); ?></p>
+      <h1 class="abt-intro-h1 abt-reveal"><?php echo $site['about_intro_title'] ?? 'Family Tree Foundation is a<br />non-profit organisation building<br /><i>permanent green cover</i> through<br />schools and communities.'; ?></h1>
       <div class="abt-photos abt-reveal">
         <div class="abt-photos-track">
           <div class="abt-photo">
-            <img src="<?php echo SITE_URL; ?>/img/4.jpeg" alt="Student reading with a plant" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_intro_img1'] ?? '4.jpeg'; ?>" alt="About Family Tree" loading="lazy" />
           </div>
           <div class="abt-photo abt-photo-tall">
-            <img src="<?php echo SITE_URL; ?>/img/twogirlplanting.jpeg" alt="Students gathered for plantation" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_intro_img2'] ?? 'twogirlplanting.jpeg'; ?>" alt="About Family Tree" loading="lazy" />
           </div>
           <div class="abt-photo">
-            <img src="<?php echo SITE_URL; ?>/img/11.jpeg" alt="Student smiling at school campus" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_intro_img3'] ?? '11.jpeg'; ?>" alt="About Family Tree" loading="lazy" />
           </div>
           <!-- Mobile only marquee images -->
+          <?php for($i=1; $i<=8; $i++): $k = "about_marquee_img$i"; ?>
           <div class="abt-photo abt-photo-mob">
-            <img src="<?php echo SITE_URL; ?>/img/1.jpeg" alt="Plantation Activity" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/<?php echo $site[$k] ?? '1.jpeg'; ?>" alt="Family Tree Impact" loading="lazy" />
           </div>
+          <?php endfor; ?>
+          <!-- Duplicates for loop (re-use same dynamic images) -->
+          <?php for($i=1; $i<=8; $i++): $k = "about_marquee_img$i"; ?>
           <div class="abt-photo abt-photo-mob">
-            <img src="<?php echo SITE_URL; ?>/img/3.jpeg" alt="School Garden" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/<?php echo $site[$k] ?? '1.jpeg'; ?>" alt="Family Tree Impact" loading="lazy" />
           </div>
-          <div class="abt-photo abt-photo-mob">
-            <img src="<?php echo SITE_URL; ?>/img/insitute.jpeg" alt="Student Guardian" loading="lazy" />
-          </div>
-          <div class="abt-photo abt-photo-mob">
-            <img src="<?php echo SITE_URL; ?>/img/indi.png" alt="Green Campus" loading="lazy" />
-          </div>
-          <div class="abt-photo abt-photo-mob">
-            <img src="<?php echo SITE_URL; ?>/img/12.jpeg" alt="Community Support" loading="lazy" />
-          </div>
-          <!-- Duplicates for loop -->
-          <div class="abt-photo abt-photo-mob">
-            <img src="<?php echo SITE_URL; ?>/img/4.jpeg" alt="Student reading" loading="lazy" />
-          </div>
-          <div class="abt-photo abt-photo-mob">
-            <img src="<?php echo SITE_URL; ?>/img/8.jpeg" alt="Students gathered" loading="lazy" />
-          </div>
-          <div class="abt-photo abt-photo-mob">
-            <img src="<?php echo SITE_URL; ?>/img/11.jpeg" alt="Student smiling" loading="lazy" />
-          </div>
-          <div class="abt-photo abt-photo-mob">
-            <img src="<?php echo SITE_URL; ?>/img/1.jpeg" alt="Plantation Activity" loading="lazy" />
-          </div>
-          <div class="abt-photo abt-photo-mob">
-            <img src="<?php echo SITE_URL; ?>/img/3.jpeg" alt="School Garden" loading="lazy" />
-          </div>
-          <div class="abt-photo abt-photo-mob">
-            <img src="<?php echo SITE_URL; ?>/img/insitute.jpeg" alt="Student Guardian" loading="lazy" />
-          </div>
-          <div class="abt-photo abt-photo-mob">
-            <img src="<?php echo SITE_URL; ?>/img/indi.png" alt="Green Campus" loading="lazy" />
-          </div>
-          <div class="abt-photo abt-photo-mob">
-            <img src="<?php echo SITE_URL; ?>/img/12.jpeg" alt="Community Support" loading="lazy" />
-          </div>
+          <?php endfor; ?>
         </div>
       </div>
     </div>
@@ -72,12 +42,8 @@ include_once 'includes/header.php';
   <!-- SECTION 2: MISSION + STATS -->
   <section class="abt-mission" id="story">
     <div class="abt-mission-inner abt-reveal">
-      <h2 class="abt-mission-h2">Together, we can build a<br /><i>greener</i> Bihar</h2>
-      <p class="abt-mission-p">Since Family Tree Foundation began, we've been chasing one ambitious goal: ensuring every
-        government school in Bihar has a thriving green campus. And while the environmental crisis is massive, we're
-        optimistic. We know how to solve the problem, and we make progress every day thanks to the dedication of student
-        guardians, local communities, and generous supporters. If we work together, we believe every child will grow up
-        surrounded by trees within our lifetime.</p>
+      <h2 class="abt-mission-h2"><?php echo $site['about_mission_title'] ?? 'Together, we can build a<br /><i>greener</i> Bihar'; ?></h2>
+      <p class="abt-mission-p"><?php echo htmlspecialchars($site['about_mission_text'] ?? ''); ?></p>
     </div>
   </section>
 
@@ -90,19 +56,19 @@ include_once 'includes/header.php';
           <p class="abt-stats-tag abt-reveal">Our Mission Target</p>
           <div class="comp-stats-grid abt-reveal">
             <div class="abt-stat">
-              <div class="abt-stat-num" data-target="10">0</div>
+              <div class="abt-stat-num" data-target="<?php echo $site['about_target_districts'] ?? '0'; ?>">0</div>
               <div class="abt-stat-lbl">DISTRICTS</div>
             </div>
             <div class="abt-stat">
-              <div class="abt-stat-num" data-target="149">0</div>
+              <div class="abt-stat-num" data-target="<?php echo $site['about_target_blocks'] ?? '0'; ?>">0</div>
               <div class="abt-stat-lbl">BLOCKS</div>
             </div>
             <div class="abt-stat">
-              <div class="abt-stat-num" data-target="15402">0</div>
+              <div class="abt-stat-num" data-target="<?php echo $site['about_target_schools'] ?? '0'; ?>">0</div>
               <div class="abt-stat-lbl">SCHOOLS</div>
             </div>
             <div class="abt-stat">
-              <div class="abt-stat-num" data-target="770100">0</div>
+              <div class="abt-stat-num" data-target="<?php echo $site['about_target_plants'] ?? '0'; ?>">0</div>
               <div class="abt-stat-lbl">PLANTS</div>
             </div>
           </div>
@@ -114,23 +80,23 @@ include_once 'includes/header.php';
           <p class="abt-stats-tag abt-reveal">COMPLETED PLANTATION</p>
           <div class="comp-stats-grid abt-reveal">
             <div class="abt-stat">
-              <div class="abt-stat-num" data-target="4">0</div>
+              <div class="abt-stat-num" data-target="<?php echo $site['about_completed_districts'] ?? '0'; ?>">0</div>
               <div class="abt-stat-lbl">DISTRICTS</div>
             </div>
             <div class="abt-stat">
-              <div class="abt-stat-num" data-target="13">0</div>
+              <div class="abt-stat-num" data-target="<?php echo $site['about_completed_blocks'] ?? '0'; ?>">0</div>
               <div class="abt-stat-lbl">BLOCKS</div>
             </div>
             <div class="abt-stat">
-              <div class="abt-stat-num" data-target="125">0</div>
+              <div class="abt-stat-num" data-target="<?php echo $site['about_completed_schools'] ?? '0'; ?>">0</div>
               <div class="abt-stat-lbl">SCHOOLS</div>
             </div>
             <div class="abt-stat">
-              <div class="abt-stat-num" data-target="10500">0</div>
+              <div class="abt-stat-num" data-target="<?php echo $site['about_completed_guardians'] ?? '0'; ?>">0</div>
               <div class="abt-stat-lbl">STUDENT GUARDIANS</div>
             </div>
             <div class="abt-stat">
-              <div class="abt-stat-num" data-target="12500">0</div>
+              <div class="abt-stat-num" data-target="<?php echo $site['about_completed_trees'] ?? '0'; ?>">0</div>
               <div class="abt-stat-lbl">TREES PLANTED</div>
             </div>
           </div>
@@ -143,18 +109,15 @@ include_once 'includes/header.php';
   <section class="abt-promise">
     <div class="abt-promise-inner founder-inner">
       <div class="abt-promise-body abt-reveal">
-        <h2 class="founder-h2">Founder</h2>
-        <p class="abt-promise-p">Dr. Ajay Sinha, Chairman of CMX Group and an MBA graduate, is a committed leader in
-          environmental and social impact. He has led the plantation of over 10 million trees through the Social
-          Forestry Program and created sustainable livelihoods for thousands, driving inclusive growth and climate
-          action.</p>
+        <h2 class="founder-h2"><?php echo htmlspecialchars($site['about_founder_title'] ?? 'Founder'); ?></h2>
+        <p class="abt-promise-p"><?php echo htmlspecialchars($site['about_founder_text'] ?? ''); ?></p>
         <div class="founder-sign">
-          <p class="fs-name">Dr. Ajay Sinha,</p>
-          <p class="fs-title">Environmentalist and Director</p>
+          <p class="fs-name"><?php echo htmlspecialchars($site['about_founder_name'] ?? ''); ?></p>
+          <p class="fs-title"><?php echo htmlspecialchars($site['about_founder_designation'] ?? ''); ?></p>
         </div>
       </div>
       <div class="abt-promise-img abt-reveal">
-        <img src="<?php echo SITE_URL; ?>/img/ajay-sinha-founder.jpeg" alt="Dr. Ajay Sinha — Founder" loading="lazy" />
+        <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_founder_img'] ?? 'ajay-sinha-founder.jpeg'; ?>" alt="Founder" loading="lazy" />
       </div>
     </div>
   </section>
@@ -163,26 +126,17 @@ include_once 'includes/header.php';
   <section class="abt-promise" id="leadership">
     <div class="abt-promise-inner">
       <div class="abt-promise-img abt-reveal">
-        <img src="<?php echo SITE_URL; ?>/img/founderimage.jpg" alt="Founder of Family Tree Foundation" loading="lazy" />
+        <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_leader_img'] ?? 'founderimage.jpg'; ?>" alt="Leadership" loading="lazy" />
         <div class="abt-promise-overlay">
-          <div class="abt-founder-name">Riya Kriti</div>
-          <div class="abt-founder-org">Executive Director</div>
+          <div class="abt-founder-name"><?php echo htmlspecialchars($site['about_leader_name'] ?? ''); ?></div>
+          <div class="abt-founder-org"><?php echo htmlspecialchars($site['about_leader_designation'] ?? ''); ?></div>
         </div>
       </div>
       <div class="abt-promise-body abt-reveal">
-        <p class="abt-eyebrow">LEADERSHIP</p>
-        <h2 class="abt-promise-h2">Leadership with<br /><i>Impact</i></h2>
-        <p class="abt-promise-p">Family Tree Foundation was founded with a single, powerful conviction — that
-          <strong>lasting green cover</strong> isn't built by organisations alone, it's built by communities. What
-          started as a vision to plant trees in a single school has grown into a proven model that has already
-          transformed <strong>125 government schools</strong> across <strong>4 districts</strong> and <strong>13
-            blocks</strong>.
-        </p>
-        <p class="abt-promise-p">Under our leadership, we pioneered the <strong>student guardianship
-            model</strong> — assigning each tree to one of our <strong>10,500 student guardians</strong>. With an
-          ambitious target to reach <strong>15,402 schools</strong> and plant <strong>7,70,100 trees</strong> across
-          <strong>10 districts (in the next 2 years)</strong>, we are building a generation of environmental stewards.
-        </p>
+        <p class="abt-eyebrow"><?php echo htmlspecialchars($site['about_leader_eyebrow'] ?? 'LEADERSHIP'); ?></p>
+        <h2 class="abt-promise-h2"><?php echo $site['about_leader_title'] ?? 'Leadership with<br /><i>Impact</i>'; ?></h2>
+        <p class="abt-promise-p"><?php echo htmlspecialchars($site['about_leader_text1'] ?? ''); ?></p>
+        <p class="abt-promise-p"><?php echo htmlspecialchars($site['about_leader_text2'] ?? ''); ?></p>
       </div>
     </div>
   </section>
@@ -191,8 +145,8 @@ include_once 'includes/header.php';
   <section class="abt-partners">
     <div class="abt-partners-inner">
       <div class="abt-partners-head abt-reveal">
-        <p class="abt-eyebrow">OUR PARTNERS & SUPPORTERS</p>
-        <h2 class="abt-partners-h2">Backed by institutions<br />that <i>matter.</i></h2>
+        <p class="abt-eyebrow"><?php echo htmlspecialchars($site['about_partners_eyebrow'] ?? 'OUR PARTNERS & SUPPORTERS'); ?></p>
+        <h2 class="abt-partners-h2"><?php echo $site['about_partners_title'] ?? 'Backed by institutions<br />that <i>matter.</i>'; ?></h2>
       </div>
       <div class="abt-partners-logos abt-reveal">
         <div class="abt-partner-logo">

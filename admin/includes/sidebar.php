@@ -23,6 +23,12 @@
         </a>
       </li>
       <li class="nav-item-admin">
+        <a href="about_settings.php" class="nav-link-admin <?php echo ($activePage == 'about_settings') ? 'active' : ''; ?>">
+          <i class="fa-solid fa-file-invoice"></i>
+          <span>About Us Page</span>
+        </a>
+      </li>
+      <li class="nav-item-admin">
         <a href="settings.php" class="nav-link-admin <?php echo ($activePage == 'settings') ? 'active' : ''; ?>">
           <i class="fa-solid fa-gear"></i>
           <span>Site Settings</span>
