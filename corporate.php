@@ -11,9 +11,13 @@ include_once 'includes/header.php';
     <div class="corp-hero-bg"></div>
     <div class="corp-hero-overlay"></div>
     <div class="corp-hero-content">
-      <p class="corp-tag"><span class="corp-tag-line"></span>CSR Partnerships</p>
-      <h1 class="corp-h1">Corporate<br /><i>Partnerships</i></h1>
-      <p class="corp-hero-sub">Bachpan Sang Hariyali × Family Tree Foundation</p>
+      <p class="corp-tag"><span class="corp-tag-line"></span><?php echo htmlspecialchars($site['corp_hero_tag'] ?? 'CSR Partnerships'); ?></p>
+      <h1 class="corp-h1">
+        <?php echo ($site['corp_hero_title_main'] ?? 'Corporate'); ?><br />
+        <i><?php echo ($site['corp_hero_title_highlight'] ?? 'Partnerships'); ?></i>
+        <?php echo ($site['corp_hero_title_end'] ?? ''); ?>
+      </h1>
+      <p class="corp-hero-sub"><?php echo htmlspecialchars($site['corp_hero_sub'] ?? 'Bachpan Sang Hariyali × Family Tree Foundation'); ?></p>
     </div>
   </section>
 
@@ -21,13 +25,16 @@ include_once 'includes/header.php';
   <section class="corp-intro">
     <div class="corp-intro-inner">
       <div class="corp-intro-left corp-reveal">
-        <p class="eyebrow"><span></span>About the Program</p>
-        <h2 class="corp-intro-h2">Transforming school<br />campuses into<br /><i>greener spaces.</i></h2>
+        <p class="eyebrow"><span></span><?php echo htmlspecialchars($site['corp_intro_eyebrow'] ?? 'About the Program'); ?></p>
+        <h2 class="corp-intro-h2">
+          <?php echo ($site['corp_intro_title_main'] ?? 'Transforming school'); ?><br />
+          <?php echo ($site['corp_intro_title_highlight'] ?? 'campuses into'); ?><br />
+          <i><?php echo ($site['corp_intro_title_end'] ?? 'greener spaces.'); ?></i>
+        </h2>
       </div>
       <div class="corp-intro-right corp-reveal">
-        <p class="corp-intro-p">Partner with us to help transform government school campuses across Bihar into greener,
-          cooler, and climate-resilient spaces through survival-first plantation and sustainable campus greening.</p>
-        <p class="corp-intro-note">Implemented in partnership with the Education Department, Government of Bihar.</p>
+        <div class="corp-intro-p"><?php echo ($site['corp_intro_text'] ?? 'Partner with us to help transform government school campuses across Bihar into greener, cooler, and climate-resilient spaces through survival-first plantation and sustainable campus greening.'); ?></div>
+        <p class="corp-intro-note"><?php echo htmlspecialchars($site['corp_intro_note'] ?? 'Implemented in partnership with the Education Department, Government of Bihar.'); ?></p>
         <a href="#partnership-options" class="link-arr">Explore Partnership Options</a>
       </div>
     </div>
@@ -36,8 +43,12 @@ include_once 'includes/header.php';
   <!-- PARTNERSHIP OPTIONS -->
   <section class="corp-options" id="partnership-options">
     <div class="corp-options-head corp-reveal">
-      <p class="eyebrow"><span></span>Partnership Options</p>
-      <h2 class="corp-sec-h2">Choose your level<br />of <i>impact.</i></h2>
+      <p class="eyebrow"><span></span><?php echo htmlspecialchars($site['corp_options_eyebrow'] ?? 'Partnership Options'); ?></p>
+      <h2 class="corp-sec-h2">
+        <?php echo ($site['corp_options_title_main'] ?? 'Choose your level'); ?><br />
+        of <i><?php echo ($site['corp_options_title_highlight'] ?? 'impact.'); ?></i>
+        <?php echo ($site['corp_options_title_end'] ?? ''); ?>
+      </h2>
     </div>
 
     <div class="corp-cards corp-reveal">
@@ -45,15 +56,11 @@ include_once 'includes/header.php';
       <div class="corp-card">
         <div class="corp-card-accent"></div>
         <div class="corp-card-badge">01</div>
-        <h3 class="corp-card-title">Adopt a School</h3>
-        <p class="corp-card-sub">Support greening within a single government school campus.</p>
+        <h3 class="corp-card-title"><?php echo htmlspecialchars($site['corp_card1_title'] ?? 'Adopt a School'); ?></h3>
+        <p class="corp-card-sub"><?php echo htmlspecialchars($site['corp_card1_sub'] ?? 'Support greening within a single government school campus.'); ?></p>
         <p class="corp-card-inc">This can include:</p>
         <ul class="corp-card-list">
-          <li><span class="check-ico">🌳</span> 50–100 native and climate-adapted trees</li>
-          <li><span class="check-ico">🔧</span> Plantation and on-ground supervision</li>
-          <li><span class="check-ico">🎒</span> Student participation and stewardship</li>
-          <li><span class="check-ico">🛡️</span> Tree guards and survival support</li>
-          <li><span class="check-ico">📊</span> Monitoring and impact reporting</li>
+          <?php echo ($site['corp_card1_list'] ?? '<li><span class="check-ico">🌳</span> 50–100 native and climate-adapted trees</li>'); ?>
         </ul>
         <a href="mailto:info@familytreeindia.org?subject=Inquiry: Adopt a School" class="corp-card-cta">Get Started →</a>
       </div>
@@ -62,15 +69,11 @@ include_once 'includes/header.php';
       <div class="corp-card corp-card-featured">
         <div class="corp-card-accent"></div>
         <div class="corp-card-badge">02</div>
-        <h3 class="corp-card-title">Adopt a Block / Cluster</h3>
-        <p class="corp-card-sub">Support implementation across multiple schools within a block or cluster.</p>
+        <h3 class="corp-card-title"><?php echo htmlspecialchars($site['corp_card2_title'] ?? 'Adopt a Block / Cluster'); ?></h3>
+        <p class="corp-card-sub"><?php echo htmlspecialchars($site['corp_card2_sub'] ?? 'Support implementation across multiple schools within a block or cluster.'); ?></p>
         <p class="corp-card-inc">This can include:</p>
         <ul class="corp-card-list">
-          <li><span class="check-ico">🏫</span> Multi-school plantation rollout</li>
-          <li><span class="check-ico">📋</span> Standardised implementation and monitoring</li>
-          <li><span class="check-ico">📍</span> Survival tracking and reporting</li>
-          <li><span class="check-ico">📄</span> CSR documentation support</li>
-          <li><span class="check-ico">🤝</span> Local engagement and visibility opportunities</li>
+          <?php echo ($site['corp_card2_list'] ?? '<li><span class="check-ico">🏫</span> Multi-school plantation rollout</li>'); ?>
         </ul>
         <a href="mailto:info@familytreeindia.org?subject=Inquiry: Adopt a Block" class="corp-card-cta">Get Started →</a>
       </div>
@@ -79,15 +82,11 @@ include_once 'includes/header.php';
       <div class="corp-card">
         <div class="corp-card-accent"></div>
         <div class="corp-card-badge">03</div>
-        <h3 class="corp-card-title">Adopt a District</h3>
-        <p class="corp-card-sub">Enable large-scale environmental impact across an entire district.</p>
+        <h3 class="corp-card-title"><?php echo htmlspecialchars($site['corp_card3_title'] ?? 'Adopt a District'); ?></h3>
+        <p class="corp-card-sub"><?php echo htmlspecialchars($site['corp_card3_sub'] ?? 'Enable large-scale environmental impact across an entire district.'); ?></p>
         <p class="corp-card-inc">This can include:</p>
         <ul class="corp-card-list">
-          <li><span class="check-ico">🗺️</span> District-wide plantation implementation</li>
-          <li><span class="check-ico">🔄</span> Coordinated rollout across schools</li>
-          <li><span class="check-ico">📡</span> Structured monitoring systems</li>
-          <li><span class="check-ico">📊</span> Impact reporting and documentation</li>
-          <li><span class="check-ico">🌍</span> Regional engagement and visibility support</li>
+          <?php echo ($site['corp_card3_list'] ?? '<li><span class="check-ico">🗺️</span> District-wide plantation implementation</li>'); ?>
         </ul>
         <a href="mailto:info@familytreeindia.org?subject=Inquiry: Adopt a District" class="corp-card-cta">Get Started →</a>
       </div>
@@ -98,47 +97,16 @@ include_once 'includes/header.php';
   <section class="corp-addons">
     <div class="corp-addons-inner">
       <div class="corp-addons-head corp-reveal">
-        <p class="eyebrow"><span></span>Enhance Your Impact</p>
-        <h2 class="corp-sec-h2">Optional<br /><i>Add-Ons</i></h2>
-        <p class="corp-addons-note">Partners may also choose to support:</p>
+        <p class="eyebrow"><span></span><?php echo htmlspecialchars($site['corp_addons_eyebrow'] ?? 'Enhance Your Impact'); ?></p>
+        <h2 class="corp-sec-h2">
+          <?php echo ($site['corp_addons_title_main'] ?? 'Optional'); ?><br />
+          <i><?php echo ($site['corp_addons_title_highlight'] ?? 'Add-Ons'); ?></i>
+          <?php echo ($site['corp_addons_title_end'] ?? ''); ?>
+        </h2>
+        <p class="corp-addons-note"><?php echo htmlspecialchars($site['corp_addons_note'] ?? 'Partners may also choose to support:'); ?></p>
       </div>
       <div class="corp-addon-grid corp-reveal">
-        <div class="corp-addon-item">
-          <span class="addon-ico">🛡️</span>
-          <span class="addon-txt">Tree guards and protective fencing</span>
-        </div>
-        <div class="corp-addon-item">
-          <span class="addon-ico">💧</span>
-          <span class="addon-txt">Water support / hydration points</span>
-        </div>
-        <div class="corp-addon-item">
-          <span class="addon-ico">🌿</span>
-          <span class="addon-txt">Campus shade and greening enhancements</span>
-        </div>
-        <div class="corp-addon-item">
-          <span class="addon-ico">🌳</span>
-          <span class="addon-txt">Mid-campus green spaces</span>
-        </div>
-        <div class="corp-addon-item">
-          <span class="addon-ico">👥</span>
-          <span class="addon-txt">Employee volunteering drives</span>
-        </div>
-        <div class="corp-addon-item">
-          <span class="addon-ico">🏷️</span>
-          <span class="addon-txt">Co-branded plantation boards</span>
-        </div>
-        <div class="corp-addon-item">
-          <span class="addon-ico">🎉</span>
-          <span class="addon-txt">Launch and engagement events</span>
-        </div>
-        <div class="corp-addon-item">
-          <span class="addon-ico">📍</span>
-          <span class="addon-txt">Geo-tagging and impact dashboards</span>
-        </div>
-        <div class="corp-addon-item">
-          <span class="addon-ico">📈</span>
-          <span class="addon-txt">Extended survival monitoring support</span>
-        </div>
+        <?php echo ($site['corp_addons_list'] ?? '<div class="corp-addon-item"><span class="addon-ico">🛡️</span><span class="addon-txt">Tree guards and protective fencing</span></div>'); ?>
       </div>
     </div>
   </section>
@@ -147,45 +115,18 @@ include_once 'includes/header.php';
   <section class="corp-receive">
     <div class="corp-receive-inner">
       <div class="corp-receive-left corp-reveal">
-        <p class="eyebrow"><span></span>What Partners Receive</p>
-        <h2 class="corp-sec-h2">Everything you need<br />for <i>measurable</i><br />impact.</h2>
+        <p class="eyebrow"><span></span><?php echo htmlspecialchars($site['corp_receive_eyebrow'] ?? 'What Partners Receive'); ?></p>
+        <h2 class="corp-sec-h2">
+          <?php echo ($site['corp_receive_title_main'] ?? 'Everything you need'); ?><br />
+          for <i><?php echo ($site['corp_receive_title_highlight'] ?? 'measurable'); ?></i><br />
+          <?php echo ($site['corp_receive_title_end'] ?? 'impact.'); ?>
+        </h2>
       </div>
       <div class="corp-receive-right corp-reveal">
         <div class="corp-receive-items">
-          <div class="corp-receive-item">
-            <div class="cri-n">01</div>
-            <div>
-              <div class="cri-title">Structured implementation support</div>
-            </div>
-          </div>
-          <div class="corp-receive-item">
-            <div class="cri-n">02</div>
-            <div>
-              <div class="cri-title">CSR-ready reporting and documentation</div>
-            </div>
-          </div>
-          <div class="corp-receive-item">
-            <div class="cri-n">03</div>
-            <div>
-              <div class="cri-title">Plantation photos and impact updates</div>
-            </div>
-          </div>
-          <div class="corp-receive-item">
-            <div class="cri-n">04</div>
-            <div>
-              <div class="cri-title">Employee engagement opportunities</div>
-            </div>
-          </div>
-          <div class="corp-receive-item">
-            <div class="corp-receive-item">
-            <div class="cri-n">05</div>
-            <div>
-              <div class="cri-title">Visibility through co-branded activities</div>
-            </div>
-          </div>
+          <?php echo ($site['corp_receive_list'] ?? ''); ?>
         </div>
-        <p class="corp-receive-closing">A measurable and long-term environmental initiative rooted in survival, not just
-          plantation numbers.</p>
+        <p class="corp-receive-closing"><?php echo htmlspecialchars($site['corp_receive_closing'] ?? 'A measurable and long-term environmental initiative rooted in survival, not just plantation numbers.'); ?></p>
       </div>
     </div>
   </section>
@@ -193,24 +134,27 @@ include_once 'includes/header.php';
   <!-- CERTIFICATIONS -->
   <section class="corp-certs">
     <div class="corp-certs-inner corp-reveal">
-      <p class="eyebrow"><span></span>Certifications & Registrations</p>
-      <h2 class="corp-sec-h2">Fully compliant.<br /><i>Fully transparent.</i></h2>
+      <p class="eyebrow"><span></span><?php echo htmlspecialchars($site['corp_certs_eyebrow'] ?? 'Certifications & Registrations'); ?></p>
+      <h2 class="corp-sec-h2">
+        <?php echo ($site['corp_certs_title_main'] ?? 'Fully compliant.'); ?><br />
+        <i><?php echo ($site['corp_certs_title_highlight'] ?? 'Fully transparent.'); ?></i>
+        <?php echo ($site['corp_certs_title_end'] ?? ''); ?>
+      </h2>
       <div class="corp-cert-grid">
         <div class="corp-cert-card">
           <div class="cert-icon">📋</div>
-          <h4 class="cert-title">CSR-1 Registration</h4>
-          <p class="cert-desc">Registered under the Companies Act, 2013 for eligible CSR spending by corporate partners.
-          </p>
+          <h4 class="cert-title"><?php echo htmlspecialchars($site['corp_cert1_title'] ?? 'CSR-1 Registration'); ?></h4>
+          <p class="cert-desc"><?php echo htmlspecialchars($site['corp_cert1_desc'] ?? 'Registered under the Companies Act, 2013 for eligible CSR spending by corporate partners.'); ?></p>
         </div>
         <div class="corp-cert-card">
           <div class="cert-icon">🏛️</div>
-          <h4 class="cert-title">80G Certification</h4>
-          <p class="cert-desc">Donations are eligible for tax deduction under Section 80G of the Income Tax Act.</p>
+          <h4 class="cert-title"><?php echo htmlspecialchars($site['corp_cert2_title'] ?? '80G Certification'); ?></h4>
+          <p class="cert-desc"><?php echo htmlspecialchars($site['corp_cert2_desc'] ?? 'Donations are eligible for tax deduction under Section 80G of the Income Tax Act.'); ?></p>
         </div>
         <div class="corp-cert-card">
           <div class="cert-icon">🔖</div>
-          <h4 class="cert-title">DARPAN Registration</h4>
-          <p class="cert-desc">Registered on the NITI Aayog DARPAN portal as a verified non-profit organisation.</p>
+          <h4 class="cert-title"><?php echo htmlspecialchars($site['corp_cert3_title'] ?? 'DARPAN Registration'); ?></h4>
+          <p class="cert-desc"><?php echo htmlspecialchars($site['corp_cert3_desc'] ?? 'Registered on the NITI Aayog DARPAN portal as a verified non-profit organisation.'); ?></p>
         </div>
       </div>
     </div>
@@ -219,9 +163,12 @@ include_once 'includes/header.php';
   <!-- CTA -->
   <section class="corp-cta-sec">
     <div class="corp-cta-inner corp-reveal">
-      <h2 class="corp-cta-h2">Ready to create<br />a <i>lasting</i> green<br />legacy?</h2>
-      <p class="corp-cta-sub">Start a conversation with our partnerships team and discover how your organisation can
-        drive measurable environmental change.</p>
+      <h2 class="corp-cta-h2">
+        <?php echo ($site['corp_cta_title_main'] ?? 'Ready to create'); ?><br />
+        a <i><?php echo ($site['corp_cta_title_highlight'] ?? 'lasting'); ?></i>
+        <?php echo ($site['corp_cta_title_end'] ?? 'green legacy?'); ?>
+      </h2>
+      <p class="corp-cta-sub"><?php echo htmlspecialchars($site['corp_cta_sub'] ?? 'Start a conversation with our partnerships team and discover how your organisation can drive measurable environmental change.'); ?></p>
       <div class="corp-cta-btns">
         <a href="mailto:info@familytreeindia.org?subject=Corporate Partnership Inquiry" class="btn-y">Partner With Us</a>
         <a href="<?php echo SITE_URL; ?>" class="btn-w">Back to Home</a>
