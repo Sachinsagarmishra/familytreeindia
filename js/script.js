@@ -237,7 +237,7 @@
       const formData = new FormData(donateForm);
 
       try {
-        const response = await fetch("includes/process_lead.php", {
+        const response = await fetch(SITE_URL + "/includes/process_lead.php", {
           method: "POST",
           body: formData
         });
