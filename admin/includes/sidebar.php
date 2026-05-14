@@ -11,6 +11,12 @@
         </a>
       </li>
       <li class="nav-item-admin">
+        <a href="home_settings.php" class="nav-link-admin <?php echo ($activePage == 'home_settings') ? 'active' : ''; ?>">
+          <i class="fa-solid fa-house-chimney-user"></i>
+          <span>Home Page</span>
+        </a>
+      </li>
+      <li class="nav-item-admin">
         <a href="leads.php" class="nav-link-admin <?php echo ($activePage == 'leads') ? 'active' : ''; ?>">
           <i class="fa-solid fa-envelope-open-text"></i>
           <span>Contact Leads</span>
