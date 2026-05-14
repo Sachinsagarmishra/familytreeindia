@@ -80,6 +80,21 @@ $result = $conn->query($sql);
   .btn-delete-multi { background: #fee2e2; color: #991b1b; border: 1px solid #fecaca; padding: 8px 16px; border-radius: 6px; font-weight: 700; font-size: 0.8rem; cursor: pointer; }
   .btn-delete-multi:hover { background: #fecaca; }
   .status-badge { background: #eef2ff; color: #4338ca; padding: 4px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 700; }
+  
+  /* Modal Styles */
+  .lead-modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); backdrop-filter: blur(4px); align-items: center; justify-content: center; }
+  .lead-modal.active { display: flex; }
+  .lead-modal-content { background: #fff; width: 100%; max-width: 600px; padding: 40px; border-radius: 20px; position: relative; box-shadow: 0 20px 50px rgba(0,0,0,0.2); }
+  .lead-modal-close { position: absolute; right: 20px; top: 20px; background: #f0f0f0; border: none; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+  .lead-modal-header { margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+  .lead-modal-header h3 { font-family: 'Fraunces', serif; font-size: 1.8rem; margin: 0; }
+  .lead-detail-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .detail-item { margin-bottom: 15px; }
+  .detail-label { font-size: 0.7rem; text-transform: uppercase; font-weight: 700; color: #888; margin-bottom: 4px; }
+  .detail-val { font-weight: 600; color: #222; }
+  .detail-full { grid-column: span 2; }
+  .source-badge { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; background: #f0fdf4; color: #166534; }
+  .source-badge.popup { background: #fff7ed; color: #9a3412; }
 </style>
 
 <main class="main-content">
@@ -172,7 +187,12 @@ $result = $conn->query($sql);
                   <div style="font-size: 0.85rem; line-height: 1.5; color: #444;"><?php echo nl2br(htmlspecialchars($row['message'])); ?></div>
                 </td>
                 <td style="padding: 16px; border-bottom: 1px solid rgba(0,0,0,0.05); text-align: right;">
-                  <a href="?delete_single=<?php echo $row['id']; ?>" style="color: #ef4444; font-size: 1.1rem;" onclick="return confirm('Delete this lead?')">
+                  <a href="javascript:void(0)" class="view-lead-btn" 
+                     data-lead='<?php echo json_encode($row); ?>'
+                     style="color: var(--green-mid); font-size: 1.1rem; margin-right: 12px;" title="View Details">
+                    <i class="fa-solid fa-eye"></i>
+                  </a>
+                  <a href="?delete_single=<?php echo $row['id']; ?>" style="color: #ef4444; font-size: 1.1rem;" onclick="return confirm('Delete this lead?')" title="Delete">
                     <i class="fa-solid fa-circle-xmark"></i>
                   </a>
                 </td>
@@ -226,7 +246,134 @@ $result = $conn->query($sql);
 </main>
 
 <script>
-  const selectAll = document.getElementById('selectAll');
+  <!-- DETAILS MODAL -->
+  <div class="lead-modal" id="leadModal">
+    <div class="lead-modal-content">
+      <button class="lead-modal-close" onclick="closeModal()">✕</button>
+      <div class="lead-modal-header">
+        <h3 id="m-name">Lead Details</h3>
+        <p style="font-size: 0.85rem; color: #888; margin-top: 5px;" id="m-date"></p>
+      </div>
+      <div class="lead-detail-grid">
+        <div class="detail-item">
+          <div class="detail-label">Email ID</div>
+          <div class="detail-val" id="m-email"></div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Phone Number</div>
+          <div class="detail-val" id="m-phone"></div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Organization</div>
+          <div class="detail-val" id="m-company"></div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Interest</div>
+          <div class="detail-val" id="m-interest"></div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Location (State)</div>
+          <div class="detail-val" id="m-state" style="color: #e05a1a;"></div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Source</div>
+          <div id="m-source"></div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">IP Address</div>
+          <div class="detail-val" id="m-ip" style="font-family: monospace; font-size: 0.8rem;"></div>
+        </div>
+        <div class="detail-item detail-full">
+          <div class="detail-label">Message</div>
+          <div class="detail-val" id="m-message" style="background: #f9f9f9; padding: 15px; border-radius: 10px; font-weight: 400; line-height: 1.6;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- DETAILS MODAL -->
+  <div class="lead-modal" id="leadModal">
+    <div class="lead-modal-content">
+      <button class="lead-modal-close" onclick="closeModal()">✕</button>
+      <div class="lead-modal-header">
+        <h3 id="m-name">Lead Details</h3>
+        <p style="font-size: 0.85rem; color: #888; margin-top: 5px;" id="m-date"></p>
+      </div>
+      <div class="lead-detail-grid">
+        <div class="detail-item">
+          <div class="detail-label">Email ID</div>
+          <div class="detail-val" id="m-email"></div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Phone Number</div>
+          <div class="detail-val" id="m-phone"></div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Organization</div>
+          <div class="detail-val" id="m-company"></div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Interest</div>
+          <div class="detail-val" id="m-interest"></div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Location (State)</div>
+          <div class="detail-val" id="m-state" style="color: #e05a1a;"></div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">Source</div>
+          <div id="m-source"></div>
+        </div>
+        <div class="detail-item">
+          <div class="detail-label">IP Address</div>
+          <div class="detail-val" id="m-ip" style="font-family: monospace; font-size: 0.8rem;"></div>
+        </div>
+        <div class="detail-item detail-full">
+          <div class="detail-label">Message</div>
+          <div class="detail-val" id="m-message" style="background: #f9f9f9; padding: 15px; border-radius: 10px; font-weight: 400; line-height: 1.6;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const leadModal = document.getElementById('leadModal');
+    
+    document.querySelectorAll('.view-lead-btn').forEach(btn => {
+      btn.onclick = function() {
+        const data = JSON.parse(this.getAttribute('data-lead'));
+        
+        document.getElementById('m-name').innerText = data.name;
+        document.getElementById('m-date').innerText = "Submitted on " + data.created_at;
+        document.getElementById('m-email').innerText = data.email;
+        document.getElementById('m-phone').innerText = data.phone;
+        document.getElementById('m-company').innerText = data.company || "N/A";
+        document.getElementById('m-interest').innerText = data.interest;
+        document.getElementById('m-state').innerText = data.state || "Unknown";
+        document.getElementById('m-ip').innerText = data.ip_address || "N/A";
+        document.getElementById('m-message').innerText = data.message || "No message provided.";
+        
+        const sourceBox = document.getElementById('m-source');
+        if(data.source === 'popup_form') {
+          sourceBox.innerHTML = '<span class="source-badge popup">Popup Form</span>';
+        } else {
+          sourceBox.innerHTML = '<span class="source-badge">Contact Page</span>';
+        }
+        
+        leadModal.classList.add('active');
+      };
+    });
+
+    function closeModal() {
+      leadModal.classList.remove('active');
+    }
+
+    // Close on outside click
+    window.onclick = function(event) {
+      if (event.target == leadModal) closeModal();
+    }
+
+    const selectAll = document.getElementById('selectAll');
   const checks = document.querySelectorAll('.lead-item-check');
   const bulkActions = document.getElementById('bulkActions');
 

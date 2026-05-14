@@ -12,8 +12,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $interest = $conn->real_escape_string($_POST['interest']);
     $message = $conn->real_escape_string($_POST['message']);
 
+    $ip = $_SERVER['REMOTE_ADDR'];
+    $state = "Unknown";
+    $source = "popup_form";
+    
+    // Simple Geolocation
+    $geo = file_get_contents("http://ip-api.com/json/$ip?fields=regionName");
+    if($geo) {
+        $geo_data = json_decode($geo, true);
+        if(isset($geo_data['regionName'])) $state = $geo_data['regionName'];
+    }
+
     // Save to database
-    $sql = "INSERT INTO leads (name, email, phone, company, interest, message) VALUES ('$name', '$email', '$phone', '$company', '$interest', '$message')";
+    $sql = "INSERT INTO leads (name, email, phone, company, interest, message, state, source, ip_address) 
+            VALUES ('$name', '$email', '$phone', '$company', '$interest', '$message', '$state', '$source', '$ip')";
     
     if ($conn->query($sql)) {
         // Send Email notification
