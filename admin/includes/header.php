@@ -14,6 +14,8 @@ $admin_user = isset($_SESSION['admin_user']) ? $_SESSION['admin_user'] : 'Admin'
   <title><?php echo isset($pageTitle) ? $pageTitle . ' — Admin Panel' : 'Admin Panel — Family Tree'; ?></title>
   <link rel="stylesheet" href="<?php echo SITE_URL; ?>/admin/style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- TinyMCE -->
+  <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
 </head>
 <body>
 

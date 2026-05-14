@@ -66,8 +66,8 @@ while($row = $res->fetch_assoc()) {
           <input type="text" name="settings[about_intro_eyebrow]" class="form-control" value="<?php echo htmlspecialchars($settings['about_intro_eyebrow'] ?? ''); ?>">
         </div>
         <div class="form-group">
-          <label>Intro Title (HTML allowed)</label>
-          <textarea name="settings[about_intro_title]" class="form-control" rows="3"><?php echo htmlspecialchars($settings['about_intro_title'] ?? ''); ?></textarea>
+          <label>Intro Title (Use Bold/Italic for styling)</label>
+          <textarea name="settings[about_intro_title]" class="form-control tinymce-editor" rows="3"><?php echo htmlspecialchars($settings['about_intro_title'] ?? ''); ?></textarea>
         </div>
         
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 20px;">
@@ -117,11 +117,11 @@ while($row = $res->fetch_assoc()) {
         <h3 style="margin-bottom: 24px;"><i class="fa-solid fa-bullseye"></i> Mission & Impact</h3>
         <div class="form-group">
           <label>Mission Title</label>
-          <input type="text" name="settings[about_mission_title]" class="form-control" value="<?php echo htmlspecialchars($settings['about_mission_title'] ?? ''); ?>">
+          <textarea name="settings[about_mission_title]" class="form-control tinymce-editor" rows="2"><?php echo htmlspecialchars($settings['about_mission_title'] ?? ''); ?></textarea>
         </div>
         <div class="form-group">
           <label>Mission Description</label>
-          <textarea name="settings[about_mission_text]" class="form-control" rows="5"><?php echo htmlspecialchars($settings['about_mission_text'] ?? ''); ?></textarea>
+          <textarea name="settings[about_mission_text]" class="form-control tinymce-editor" rows="5"><?php echo htmlspecialchars($settings['about_mission_text'] ?? ''); ?></textarea>
         </div>
 
         <div style="margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee;">
@@ -172,7 +172,7 @@ while($row = $res->fetch_assoc()) {
         </div>
         <div class="form-group">
           <label>Founder Bio</label>
-          <textarea name="settings[about_founder_text]" class="form-control" rows="4"><?php echo htmlspecialchars($settings['about_founder_text'] ?? ''); ?></textarea>
+          <textarea name="settings[about_founder_text]" class="form-control tinymce-editor" rows="4"><?php echo htmlspecialchars($settings['about_founder_text'] ?? ''); ?></textarea>
         </div>
       </div>
 
@@ -202,15 +202,15 @@ while($row = $res->fetch_assoc()) {
         </div>
         <div class="form-group">
           <label>Section Title</label>
-          <input type="text" name="settings[about_leader_title]" class="form-control" value="<?php echo htmlspecialchars($settings['about_leader_title'] ?? ''); ?>">
+          <textarea name="settings[about_leader_title]" class="form-control tinymce-editor" rows="2"><?php echo htmlspecialchars($settings['about_leader_title'] ?? ''); ?></textarea>
         </div>
         <div class="form-group">
           <label>Paragraph 1</label>
-          <textarea name="settings[about_leader_text1]" class="form-control" rows="4"><?php echo htmlspecialchars($settings['about_leader_text1'] ?? ''); ?></textarea>
+          <textarea name="settings[about_leader_text1]" class="form-control tinymce-editor" rows="4"><?php echo htmlspecialchars($settings['about_leader_text1'] ?? ''); ?></textarea>
         </div>
         <div class="form-group">
           <label>Paragraph 2</label>
-          <textarea name="settings[about_leader_text2]" class="form-control" rows="4"><?php echo htmlspecialchars($settings['about_leader_text2'] ?? ''); ?></textarea>
+          <textarea name="settings[about_leader_text2]" class="form-control tinymce-editor" rows="4"><?php echo htmlspecialchars($settings['about_leader_text2'] ?? ''); ?></textarea>
         </div>
       </div>
 
@@ -234,3 +234,16 @@ while($row = $res->fetch_assoc()) {
   </main>
 
 <?php include_once 'includes/footer.php'; ?>
+
+<script>
+  tinymce.init({
+    selector: 'textarea.tinymce-editor',
+    plugins: 'link lists autoresize',
+    toolbar: 'undo redo | bold italic | bullist numlist | link',
+    menubar: false,
+    statusbar: false,
+    autoresize_bottom_margin: 20,
+    branding: false,
+    height: 200
+  });
+</script>

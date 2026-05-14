@@ -65,12 +65,12 @@ foreach($contact_keys as $key) {
           <input type="text" name="settings[contact_hero_eyebrow]" class="form-control" value="<?php echo htmlspecialchars($settings['contact_hero_eyebrow']); ?>">
         </div>
         <div class="form-group">
-          <label>Hero Title (HTML allowed)</label>
-          <input type="text" name="settings[contact_hero_title]" class="form-control" value="<?php echo htmlspecialchars($settings['contact_hero_title']); ?>">
+          <label>Hero Title (Use Bold/Italic for styling)</label>
+          <textarea name="settings[contact_hero_title]" class="form-control tinymce-editor" rows="2"><?php echo htmlspecialchars($settings['contact_hero_title']); ?></textarea>
         </div>
         <div class="form-group">
           <label>Hero Subtext</label>
-          <textarea name="settings[contact_hero_subtext]" class="form-control" rows="3"><?php echo htmlspecialchars($settings['contact_hero_subtext']); ?></textarea>
+          <textarea name="settings[contact_hero_subtext]" class="form-control tinymce-editor" rows="3"><?php echo htmlspecialchars($settings['contact_hero_subtext']); ?></textarea>
         </div>
       </div>
 
@@ -170,3 +170,16 @@ foreach($contact_keys as $key) {
   </main>
 
 <?php include_once 'includes/footer.php'; ?>
+
+<script>
+  tinymce.init({
+    selector: 'textarea.tinymce-editor',
+    plugins: 'link lists autoresize',
+    toolbar: 'undo redo | bold italic | bullist numlist | link',
+    menubar: false,
+    statusbar: false,
+    autoresize_bottom_margin: 20,
+    branding: false,
+    height: 150
+  });
+</script>
