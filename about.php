@@ -165,21 +165,24 @@ include_once 'includes/header.php';
         </h2>
       </div>
       <div class="abt-partners-logos abt-reveal">
+        <?php 
+        $partners_res = $conn->query("SELECT * FROM partners ORDER BY order_index ASC, id DESC");
+        if ($partners_res && $partners_res->num_rows > 0):
+          while($p = $partners_res->fetch_assoc()):
+            // Check if it's a new upload (img/partners/) or legacy (Icons/black/)
+            $logo_path = (file_exists("img/partners/" . $p['logo'])) 
+                        ? SITE_URL . "/img/partners/" . $p['logo'] 
+                        : SITE_URL . "/Icons/black/" . $p['logo'];
+        ?>
         <div class="abt-partner-logo">
-          <img src="<?php echo SITE_URL; ?>/Icons/black/Bihar-Education-Project-Council.svg" alt="Bihar Education Project Council" />
+          <img src="<?php echo $logo_path; ?>" alt="<?php echo htmlspecialchars($p['name']); ?>" />
         </div>
-        <div class="abt-partner-logo">
-          <img src="<?php echo SITE_URL; ?>/Icons/black/aiims-delhi.svg" alt="AIIMS Delhi" />
-        </div>
-        <div class="abt-partner-logo">
-          <img src="<?php echo SITE_URL; ?>/Icons/black/ministry of education.svg" alt="Ministry of Education" />
-        </div>
-        <div class="abt-partner-logo">
-          <img src="<?php echo SITE_URL; ?>/Icons/black/Government-of-Bihar.svg" alt="Government of Bihar" />
-        </div>
-        <div class="abt-partner-logo">
-          <img src="<?php echo SITE_URL; ?>/Icons/black/cmx-foundation.svg" alt="CMX Foundation" />
-        </div>
+        <?php endwhile; else: ?>
+          <!-- Fallback if table is empty but seeding failed -->
+          <div class="abt-partner-logo"><img src="<?php echo SITE_URL; ?>/Icons/black/Bihar-Education-Project-Council.svg" alt="Partner" /></div>
+          <div class="abt-partner-logo"><img src="<?php echo SITE_URL; ?>/Icons/black/aiims-delhi.svg" alt="Partner" /></div>
+          <div class="abt-partner-logo"><img src="<?php echo SITE_URL; ?>/Icons/black/Government-of-Bihar.svg" alt="Partner" /></div>
+        <?php endif; ?>
       </div>
     </div>
   </section>

@@ -29,6 +29,12 @@
         </a>
       </li>
       <li class="nav-item-admin">
+        <a href="partners.php" class="nav-link-admin <?php echo ($activePage == 'partners') ? 'active' : ''; ?>">
+          <i class="fa-solid fa-handshake"></i>
+          <span>Partner Logos</span>
+        </a>
+      </li>
+      <li class="nav-item-admin">
         <a href="settings.php" class="nav-link-admin <?php echo ($activePage == 'settings') ? 'active' : ''; ?>">
           <i class="fa-solid fa-gear"></i>
           <span>Site Settings</span>

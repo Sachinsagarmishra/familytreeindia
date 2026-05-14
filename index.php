@@ -38,17 +38,22 @@ include_once 'includes/header.php';
     <span class="partners-lbl">Trusted by</span>
     <div class="partners-row">
       <div class="marquee-content">
-        <img src="<?php echo SITE_URL; ?>/Icons/biahr-education.png" alt="Bihar Education Project Council" class="partner-logo">
-        <img src="<?php echo SITE_URL; ?>/Icons/aiims-delhi.png" alt="AIIMS Delhi" class="partner-logo">
-        <img src="<?php echo SITE_URL; ?>/Icons/ministry-of-education.png" alt="Ministry of Education" class="partner-logo">
-        <img src="<?php echo SITE_URL; ?>/Icons/govt-of-bihar.png" alt="Government of Bihar" class="partner-logo">
-        <img src="<?php echo SITE_URL; ?>/Icons/CMX-foundation.png" alt="CMX Foundation" class="partner-logo">
-        <!-- Duplicated for loop -->
-        <img src="<?php echo SITE_URL; ?>/Icons/biahr-education.png" alt="Bihar Education Project Council" class="partner-logo">
-        <img src="<?php echo SITE_URL; ?>/Icons/aiims-delhi.png" alt="AIIMS Delhi" class="partner-logo">
-        <img src="<?php echo SITE_URL; ?>/Icons/ministry-of-education.png" alt="Ministry of Education" class="partner-logo">
-        <img src="<?php echo SITE_URL; ?>/Icons/govt-of-bihar.png" alt="Government of Bihar" class="partner-logo">
-        <img src="<?php echo SITE_URL; ?>/Icons/CMX-foundation.png" alt="CMX Foundation" class="partner-logo">
+        <?php 
+        $partners_res = $conn->query("SELECT * FROM partners ORDER BY order_index ASC, id DESC");
+        $all_partners = [];
+        if ($partners_res && $partners_res->num_rows > 0) {
+            while($p = $partners_res->fetch_assoc()) $all_partners[] = $p;
+        }
+
+        // Render twice for continuous loop
+        for($i=0; $i<2; $i++):
+          foreach($all_partners as $p):
+            $logo_path = (file_exists("img/partners/" . $p['logo'])) 
+                        ? SITE_URL . "/img/partners/" . $p['logo'] 
+                        : SITE_URL . "/Icons/" . $p['logo']; // Note: index uses /Icons/
+        ?>
+          <img src="<?php echo $logo_path; ?>" alt="<?php echo htmlspecialchars($p['name']); ?>" class="partner-logo">
+        <?php endforeach; endfor; ?>
       </div>
     </div>
   </div>
