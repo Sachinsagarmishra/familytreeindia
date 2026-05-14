@@ -1957,11 +1957,13 @@ footer {
 }
 
 @media (max-width: 900px) {
-  nav {
-    padding: 0 16px;
+  .main-nav {
+    padding: 0 20px;
     height: 80px;
-    justify-content: flex-start;
-    gap: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
   }
 
   .nav-logo {
@@ -1969,15 +1971,17 @@ footer {
   }
 
   .nav-donate {
-    padding: 8px 16px;
-    font-size: 0.7rem;
+    padding: 10px 18px;
+    font-size: 0.75rem;
     display: block;
     white-space: nowrap;
+    margin-right: 0;
   }
 
   .nav-mob-btn {
     display: flex;
     margin-left: 0;
+    padding: 5px;
   }
 
   .nav-link {
