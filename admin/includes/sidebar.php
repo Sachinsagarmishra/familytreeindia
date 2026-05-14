@@ -17,6 +17,12 @@
         </a>
       </li>
       <li class="nav-item-admin">
+        <a href="contact_settings.php" class="nav-link-admin <?php echo ($activePage == 'contact_settings') ? 'active' : ''; ?>">
+          <i class="fa-solid fa-file-signature"></i>
+          <span>Contact Page</span>
+        </a>
+      </li>
+      <li class="nav-item-admin">
         <a href="settings.php" class="nav-link-admin <?php echo ($activePage == 'settings') ? 'active' : ''; ?>">
           <i class="fa-solid fa-gear"></i>
           <span>Site Settings</span>

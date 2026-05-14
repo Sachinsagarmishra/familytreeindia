@@ -48,9 +48,9 @@ include_once 'includes/header.php';
   <!-- CONTACT HERO -->
   <section class="cont-hero">
     <div class="cont-hero-inner">
-      <p class="cont-eyebrow cont-reveal">GET IN TOUCH</p>
-      <h1 class="cont-h1 cont-reveal">Let’s <i>grow</i> something<br>meaningful together.</h1>
-      <p class="cont-sub cont-reveal">Whether you're a corporate partner, a donor agency, or a volunteer, we'd love to hear from you. Reach out and help us build a greener Bihar.</p>
+      <p class="cont-eyebrow cont-reveal"><?php echo isset($site['contact_hero_eyebrow']) ? htmlspecialchars($site['contact_hero_eyebrow']) : 'GET IN TOUCH'; ?></p>
+      <h1 class="cont-h1 cont-reveal"><?php echo isset($site['contact_hero_title']) ? $site['contact_hero_title'] : 'Let’s <i>grow</i> something<br>meaningful together.'; ?></h1>
+      <p class="cont-sub cont-reveal"><?php echo isset($site['contact_hero_subtext']) ? htmlspecialchars($site['contact_hero_subtext']) : "Whether you're a corporate partner, a donor agency, or a volunteer, we'd love to hear from you. Reach out and help us build a greener Bihar."; ?></p>
     </div>
   </section>
 
@@ -110,28 +110,28 @@ include_once 'includes/header.php';
         <form class="cont-form" action="" method="post">
           <div class="form-row">
             <div class="form-group">
-              <label for="name">Names</label>
-              <input type="text" id="name" name="name" placeholder="John Doe" required>
+              <label for="name"><?php echo isset($site['contact_form_name_label']) ? htmlspecialchars($site['contact_form_name_label']) : 'Names'; ?></label>
+              <input type="text" id="name" name="name" placeholder="<?php echo isset($site['contact_form_name_placeholder']) ? htmlspecialchars($site['contact_form_name_placeholder']) : 'John Doe'; ?>" required>
             </div>
             <div class="form-group">
-              <label for="email">Email ID</label>
-              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+              <label for="email"><?php echo isset($site['contact_form_email_label']) ? htmlspecialchars($site['contact_form_email_label']) : 'Email ID'; ?></label>
+              <input type="email" id="email" name="email" placeholder="<?php echo isset($site['contact_form_email_placeholder']) ? htmlspecialchars($site['contact_form_email_placeholder']) : 'john@example.com'; ?>" required>
             </div>
           </div>
           <div class="form-row">
             <div class="form-group">
-              <label for="phone">Phone number</label>
-              <input type="tel" id="phone" name="phone" placeholder="+91 XXXXX XXXXX" required>
+              <label for="phone"><?php echo isset($site['contact_form_phone_label']) ? htmlspecialchars($site['contact_form_phone_label']) : 'Phone number'; ?></label>
+              <input type="tel" id="phone" name="phone" placeholder="<?php echo isset($site['contact_form_phone_placeholder']) ? htmlspecialchars($site['contact_form_phone_placeholder']) : '+91 XXXXX XXXXX'; ?>" required>
             </div>
             <div class="form-group">
-              <label for="company">Company name</label>
-              <input type="text" id="company" name="company" placeholder="Your Organization">
+              <label for="company"><?php echo isset($site['contact_form_company_label']) ? htmlspecialchars($site['contact_form_company_label']) : 'Company name'; ?></label>
+              <input type="text" id="company" name="company" placeholder="<?php echo isset($site['contact_form_company_placeholder']) ? htmlspecialchars($site['contact_form_company_placeholder']) : 'Your Organization'; ?>">
             </div>
           </div>
           <div class="form-group">
-            <label for="interest">Interested in</label>
+            <label for="interest"><?php echo isset($site['contact_form_interest_label']) ? htmlspecialchars($site['contact_form_interest_label']) : 'Interested in'; ?></label>
             <select id="interest" name="interest" required>
-              <option value="" disabled selected>Select an option</option>
+              <option value="" disabled selected><?php echo isset($site['contact_form_interest_placeholder']) ? htmlspecialchars($site['contact_form_interest_placeholder']) : 'Select an option'; ?></option>
               <option value="CSR">CSR</option>
               <option value="Employee Engagement">Employee Engagement</option>
               <option value="Volunteer program">Volunteer program</option>
@@ -140,10 +140,10 @@ include_once 'includes/header.php';
             </select>
           </div>
           <div class="form-group">
-            <label for="message">Comments (optional)</label>
-            <textarea id="message" name="message" rows="4" placeholder="How can we help you?"></textarea>
+            <label for="message"><?php echo isset($site['contact_form_message_label']) ? htmlspecialchars($site['contact_form_message_label']) : 'Comments (optional)'; ?></label>
+            <textarea id="message" name="message" rows="4" placeholder="<?php echo isset($site['contact_form_message_placeholder']) ? htmlspecialchars($site['contact_form_message_placeholder']) : 'How can we help you?'; ?>"></textarea>
           </div>
-          <button type="submit" name="submit_form" class="btn-y">Send Message</button>
+          <button type="submit" name="submit_form" class="btn-y"><?php echo isset($site['contact_form_submit_text']) ? htmlspecialchars($site['contact_form_submit_text']) : 'Send Message'; ?></button>
         </form>
       </div>
     </div>
@@ -153,8 +153,8 @@ include_once 'includes/header.php';
   <section class="cont-map cont-reveal">
     <div class="map-placeholder">
        <div class="map-overlay">
-          <p>Our initiatives span 125 schools across 4 districts in Bihar.</p>
-          <a href="<?php echo SITE_URL; ?>/about" class="link-arr">See Our Impact</a>
+          <p><?php echo isset($site['contact_map_text']) ? htmlspecialchars($site['contact_map_text']) : 'Our initiatives span 125 schools across 4 districts in Bihar.'; ?></p>
+          <a href="<?php echo SITE_URL; ?>/about" class="link-arr"><?php echo isset($site['contact_map_link_text']) ? htmlspecialchars($site['contact_map_link_text']) : 'See Our Impact'; ?></a>
        </div>
     </div>
   </section>
