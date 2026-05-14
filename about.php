@@ -10,7 +10,11 @@ include_once 'includes/header.php';
   <section class="abt-intro">
     <div class="abt-intro-inner">
       <p class="abt-eyebrow abt-reveal"><?php echo htmlspecialchars($site['about_intro_eyebrow'] ?? 'ABOUT US'); ?></p>
-      <h1 class="abt-intro-h1 abt-reveal"><?php echo $site['about_intro_title'] ?? 'Family Tree Foundation is a<br />non-profit organisation building<br /><i>permanent green cover</i> through<br />schools and communities.'; ?></h1>
+      <h1 class="abt-intro-h1 abt-reveal">
+        <?php echo htmlspecialchars($site['about_intro_title_main'] ?? 'Family Tree Foundation is a'); ?> 
+        <i><?php echo htmlspecialchars($site['about_intro_title_highlight'] ?? 'non-profit organisation'); ?></i> 
+        <?php echo htmlspecialchars($site['about_intro_title_end'] ?? 'building permanent green cover through schools and communities.'); ?>
+      </h1>
       <div class="abt-photos abt-reveal">
         <div class="abt-photos-track">
           <div class="abt-photo">
@@ -42,7 +46,11 @@ include_once 'includes/header.php';
   <!-- SECTION 2: MISSION + STATS -->
   <section class="abt-mission" id="story">
     <div class="abt-mission-inner abt-reveal">
-      <h2 class="abt-mission-h2"><?php echo $site['about_mission_title'] ?? 'Together, we can build a<br /><i>greener</i> Bihar'; ?></h2>
+      <h2 class="abt-mission-h2">
+        <?php echo htmlspecialchars($site['about_mission_title_main'] ?? 'Together, we can build a'); ?> 
+        <i><?php echo htmlspecialchars($site['about_mission_title_highlight'] ?? 'greener'); ?></i> 
+        <?php echo htmlspecialchars($site['about_mission_title_end'] ?? 'Bihar'); ?>
+      </h2>
       <p class="abt-mission-p"><?php echo htmlspecialchars($site['about_mission_text'] ?? ''); ?></p>
     </div>
   </section>
@@ -134,7 +142,11 @@ include_once 'includes/header.php';
       </div>
       <div class="abt-promise-body abt-reveal">
         <p class="abt-eyebrow"><?php echo htmlspecialchars($site['about_leader_eyebrow'] ?? 'LEADERSHIP'); ?></p>
-        <h2 class="abt-promise-h2"><?php echo $site['about_leader_title'] ?? 'Leadership with<br /><i>Impact</i>'; ?></h2>
+        <h2 class="abt-promise-h2">
+          <?php echo htmlspecialchars($site['about_leader_title_main'] ?? 'Leadership with'); ?> 
+          <i><?php echo htmlspecialchars($site['about_leader_title_highlight'] ?? 'Impact'); ?></i> 
+          <?php echo htmlspecialchars($site['about_leader_title_end'] ?? ''); ?>
+        </h2>
         <p class="abt-promise-p"><?php echo htmlspecialchars($site['about_leader_text1'] ?? ''); ?></p>
         <p class="abt-promise-p"><?php echo htmlspecialchars($site['about_leader_text2'] ?? ''); ?></p>
       </div>
@@ -146,7 +158,11 @@ include_once 'includes/header.php';
     <div class="abt-partners-inner">
       <div class="abt-partners-head abt-reveal">
         <p class="abt-eyebrow"><?php echo htmlspecialchars($site['about_partners_eyebrow'] ?? 'OUR PARTNERS & SUPPORTERS'); ?></p>
-        <h2 class="abt-partners-h2"><?php echo $site['about_partners_title'] ?? 'Backed by institutions<br />that <i>matter.</i>'; ?></h2>
+        <h2 class="abt-partners-h2">
+          <?php echo htmlspecialchars($site['about_partners_title_main'] ?? 'Backed by institutions'); ?> 
+          <i><?php echo htmlspecialchars($site['about_partners_title_highlight'] ?? 'that matter.'); ?></i> 
+          <?php echo htmlspecialchars($site['about_partners_title_end'] ?? ''); ?>
+        </h2>
       </div>
       <div class="abt-partners-logos abt-reveal">
         <div class="abt-partner-logo">

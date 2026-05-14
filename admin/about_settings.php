@@ -66,8 +66,12 @@ while($row = $res->fetch_assoc()) {
           <input type="text" name="settings[about_intro_eyebrow]" class="form-control" value="<?php echo htmlspecialchars($settings['about_intro_eyebrow'] ?? ''); ?>">
         </div>
         <div class="form-group">
-          <label>Intro Title (Use Bold/Italic for styling)</label>
-          <textarea name="settings[about_intro_title]" class="form-control tinymce-editor" rows="3"><?php echo htmlspecialchars($settings['about_intro_title'] ?? ''); ?></textarea>
+          <label>Intro Title (Three parts for styling)</label>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <input type="text" name="settings[about_intro_title_main]" class="form-control" placeholder="Main text..." value="<?php echo htmlspecialchars($settings['about_intro_title_main'] ?? ''); ?>">
+            <input type="text" name="settings[about_intro_title_highlight]" class="form-control" style="border-color: #2d6b35; color: #2d6b35; font-weight: bold;" placeholder="Green/Italic part..." value="<?php echo htmlspecialchars($settings['about_intro_title_highlight'] ?? ''); ?>">
+            <input type="text" name="settings[about_intro_title_end]" class="form-control" placeholder="End text..." value="<?php echo htmlspecialchars($settings['about_intro_title_end'] ?? ''); ?>">
+          </div>
         </div>
         
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; margin-top: 20px;">
@@ -116,8 +120,12 @@ while($row = $res->fetch_assoc()) {
       <div class="settings-card">
         <h3 style="margin-bottom: 24px;"><i class="fa-solid fa-bullseye"></i> Mission & Impact</h3>
         <div class="form-group">
-          <label>Mission Title</label>
-          <textarea name="settings[about_mission_title]" class="form-control tinymce-editor" rows="2"><?php echo htmlspecialchars($settings['about_mission_title'] ?? ''); ?></textarea>
+          <label>Mission Title (Three parts for styling)</label>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <input type="text" name="settings[about_mission_title_main]" class="form-control" placeholder="Main text..." value="<?php echo htmlspecialchars($settings['about_mission_title_main'] ?? ''); ?>">
+            <input type="text" name="settings[about_mission_title_highlight]" class="form-control" style="border-color: #2d6b35; color: #2d6b35; font-weight: bold;" placeholder="Green/Italic part..." value="<?php echo htmlspecialchars($settings['about_mission_title_highlight'] ?? ''); ?>">
+            <input type="text" name="settings[about_mission_title_end]" class="form-control" placeholder="End text..." value="<?php echo htmlspecialchars($settings['about_mission_title_end'] ?? ''); ?>">
+          </div>
         </div>
         <div class="form-group">
           <label>Mission Description</label>
@@ -201,8 +209,12 @@ while($row = $res->fetch_assoc()) {
           <input type="text" name="settings[about_leader_eyebrow]" class="form-control" value="<?php echo htmlspecialchars($settings['about_leader_eyebrow'] ?? ''); ?>">
         </div>
         <div class="form-group">
-          <label>Section Title</label>
-          <textarea name="settings[about_leader_title]" class="form-control tinymce-editor" rows="2"><?php echo htmlspecialchars($settings['about_leader_title'] ?? ''); ?></textarea>
+          <label>Section Title (Three parts for styling)</label>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <input type="text" name="settings[about_leader_title_main]" class="form-control" placeholder="Main text..." value="<?php echo htmlspecialchars($settings['about_leader_title_main'] ?? ''); ?>">
+            <input type="text" name="settings[about_leader_title_highlight]" class="form-control" style="border-color: #2d6b35; color: #2d6b35; font-weight: bold;" placeholder="Green/Italic part..." value="<?php echo htmlspecialchars($settings['about_leader_title_highlight'] ?? ''); ?>">
+            <input type="text" name="settings[about_leader_title_end]" class="form-control" placeholder="End text..." value="<?php echo htmlspecialchars($settings['about_leader_title_end'] ?? ''); ?>">
+          </div>
         </div>
         <div class="form-group">
           <label>Paragraph 1</label>
@@ -222,8 +234,12 @@ while($row = $res->fetch_assoc()) {
           <input type="text" name="settings[about_partners_eyebrow]" class="form-control" value="<?php echo htmlspecialchars($settings['about_partners_eyebrow'] ?? ''); ?>">
         </div>
         <div class="form-group">
-          <label>Title</label>
-          <input type="text" name="settings[about_partners_title]" class="form-control" value="<?php echo htmlspecialchars($settings['about_partners_title'] ?? ''); ?>">
+          <label>Title (Three parts for styling)</label>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <input type="text" name="settings[about_partners_title_main]" class="form-control" placeholder="Main text..." value="<?php echo htmlspecialchars($settings['about_partners_title_main'] ?? ''); ?>">
+            <input type="text" name="settings[about_partners_title_highlight]" class="form-control" style="border-color: #2d6b35; color: #2d6b35; font-weight: bold;" placeholder="Green/Italic part..." value="<?php echo htmlspecialchars($settings['about_partners_title_highlight'] ?? ''); ?>">
+            <input type="text" name="settings[about_partners_title_end]" class="form-control" placeholder="End text..." value="<?php echo htmlspecialchars($settings['about_partners_title_end'] ?? ''); ?>">
+          </div>
         </div>
       </div>
 

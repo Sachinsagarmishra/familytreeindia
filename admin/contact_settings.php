@@ -65,8 +65,12 @@ foreach($contact_keys as $key) {
           <input type="text" name="settings[contact_hero_eyebrow]" class="form-control" value="<?php echo htmlspecialchars($settings['contact_hero_eyebrow']); ?>">
         </div>
         <div class="form-group">
-          <label>Hero Title (Use Bold/Italic for styling)</label>
-          <textarea name="settings[contact_hero_title]" class="form-control tinymce-editor" rows="2"><?php echo htmlspecialchars($settings['contact_hero_title']); ?></textarea>
+          <label>Hero Title (Three parts for styling)</label>
+          <div style="display: flex; flex-direction: column; gap: 8px;">
+            <input type="text" name="settings[contact_hero_title_main]" class="form-control" placeholder="Main text..." value="<?php echo htmlspecialchars($settings['contact_hero_title_main']); ?>">
+            <input type="text" name="settings[contact_hero_title_highlight]" class="form-control" style="border-color: #2d6b35; color: #2d6b35; font-weight: bold;" placeholder="Green/Italic part..." value="<?php echo htmlspecialchars($settings['contact_hero_title_highlight']); ?>">
+            <input type="text" name="settings[contact_hero_title_end]" class="form-control" placeholder="End text..." value="<?php echo htmlspecialchars($settings['contact_hero_title_end']); ?>">
+          </div>
         </div>
         <div class="form-group">
           <label>Hero Subtext</label>
