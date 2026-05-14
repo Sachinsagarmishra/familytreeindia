@@ -11,11 +11,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $company = $conn->real_escape_string($_POST['company']);
     $interest = $conn->real_escape_string($_POST['interest']);
     $message = $conn->real_escape_string($_POST['message']);
-
     $ip = $_SERVER['REMOTE_ADDR'];
     $state = "Unknown";
     $source = "popup_form";
     
+    // Verify reCAPTCHA
+    $recaptcha_secret = $site['recaptcha_secret_key'];
+    $recaptcha_response = $_POST['g-recaptcha-response'];
+    
+    $verify_url = "https://www.google.com/recaptcha/api/siteverify?secret=$recaptcha_secret&response=$recaptcha_response";
+    $response = file_get_contents($verify_url);
+    $response_keys = json_decode($response, true);
+    
+    if(!$response_keys["success"]) {
+        echo json_encode(["status" => "error", "message" => "reCAPTCHA verification failed. Please try again."]);
+        exit;
+    }
+
     // Simple Geolocation
     $geo = file_get_contents("http://ip-api.com/json/$ip?fields=regionName");
     if($geo) {

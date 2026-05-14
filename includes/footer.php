@@ -110,6 +110,9 @@
           <label>Message (Optional)</label>
           <textarea name="message" rows="3" placeholder="Tell us more..."></textarea>
         </div>
+        <div class="form-group" style="margin-bottom: 15px;">
+          <div class="g-recaptcha" data-sitekey="<?php echo $site['recaptcha_site_key']; ?>"></div>
+        </div>
         <button type="submit" class="btn-y" style="width: 100%;">Submit Inquiry</button>
         <div id="donateFeedback" style="margin-top: 15px; font-size: 0.9rem; padding: 12px; border-radius: 6px; display: none;"></div>
       </form>
@@ -148,9 +151,14 @@
     }
   </style>
 
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script src="<?php echo SITE_URL; ?>/js/script.js"></script>
   <?php if(isset($extraJS)): foreach($extraJS as $js): ?>
+  <?php if(strpos($js, 'http') === 0): ?>
+  <script src="<?php echo $js; ?>"></script>
+  <?php else: ?>
   <script src="<?php echo SITE_URL; ?>/js/<?php echo $js; ?>"></script>
+  <?php endif; ?>
   <?php endforeach; endif; ?>
 </body>
 </html>

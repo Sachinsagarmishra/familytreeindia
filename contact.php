@@ -4,7 +4,7 @@ require_once 'includes/MailHelper.php';
 
 $pageTitle = "Contact Us";
 $extraCSS = ["contact.css"];
-$extraJS = ["contact.js"];
+$extraJS = ["contact.js", "https://www.google.com/recaptcha/api.js"];
 $navClass = "cont-nav";
 
 $msg = "";
@@ -29,32 +29,45 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['submit_form'])) {
         if(isset($geo_data['regionName'])) $state = $geo_data['regionName'];
     }
 
-    // Save to database
-    $sql = "INSERT INTO leads (name, email, phone, company, interest, message, state, source, ip_address) 
-            VALUES ('$name', '$email', '$phone', '$company', '$interest', '$message', '$state', '$source', '$ip')";
+    // Verify reCAPTCHA
+    $recaptcha_secret = $site['recaptcha_secret_key'];
+    $recaptcha_response = $_POST['g-recaptcha-response'];
     
-    if ($conn->query($sql)) {
-        // Send Email
-        $subject = "New Contact Lead: $name ($interest)";
-        $body = "<h2>New Lead from Website</h2>
-                 <p><strong>Name:</strong> $name</p>
-                 <p><strong>Email:</strong> $email</p>
-                 <p><strong>Phone:</strong> $phone</p>
-                 <p><strong>Company:</strong> $company</p>
-                 <p><strong>Interest:</strong> $interest</p>
-                 <p><strong>Message:</strong> $message</p>
-                 <hr>
-                 <p><strong>State:</strong> $state</p>
-                 <p><strong>Source:</strong> $source</p>
-                 <p><strong>IP:</strong> $ip</p>";
-        
-        $mailResult = MailHelper::send($site['contact_email'], $subject, $body);
-        
-        $msg = "Thank you! Your message has been sent successfully.";
-        $status = "success";
-    } else {
-        $msg = "Sorry, something went wrong. Please try again.";
+    $verify_url = "https://www.google.com/recaptcha/api/siteverify?secret=$recaptcha_secret&response=$recaptcha_response";
+    $response = file_get_contents($verify_url);
+    $response_keys = json_decode($response, true);
+    
+    if(!$response_keys["success"]) {
+        $msg = "Please complete the reCAPTCHA to prove you're not a robot.";
         $status = "error";
+    } else {
+        // Save to database
+        $sql = "INSERT INTO leads (name, email, phone, company, interest, message, state, source, ip_address) 
+                VALUES ('$name', '$email', '$phone', '$company', '$interest', '$message', '$state', '$source', '$ip')";
+        
+        if ($conn->query($sql)) {
+            // Send Email
+            $subject = "New Contact Lead: $name ($interest)";
+            $body = "<h2>New Lead from Website</h2>
+                     <p><strong>Name:</strong> $name</p>
+                     <p><strong>Email:</strong> $email</p>
+                     <p><strong>Phone:</strong> $phone</p>
+                     <p><strong>Company:</strong> $company</p>
+                     <p><strong>Interest:</strong> $interest</p>
+                     <p><strong>Message:</strong> $message</p>
+                     <hr>
+                     <p><strong>State:</strong> $state</p>
+                     <p><strong>Source:</strong> $source</p>
+                     <p><strong>IP:</strong> $ip</p>";
+            
+            $mailResult = MailHelper::send($site['contact_email'], $subject, $body);
+            
+            $msg = "Thank you! Your message has been sent successfully.";
+            $status = "success";
+        } else {
+            $msg = "Sorry, something went wrong. Please try again.";
+            $status = "error";
+        }
     }
 }
 
@@ -159,6 +172,13 @@ include_once 'includes/header.php';
             <label for="message"><?php echo isset($site['contact_form_message_label']) ? htmlspecialchars($site['contact_form_message_label']) : 'Comments (optional)'; ?></label>
             <textarea id="message" name="message" rows="4" placeholder="<?php echo isset($site['contact_form_message_placeholder']) ? htmlspecialchars($site['contact_form_message_placeholder']) : 'How can we help you?'; ?>"></textarea>
           </div>
+          
+          <?php if(isset($site['recaptcha_site_key'])): ?>
+          <div class="form-group" style="margin-bottom: 20px;">
+            <div class="g-recaptcha" data-sitekey="<?php echo $site['recaptcha_site_key']; ?>"></div>
+          </div>
+          <?php endif; ?>
+
           <button type="submit" name="submit_form" class="btn-y"><?php echo isset($site['contact_form_submit_text']) ? htmlspecialchars($site['contact_form_submit_text']) : 'Send Message'; ?></button>
         </form>
       </div>
