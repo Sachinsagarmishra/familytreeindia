@@ -17,6 +17,12 @@
         </a>
       </li>
       <li class="nav-item-admin">
+        <a href="site_settings.php" class="nav-link-admin <?php echo ($activePage == 'site_settings') ? 'active' : ''; ?>">
+          <i class="fa-solid fa-sliders"></i>
+          <span>General Settings</span>
+        </a>
+      </li>
+      <li class="nav-item-admin">
         <a href="leads.php" class="nav-link-admin <?php echo ($activePage == 'leads') ? 'active' : ''; ?>">
           <i class="fa-solid fa-envelope-open-text"></i>
           <span>Contact Leads</span>
