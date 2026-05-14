@@ -115,10 +115,10 @@ $partners = $conn->query("SELECT * FROM partners ORDER BY order_index ASC, id DE
 </main>
 
 <!-- ADD MODAL -->
-<div id="addModal" class="lead-modal" style="display:none; align-items: center; justify-content: center;">
-  <div class="lead-modal-content" style="max-width: 450px;">
-    <button class="lead-modal-close" onclick="document.getElementById('addModal').style.display='none'">✕</button>
-    <h3 style="font-family: 'Fraunces', serif; margin-bottom: 20px;">Add New Partner</h3>
+<div id="addModal" class="lead-modal">
+  <div class="lead-modal-content">
+    <button class="lead-modal-close" onclick="closeModal()">✕</button>
+    <h3>Add New Partner</h3>
     <form method="POST" action="" enctype="multipart/form-data">
       <div class="form-group">
         <label>Partner Name</label>
@@ -134,10 +134,20 @@ $partners = $conn->query("SELECT * FROM partners ORDER BY order_index ASC, id DE
 </div>
 
 <script>
+const addModal = document.getElementById('addModal');
+
+function openModal() {
+  addModal.classList.add('active');
+}
+
+function closeModal() {
+  addModal.classList.remove('active');
+}
+
 // Close on outside click
 window.onclick = function(event) {
-  if (event.target == document.getElementById('addModal')) {
-    document.getElementById('addModal').style.display = 'none';
+  if (event.target == addModal) {
+    closeModal();
   }
 }
 </script>
