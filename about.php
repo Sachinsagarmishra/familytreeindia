@@ -34,13 +34,13 @@ include_once 'includes/header.php';
       <div class="abt-photos abt-reveal">
         <div class="abt-photos-track">
           <div class="abt-photo">
-            <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_intro_img1'] ?? '4.jpeg'; ?>" alt="School students participating in tree plantation drive in Bihar" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_intro_img1'] ?? '4.jpeg'; ?>" alt="School students participating in tree plantation drive in Bihar" fetchpriority="high" />
           </div>
           <div class="abt-photo abt-photo-tall">
-            <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_intro_img2'] ?? 'twogirlplanting.jpeg'; ?>" alt="Two young students planting a native sapling together" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_intro_img2'] ?? 'twogirlplanting.jpeg'; ?>" alt="Two young students planting a native sapling together" fetchpriority="high" />
           </div>
           <div class="abt-photo">
-            <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_intro_img3'] ?? '11.jpeg'; ?>" alt="Family Tree Foundation green campus initiative" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_intro_img3'] ?? '11.jpeg'; ?>" alt="Family Tree Foundation green campus initiative" fetchpriority="high" />
           </div>
           <!-- Mobile only marquee images -->
           <?php for($i=1; $i<=8; $i++): $k = "about_marquee_img$i"; ?>
