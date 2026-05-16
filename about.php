@@ -186,18 +186,39 @@ include_once 'includes/header.php';
         if ($partners_res && $partners_res->num_rows > 0):
           while($p = $partners_res->fetch_assoc()):
             // Check if it's a new upload (img/partners/) or legacy (Icons/black/)
-            $logo_path = (file_exists("img/partners/" . $p['logo'])) 
-                        ? SITE_URL . "/img/partners/" . $p['logo'] 
-                        : SITE_URL . "/Icons/black/" . $p['logo'];
+            $logo = $p['logo'];
+            $logo_path = SITE_URL . "/Icons/" . $logo; // Default fallback
+
+            if (file_exists("img/partners/" . $logo)) {
+                $logo_path = SITE_URL . "/img/partners/" . $logo;
+            } else {
+                // Try to map to the white/colored PNGs in Icons/
+                $basename = pathinfo($logo, PATHINFO_FILENAME);
+                $mapping = [
+                    'Government-of-Bihar' => 'govt-of-bihar',
+                    'Bihar-Education-Project-Council' => 'biahr-education',
+                    'ministry of education' => 'ministry-of-education',
+                    'aiims patna' => 'aiims_patna',
+                    'aiims-delhi' => 'aiims-delhi',
+                    'cmx-foundation' => 'CMX-foundation'
+                ];
+                
+                $search_name = isset($mapping[$basename]) ? $mapping[$basename] : $basename;
+                if (file_exists("Icons/" . $search_name . ".png")) {
+                    $logo_path = SITE_URL . "/Icons/" . $search_name . ".png";
+                } else if (file_exists("Icons/" . $logo)) {
+                    $logo_path = SITE_URL . "/Icons/" . $logo;
+                }
+            }
         ?>
         <div class="abt-partner-logo">
           <img src="<?php echo $logo_path; ?>" alt="<?php echo htmlspecialchars($p['name']); ?>" />
         </div>
         <?php endwhile; else: ?>
           <!-- Fallback if table is empty but seeding failed -->
-          <div class="abt-partner-logo"><img src="<?php echo SITE_URL; ?>/Icons/black/Bihar-Education-Project-Council.svg" alt="Partner" /></div>
-          <div class="abt-partner-logo"><img src="<?php echo SITE_URL; ?>/Icons/black/aiims-delhi.svg" alt="Partner" /></div>
-          <div class="abt-partner-logo"><img src="<?php echo SITE_URL; ?>/Icons/black/Government-of-Bihar.svg" alt="Partner" /></div>
+          <div class="abt-partner-logo"><img src="<?php echo SITE_URL; ?>/Icons/biahr-education.png" alt="Partner" /></div>
+          <div class="abt-partner-logo"><img src="<?php echo SITE_URL; ?>/Icons/aiims-delhi.png" alt="Partner" /></div>
+          <div class="abt-partner-logo"><img src="<?php echo SITE_URL; ?>/Icons/govt-of-bihar.png" alt="Partner" /></div>
         <?php endif; ?>
       </div>
     </div>
