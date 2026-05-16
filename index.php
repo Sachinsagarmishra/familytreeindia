@@ -67,41 +67,21 @@ include_once 'includes/header.php';
     <div class="partners-row">
       <div class="marquee-content">
         <?php 
-        $partners_res = $conn->query("SELECT * FROM partners ORDER BY order_index ASC, id DESC");
-        $all_partners = [];
-        if ($partners_res && $partners_res->num_rows > 0) {
-            while($p = $partners_res->fetch_assoc()) $all_partners[] = $p;
-        }
+        $white_logos = [
+          ['name' => 'Govt of Bihar', 'file' => 'govt-of-bihar.png'],
+          ['name' => 'Bihar Education', 'file' => 'biahr-education.png'],
+          ['name' => 'Ministry of Education', 'file' => 'ministry-of-education.png'],
+          ['name' => 'AIIMS Patna', 'file' => 'aiims_patna.png'],
+          ['name' => 'AIIMS Delhi', 'file' => 'aiims-delhi.png'],
+          ['name' => 'CMX Foundation', 'file' => 'CMX-foundation.png']
+        ];
 
         // Render twice for continuous loop
         for($i=0; $i<2; $i++):
-          foreach($all_partners as $p):
-            $logo = $p['logo'];
-            $logo_path = SITE_URL . "/Icons/" . $logo; // Default fallback
-
-            if (file_exists("img/partners/" . $logo)) {
-                $logo_path = SITE_URL . "/img/partners/" . $logo;
-            } else {
-                // Try to map to the white/colored PNGs in Icons/
-                $basename = pathinfo($logo, PATHINFO_FILENAME);
-                $mapping = [
-                    'Government-of-Bihar' => 'govt-of-bihar',
-                    'Bihar-Education-Project-Council' => 'biahr-education',
-                    'ministry of education' => 'ministry-of-education',
-                    'aiims patna' => 'aiims_patna',
-                    'aiims-delhi' => 'aiims-delhi',
-                    'cmx-foundation' => 'CMX-foundation'
-                ];
-                
-                $search_name = isset($mapping[$basename]) ? $mapping[$basename] : $basename;
-                if (file_exists("Icons/" . $search_name . ".png")) {
-                    $logo_path = SITE_URL . "/Icons/" . $search_name . ".png";
-                } else if (file_exists("Icons/" . $logo)) {
-                    $logo_path = SITE_URL . "/Icons/" . $logo;
-                }
-            }
+          foreach($white_logos as $l):
+            $logo_path = SITE_URL . "/Icons/" . $l['file'];
         ?>
-        <img src="<?php echo $logo_path; ?>" alt="<?php echo htmlspecialchars($p['name']); ?>" class="partner-logo" loading="lazy">
+        <img src="<?php echo $logo_path; ?>" alt="<?php echo htmlspecialchars($l['name']); ?>" class="partner-logo" loading="lazy">
         <?php endforeach; endfor; ?>
       </div>
     </div>
