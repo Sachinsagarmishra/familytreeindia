@@ -28,4 +28,16 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc><?php echo SITE_URL; ?>/privacy</loc>
+    <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc><?php echo SITE_URL; ?>/terms</loc>
+    <lastmod><?php echo date('Y-m-d'); ?></lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
