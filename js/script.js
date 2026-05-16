@@ -251,6 +251,16 @@
         }
 
         if (result.status === "success") {
+          // Track conversion in GA4
+          if (typeof gtag === 'function') {
+            gtag('event', 'generate_lead', {
+              'event_category': 'Engagement',
+              'event_label': 'Donation Inquiry',
+              'value': 1,
+              'referrer_source': document.referrer || 'Direct'
+            });
+          }
+
           donateForm.reset();
           setTimeout(() => {
             if (donateModal) donateModal.classList.remove("active");
