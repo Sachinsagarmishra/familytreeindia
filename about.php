@@ -17,6 +17,20 @@ include_once 'includes/header.php';
   },
   "description": "Founder of Family Tree Foundation, dedicated to building permanent green cover through schools and communities in India.",
   "image": "<?php echo SITE_URL; ?>/img/<?php echo $site['about_founder_img'] ?? 'ajay-sinha-founder.jpeg'; ?>"
+},
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "<?php echo SITE_URL; ?>"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "About Us"
+  }]
 }
 </script>
 <?php

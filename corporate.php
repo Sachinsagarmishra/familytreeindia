@@ -45,6 +45,20 @@ include_once 'includes/header.php';
       }
     ]
   }
+},
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "<?php echo SITE_URL; ?>"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Corporate Partnerships"
+  }]
 }
 </script>
 <?php 

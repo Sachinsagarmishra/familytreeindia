@@ -27,7 +27,17 @@ include_once 'includes/header.php';
       "@type": "Answer",
       "text": "Corporates can partner with us for ESG-aligned green impact by adopting a school, block, or district for large-scale environmental initiatives."
     }
-  }]
+},
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "<?php echo SITE_URL; ?>",
+  "name": "Family Tree India",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "<?php echo SITE_URL; ?>/about?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
 }
 </script>
 <?php
