@@ -5,7 +5,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="<?php echo htmlspecialchars($site['meta_description']); ?>" />
+  <meta name="description" content="<?php echo htmlspecialchars($site['meta_description'] ?? 'Family Tree Foundation is building permanent green cover through schools and communities in India.'); ?>" />
+  <meta name="ai-summary" content="<?php echo htmlspecialchars($site['meta_description'] ?? 'Family Tree Foundation is an environmental non-profit building permanent green cover through schools and communities in India.'); ?>" />
+  <meta name="author" content="Family Tree Foundation" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <link rel="canonical" href="<?php echo SITE_URL . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>" />
   
@@ -13,37 +15,50 @@
 
   <!-- Open Graph / Social Media -->
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="<?php echo SITE_URL; ?>" />
-  <meta property="og:title" content="<?php echo $site['site_title']; ?>" />
-  <meta property="og:description" content="<?php echo htmlspecialchars($site['meta_description']); ?>" />
+  <meta property="og:url" content="<?php echo SITE_URL . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>" />
+  <meta property="og:title" content="<?php echo isset($pageTitle) ? $pageTitle . " — " . $site['site_title'] : $site['site_title']; ?>" />
+  <meta property="og:description" content="<?php echo htmlspecialchars($site['meta_description'] ?? 'Building permanent green cover through schools and communities.'); ?>" />
   <meta property="og:image" content="<?php echo SITE_URL; ?>/img/hero.jpeg" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:url" content="<?php echo SITE_URL; ?>" />
-  <meta name="twitter:title" content="<?php echo $site['site_title']; ?>" />
-  <meta name="twitter:description" content="<?php echo htmlspecialchars($site['meta_description']); ?>" />
+  <meta name="twitter:url" content="<?php echo SITE_URL . parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH); ?>" />
+  <meta name="twitter:title" content="<?php echo isset($pageTitle) ? $pageTitle . " — " . $site['site_title'] : $site['site_title']; ?>" />
+  <meta name="twitter:description" content="<?php echo htmlspecialchars($site['meta_description'] ?? 'Building permanent green cover through schools and communities.'); ?>" />
   <meta name="twitter:image" content="<?php echo SITE_URL; ?>/img/hero.jpeg" />
 
   <!-- JSON-LD Structured Data (Schema.org) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": "NonprofitOrganization",
     "name": "<?php echo $site['site_title']; ?>",
+    "alternateName": "Family Tree Foundation",
     "url": "<?php echo SITE_URL; ?>",
     "logo": "<?php echo SITE_URL; ?>/img/logo.png",
+    "description": "<?php echo htmlspecialchars($site['meta_description'] ?? 'An environmental non-profit building permanent green cover through schools and communities in India.'); ?>",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "<?php echo htmlspecialchars($site['address']); ?>",
+      "addressLocality": "Mumbai",
+      "addressRegion": "Maharashtra",
+      "postalCode": "400049",
+      "addressCountry": "IN"
+    },
     "contactPoint": {
       "@type": "ContactPoint",
       "telephone": "<?php echo $site['contact_phone']; ?>",
       "contactType": "customer service",
-      "email": "<?php echo $site['contact_email']; ?>"
+      "email": "<?php echo $site['contact_email']; ?>",
+      "areaServed": "IN",
+      "availableLanguage": ["English", "Hindi"]
     },
     "sameAs": [
-      "<?php echo $site['facebook_url']; ?>",
-      "<?php echo $site['instagram_url']; ?>",
-      "<?php echo $site['linkedin_url']; ?>"
-    ]
+      "<?php echo $site['facebook_url'] ?? ''; ?>",
+      "<?php echo $site['instagram_url'] ?? ''; ?>",
+      "<?php echo $site['linkedin_url'] ?? ''; ?>"
+    ],
+    "nonprofitStatus": "Nonprofit501c3"
   }
   </script>
   <script type="application/ld+json">

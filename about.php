@@ -5,6 +5,22 @@ $extraJS = ["about.js"];
 $navClass = "abt-nav";
 include_once 'includes/header.php'; 
 ?>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "<?php echo $site['about_founder_name'] ?? 'Ajay Sinha'; ?>",
+  "jobTitle": "<?php echo $site['about_founder_designation'] ?? 'Founder'; ?>",
+  "affiliation": {
+    "@type": "NonprofitOrganization",
+    "name": "Family Tree Foundation"
+  },
+  "description": "Founder of Family Tree Foundation, dedicated to building permanent green cover through schools and communities in India.",
+  "image": "<?php echo SITE_URL; ?>/img/<?php echo $site['about_founder_img'] ?? 'ajay-sinha-founder.jpeg'; ?>"
+}
+</script>
+<?php
+?>
 
   <!-- SECTION 1: ABOUT INTRO + 3 PHOTOS -->
   <section class="abt-intro">
@@ -18,13 +34,13 @@ include_once 'includes/header.php';
       <div class="abt-photos abt-reveal">
         <div class="abt-photos-track">
           <div class="abt-photo">
-            <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_intro_img1'] ?? '4.jpeg'; ?>" alt="About Family Tree" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_intro_img1'] ?? '4.jpeg'; ?>" alt="School students participating in tree plantation drive in Bihar" loading="lazy" />
           </div>
           <div class="abt-photo abt-photo-tall">
-            <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_intro_img2'] ?? 'twogirlplanting.jpeg'; ?>" alt="About Family Tree" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_intro_img2'] ?? 'twogirlplanting.jpeg'; ?>" alt="Two young students planting a native sapling together" loading="lazy" />
           </div>
           <div class="abt-photo">
-            <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_intro_img3'] ?? '11.jpeg'; ?>" alt="About Family Tree" loading="lazy" />
+            <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_intro_img3'] ?? '11.jpeg'; ?>" alt="Family Tree Foundation green campus initiative" loading="lazy" />
           </div>
           <!-- Mobile only marquee images -->
           <?php for($i=1; $i<=8; $i++): $k = "about_marquee_img$i"; ?>
@@ -125,7 +141,7 @@ include_once 'includes/header.php';
         </div>
       </div>
       <div class="abt-promise-img abt-reveal">
-        <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_founder_img'] ?? 'ajay-sinha-founder.jpeg'; ?>" alt="Founder" loading="lazy" />
+        <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_founder_img'] ?? 'ajay-sinha-founder.jpeg'; ?>" alt="Ajay Sinha, Founder of Family Tree Foundation" loading="lazy" />
       </div>
     </div>
   </section>
@@ -134,7 +150,7 @@ include_once 'includes/header.php';
   <section class="abt-promise" id="leadership">
     <div class="abt-promise-inner">
       <div class="abt-promise-img abt-reveal">
-        <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_leader_img'] ?? 'founderimage.jpg'; ?>" alt="Leadership" loading="lazy" />
+        <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_leader_img'] ?? 'founderimage.jpg'; ?>" alt="Leadership team at Family Tree Foundation" loading="lazy" />
         <div class="abt-promise-overlay">
           <div class="abt-founder-name"><?php echo htmlspecialchars($site['about_leader_name'] ?? ''); ?></div>
           <div class="abt-founder-org"><?php echo htmlspecialchars($site['about_leader_designation'] ?? ''); ?></div>

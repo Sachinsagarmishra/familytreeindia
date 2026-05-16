@@ -5,6 +5,50 @@ $extraJS = ["corporate.js"];
 $navClass = "corp-nav";
 include_once 'includes/header.php'; 
 ?>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Corporate CSR Tree Plantation",
+  "provider": {
+    "@type": "NonprofitOrganization",
+    "name": "Family Tree Foundation"
+  },
+  "areaServed": "Bihar, India",
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Corporate Partnership Options",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Adopt a School",
+          "description": "Support greening within a single government school campus including 50–100 native and climate-adapted trees."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Adopt a Block / Cluster",
+          "description": "Support implementation across multiple schools within a block or cluster."
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Adopt a District",
+          "description": "Enable large-scale environmental impact across an entire district."
+        }
+      }
+    ]
+  }
+}
+</script>
+<?php 
+?>
 
   <!-- CORP HERO -->
   <section class="corp-hero">

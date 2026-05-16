@@ -2,6 +2,36 @@
 $pageTitle = "Home";
 include_once 'includes/header.php'; 
 ?>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [{
+    "@type": "Question",
+    "name": "What is the mission of Family Tree Foundation?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Family Tree Foundation's mission is to build permanent green cover through schools and communities in India by assigning each tree to a student guardian."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How does the tree plantation program work?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Our model involves six steps: Sponsor, Plan, Plant, Assigned (to a student), Monitored (via geo-tagging), and Reported (quarterly impact reports)."
+    }
+  }, {
+    "@type": "Question",
+    "name": "How can corporate partners get involved?",
+    "acceptedAnswer": {
+      "@type": "Answer",
+      "text": "Corporates can partner with us for ESG-aligned green impact by adopting a school, block, or district for large-scale environmental initiatives."
+    }
+  }]
+}
+</script>
+<?php
+?>
 
   <!-- HERO -->
   <section class="hero" style="<?php if(isset($site['home_hero_bg'])) echo "background-image: linear-gradient(rgba(15, 35, 16, 0.4), rgba(15, 35, 16, 0.4)), url('".SITE_URL."/img/".$site['home_hero_bg']."');"; ?>">
@@ -50,7 +80,7 @@ include_once 'includes/header.php';
                         ? SITE_URL . "/img/partners/" . $p['logo'] 
                         : SITE_URL . "/Icons/" . $p['logo']; // Note: index uses /Icons/
         ?>
-          <img src="<?php echo $logo_path; ?>" alt="<?php echo htmlspecialchars($p['name']); ?>" class="partner-logo">
+        <img src="<?php echo $logo_path; ?>" alt="<?php echo htmlspecialchars($p['name']); ?>" class="partner-logo" loading="lazy">
         <?php endforeach; endfor; ?>
       </div>
     </div>

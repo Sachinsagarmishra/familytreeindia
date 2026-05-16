@@ -1,6 +1,7 @@
 RewriteEngine On
 Options -MultiViews
 RewriteBase /
+RewriteRule ^sitemap\.xml$ sitemap.php [L]
 
 # Add SVG MIME Type support
 AddType image/svg+xml .svg .svgz
