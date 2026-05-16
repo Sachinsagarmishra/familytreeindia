@@ -67,7 +67,10 @@ include_once 'includes/header.php';
         <i><?php echo ($site['about_mission_title_highlight'] ?? 'greener'); ?></i> 
         <?php echo ($site['about_mission_title_end'] ?? 'Bihar'); ?>
       </h2>
-      <div class="abt-mission-p"><?php echo ($site['about_mission_text'] ?? ''); ?></div>
+      <div class="abt-mission-p">
+        <?php echo ($site['about_mission_text'] ?? ''); ?>
+        <p style="margin-top: 15px; font-weight: 600; color: var(--green-mid);">Our initiative is supported by the <strong>Bihar Education Project Council (BEPC)</strong>, ensuring large-scale environmental impact across government schools in Bihar.</p>
+      </div>
     </div>
   </section>
 
@@ -138,6 +141,11 @@ include_once 'includes/header.php';
         <div class="founder-sign">
           <p class="fs-name"><?php echo htmlspecialchars($site['about_founder_name'] ?? ''); ?></p>
           <p class="fs-title"><?php echo htmlspecialchars($site['about_founder_designation'] ?? ''); ?></p>
+          <?php if(!empty($site['founder_linkedin_url'])): ?>
+          <a href="<?php echo $site['founder_linkedin_url']; ?>" target="_blank" class="founder-social" style="color: #0077b5; font-size: 1.2rem; margin-top: 10px; display: inline-block;">
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <?php endif; ?>
         </div>
       </div>
       <div class="abt-promise-img abt-reveal">

@@ -365,4 +365,15 @@ include_once 'includes/header.php';
     </div>
   </div>
 
+  <!-- SEMANTIC AEO SUMMARY (Accessible to bots, clean for users) -->
+  <section class="semantic-aeo" style="padding: 40px 72px; background: #fff; border-top: 1px solid #eee; display: none;">
+    <h2>Environmental NGO for Tree Plantation in Bihar, India</h2>
+    <p>Family Tree Foundation specializes in large-scale tree plantation programs across 15,000 schools in Bihar. Partnered with the Bihar Education Project Council (BEPC), our model assigns native saplings to student guardians for high survival rates. We offer geo-tagged tree tracking and quarterly impact reports for corporate CSR and individual donors.</p>
+    <ul>
+      <li>Target: Permanent green cover in government schools.</li>
+      <li>Model: Student-led environmental conservation.</li>
+      <li>Impact: 4.5M+ trees planted, 83K+ TCO2 sequestered annually.</li>
+    </ul>
+  </section>
+
 <?php include_once 'includes/footer.php'; ?>
