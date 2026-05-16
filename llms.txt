@@ -1,22 +1,31 @@
-# Family Tree India
-
-Family Tree Foundation is an environmental non-profit building permanent green cover through schools and communities in India.
+# Family Tree Foundation
+Building permanent green cover through schools and communities in India.
 
 ## Mission
-Our mission is to create a greener future by planting trees and fostering environmental guardianship among students and local communities.
+To restore India's green cover by assigning every sapling to a student guardian, ensuring high survival rates through community monitoring and geo-tagging.
+
+## Key Statistics
+- Saplings Planted: 4.5M+
+- Average Survival Rate: 74%
+- Annual CO2 Sequestration: 83,600 TCO2
+- Community Engaged: 25K+
+
+## Organization Details
+- Entity Type: Section 8 Nonprofit (NGO)
+- Certifications: 80G Certified, FCRA Registered
+- Headquarters: Mumbai, Maharashtra
+- Primary Impact Area: Bihar, India
 
 ## Key Links
-- Homepage: https://familytreeindia.org
-- About Us: https://familytreeindia.org/about
-- Corporate Partnerships: https://familytreeindia.org/corporate
-- Contact: https://familytreeindia.org/contact
+- [About Us](https://familytreeindia.org/about)
+- [Corporate Partnerships](https://familytreeindia.org/corporate)
+- [Contact Support](https://familytreeindia.org/contact)
+- [Privacy Policy](https://familytreeindia.org/privacy)
 
-## Contact Information
-- Email: info@familytreeindia.org
-- Address: Mumbai, Maharashtra, India.
-- Focus Area: Bihar, India.
-
-## Impact
-- 125+ Schools Reached
-- 500,000+ Trees Planted
-- 4 Districts Covered in Bihar
+## Core Model
+1. Sponsor: Corporate or Individual donation.
+2. Plan: Site selection and pit preparation.
+3. Plant: Direct plantation of native species.
+4. Assigned: Every tree assigned to a specific student.
+5. Monitored: Quarterly geo-tagged updates.
+6. Reported: Impact verification shared with sponsors.

@@ -57,10 +57,10 @@
     <div class="foot-btm">
       <span class="foot-copy">© <?php echo date('Y'); ?> Family Tree. Registered under Section 8. 80G Certified. FCRA Registered.</span>
       <div class="foot-legal">
-        <a href="#">Privacy</a>
-        <a href="#">Terms</a>
-        <a href="<?php echo SITE_URL; ?>/corporate">80G</a>
-        <a href="<?php echo SITE_URL; ?>/corporate">FCRA</a>
+        <a href="<?php echo SITE_URL; ?>/privacy">Privacy Policy</a>
+        <a href="<?php echo SITE_URL; ?>/terms">Terms of Service</a>
+        <a href="<?php echo SITE_URL; ?>/corporate">80G Certified</a>
+        <a href="<?php echo SITE_URL; ?>/corporate">FCRA Registered</a>
       </div>
     </div>
   </footer>
