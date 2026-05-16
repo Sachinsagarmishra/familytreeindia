@@ -2315,17 +2315,12 @@ footer {
   .part-grid {
     grid-template-columns: 1fr;
     gap: 12px;
-    display: flex;
-    flex-direction: column;
   }
 
   .part-card {
     aspect-ratio: 1.2 / 1;
   }
 
-  .pc-individuals {
-    order: -1;
-  }
 
   .pc-body {
     padding: 24px;
@@ -2336,7 +2331,7 @@ footer {
   }
 
   .bg3 {
-    background-position: center top;
+    background-position: center bottom;
   }
 
   .pc-sub {

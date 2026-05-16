@@ -283,7 +283,7 @@ include_once 'includes/header.php';
           <a href="<?php echo SITE_URL; ?>/contact" class="pc-link">Join Program</a>
         </div>
       </div>
-      <div class="part-card pc-individuals">
+      <div class="part-card">
         <div class="pc-bg bg3"></div>
         <div class="pc-ov"></div>
         <div class="pc-body">
