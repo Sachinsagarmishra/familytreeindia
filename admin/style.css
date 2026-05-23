@@ -305,33 +305,63 @@ h1, h2, h3, h4, h5 {
 /* MOBILE HEADER */
 .mobile-admin-header {
   display: none;
-  background: var(--green-dark);
-  padding: 14px 20px;
+  background: #ffffff;
+  padding: 14px 24px;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
   z-index: 101;
-  color: #fff;
+  color: var(--black);
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.02);
 }
 
-.mob-title {
-  font-family: "Fraunces", serif;
+.mob-header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mob-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--yellow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: var(--black);
+  box-shadow: 0 2px 6px rgba(240, 193, 50, 0.25);
+  border: 2px solid #fff;
+}
+
+.mob-user-name {
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 0.95rem;
+  color: var(--black);
+  font-family: "Instrument Sans", sans-serif;
 }
 
 .menu-toggle {
   background: none;
   border: none;
-  color: #fff;
+  color: var(--black);
   font-size: 1.4rem;
   cursor: pointer;
-  padding: 5px;
+  padding: 6px;
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.2s ease;
 }
+
+.menu-toggle:active {
+  transform: scale(0.9);
+}
+
 
 /* SETTINGS PAGE */
 .settings-form-grid {
@@ -432,6 +462,31 @@ h1, h2, h3, h4, h5 {
   .stats-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  /* Premium Overlay & Scroll Lock when Sidebar Open */
+  body.sidebar-open {
+    overflow: hidden;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+    z-index: 150;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  body.sidebar-open::after {
+    opacity: 1;
+    pointer-events: auto;
   }
 }
 /* MODALS */

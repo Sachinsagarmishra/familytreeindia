@@ -9,15 +9,18 @@
     menuToggle.onclick = (e) => {
       e.stopPropagation();
       sidebar.classList.toggle('active');
+      document.body.classList.toggle('sidebar-open', sidebar.classList.contains('active'));
     };
 
     document.addEventListener('click', (e) => {
       if (sidebar.classList.contains('active') && !sidebar.contains(e.target) && e.target !== menuToggle) {
         sidebar.classList.remove('active');
+        document.body.classList.remove('sidebar-open');
       }
     });
   }
 </script>
+
 
 </body>
 </html>

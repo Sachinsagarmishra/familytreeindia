@@ -22,8 +22,13 @@ $admin_user = isset($_SESSION['admin_user']) ? $_SESSION['admin_user'] : 'Admin'
 <div class="admin-wrapper">
   <!-- MOBILE HEADER -->
   <header class="mobile-admin-header">
-    <div class="mob-title">Admin Panel</div>
-    <button id="menuToggle" class="menu-toggle">
+    <div class="mob-header-left">
+      <div class="mob-avatar">
+        <?php echo strtoupper(substr($admin_user, 0, 1)); ?>
+      </div>
+      <span class="mob-user-name"><?php echo htmlspecialchars($admin_user); ?></span>
+    </div>
+    <button id="menuToggle" class="menu-toggle" aria-label="Toggle Menu">
       <i class="fa-solid fa-bars"></i>
     </button>
   </header>
