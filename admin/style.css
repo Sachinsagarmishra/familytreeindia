@@ -445,11 +445,12 @@ h1, h2, h3, h4, h5 {
     transition: transform 0.3s ease;
     width: 260px;
     z-index: 200;
-    box-shadow: 15px 0 30px rgba(0,0,0,0.2);
+    box-shadow: none; /* Remove shadow when hidden to avoid spillover */
   }
   
   .sidebar.active {
     transform: translateX(0);
+    box-shadow: 15px 0 30px rgba(0,0,0,0.2); /* Show shadow only when menu is active */
   }
 
   .sidebar-brand span, .nav-link-admin span {
@@ -476,6 +477,15 @@ h1, h2, h3, h4, h5 {
   .stats-grid {
     grid-template-columns: 1fr;
     gap: 16px;
+  }
+
+  /* Force all grids and grid items to be single row blocks on mobile */
+  .settings-form-grid, .form-row-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .settings-form-grid > *, .form-row-grid > * {
+    grid-column: span 1 !important;
   }
 
   /* Premium Overlay & Scroll Lock when Sidebar Open */
