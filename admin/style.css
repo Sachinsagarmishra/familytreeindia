@@ -420,6 +420,19 @@ h1, h2, h3, h4, h5 {
 @media (max-width: 768px) {
   .mobile-admin-header {
     display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 60px;
+    z-index: 150;
+    background: #ffffff;
+    padding: 0 24px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.02);
   }
   
   .sidebar {
@@ -446,6 +459,7 @@ h1, h2, h3, h4, h5 {
   .main-content {
     margin-left: 0;
     padding: 24px;
+    padding-top: 84px; /* 60px header + 24px default padding */
   }
 
   .header-admin {
