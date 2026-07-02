@@ -150,17 +150,19 @@ include_once 'includes/header.php';
   <section class="abt-promise">
     <div class="abt-promise-inner founder-inner">
       <div class="abt-promise-body abt-reveal">
-        <h2 class="founder-h2"><?php echo ($site['about_founder_title'] ?? 'Founder'); ?></h2>
+        <p class="abt-eyebrow"><?php echo htmlspecialchars($site['about_founder_title'] ?? 'Founder'); ?></p>
+        <h2 class="abt-promise-h2"><?php echo rtrim(trim(htmlspecialchars($site['about_founder_name'] ?? 'Dr. Ajay Sinha')), ','); ?></h2>
+        <p class="abt-promise-subtitle" style="font-style: italic; color: var(--green-mid); margin-bottom: 20px; font-size: 1.1rem; font-weight: 500;">
+          <?php echo htmlspecialchars($site['about_founder_designation'] ?? ''); ?>
+        </p>
         <div class="abt-promise-p"><?php echo ($site['about_founder_text'] ?? ''); ?></div>
-        <div class="founder-sign">
-          <p class="fs-name"><?php echo htmlspecialchars($site['about_founder_name'] ?? ''); ?></p>
-          <p class="fs-title"><?php echo htmlspecialchars($site['about_founder_designation'] ?? ''); ?></p>
-          <?php if(!empty($site['founder_linkedin_url'])): ?>
-          <a href="<?php echo $site['founder_linkedin_url']; ?>" target="_blank" class="founder-social" style="color: #0077b5; font-size: 1.2rem; margin-top: 10px; display: inline-block;">
+        <?php if(!empty($site['founder_linkedin_url'])): ?>
+        <div style="margin-top: -10px; margin-bottom: 30px;">
+          <a href="<?php echo $site['founder_linkedin_url']; ?>" target="_blank" class="founder-social" style="color: #0077b5; font-size: 1.2rem; display: inline-block;">
             <i class="fa-brands fa-linkedin"></i>
           </a>
-          <?php endif; ?>
         </div>
+        <?php endif; ?>
       </div>
       <div class="abt-promise-img abt-reveal">
         <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_founder_img'] ?? 'ajay-sinha-founder.jpeg'; ?>" alt="Ajay Sinha, Founder of Family Tree Foundation" loading="lazy" />
@@ -193,13 +195,9 @@ include_once 'includes/header.php';
       </div>
       <div class="abt-promise-body abt-reveal">
         <p class="abt-eyebrow"><?php echo htmlspecialchars($site['about_leader_eyebrow'] ?? 'LEADERSHIP'); ?></p>
-        <h2 class="abt-promise-h2">
-          <?php echo ($site['about_leader_title_main'] ?? 'Leadership with'); ?> 
-          <i><?php echo ($site['about_leader_title_highlight'] ?? 'Impact'); ?></i> 
-          <?php echo ($site['about_leader_title_end'] ?? ''); ?>
-        </h2>
+        <h2 class="abt-promise-h2"><?php echo rtrim(trim(htmlspecialchars($site['about_leader_name'] ?? 'Riya Kriti')), ','); ?></h2>
         <p class="abt-promise-subtitle" style="font-style: italic; color: var(--green-mid); margin-bottom: 20px; font-size: 1.1rem; font-weight: 500;">
-          <?php echo htmlspecialchars($site['about_leader_name'] ?? ''); ?> — <?php echo htmlspecialchars($site['about_leader_designation'] ?? ''); ?>
+          <?php echo htmlspecialchars($site['about_leader_designation'] ?? ''); ?>
         </p>
         <div class="abt-promise-p"><?php echo ($site['about_leader_text1'] ?? ''); ?></div>
         <div class="abt-promise-p"><?php echo ($site['about_leader_text2'] ?? ''); ?></div>
