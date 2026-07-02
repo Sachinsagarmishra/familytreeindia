@@ -168,6 +168,27 @@ include_once 'includes/header.php';
     </div>
   </section>
 
+  <!-- SECTION: ADVISOR -->
+  <section class="abt-promise" id="advisor">
+    <div class="abt-promise-inner">
+      <div class="abt-promise-img abt-reveal">
+        <img src="<?php echo SITE_URL; ?>/img/Uma-Shankar-Jha.png" alt="Uma Shankar Jha, Joint Advisor in NHAI, Retd. Indian Forest Service Officer" loading="lazy" />
+        <div class="abt-promise-overlay">
+          <div class="abt-founder-name">Uma Shankar Jha</div>
+          <div class="abt-founder-org">Joint Advisor in NHAI, Retd. IFS</div>
+        </div>
+      </div>
+      <div class="abt-promise-body abt-reveal">
+        <p class="abt-eyebrow">ADVISOR</p>
+        <h2 class="abt-promise-h2">Uma Shankar Jha</h2>
+        <p class="abt-promise-subtitle" style="font-style: italic; color: var(--green-mid); margin-bottom: 20px; font-size: 1.1rem; font-weight: 500;">Joint Advisor in NHAI, Retd. Indian Forest Service Officer</p>
+        <div class="abt-promise-p">A veteran of the Indian Forest Service, he brings over 30 years of expertise in plantation management, wildlife conservation, and environmental policy. An M.Sc. Physics graduate and University Topper, he also holds a Post Graduate Diploma in Forestry from the Indira Gandhi National Forest Academy.</div>
+        <div class="abt-promise-p">He has held senior roles including Principal Chief Conservator of Forests, Chief Wildlife Warden, and Director of Social Forestry. His experience spans field operations and policy leadership across afforestation, biodiversity, and ecological planning.</div>
+        <div class="abt-promise-p">At Family Tree, he leads operations with a strong focus on sustainability and environmental stewardship</div>
+      </div>
+    </div>
+  </section>
+
   <!-- SECTION 3: LEADERSHIP WITH IMPACT -->
   <section class="abt-promise" id="leadership">
     <div class="abt-promise-inner">
