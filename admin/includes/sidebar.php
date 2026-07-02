@@ -1,7 +1,7 @@
   <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar">
     <div class="sidebar-brand">
-      <img src="../img/logo.png" alt="Family Tree">
+      <img src="../img/new-familytreeindia-logo.svg" alt="Family Tree">
     </div>
     <ul class="nav-menu">
       <li class="nav-item-admin">

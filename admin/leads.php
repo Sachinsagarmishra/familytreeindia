@@ -200,7 +200,7 @@ $result = $conn->query($sql);
           <?php else: ?>
             <tr>
               <td colspan="6" style="padding: 60px; text-align: center;">
-                <img src="../img/favicon.png" style="width: 40px; opacity: 0.1; margin-bottom: 12px;">
+                <img src="../img/favicon-new.png" style="width: 40px; opacity: 0.1; margin-bottom: 12px;">
                 <p style="color: rgba(0,0,0,0.3); font-weight: 600;">No submissions match your criteria.</p>
               </td>
             </tr>

@@ -53,7 +53,7 @@
     "name": "<?php echo $site['site_title']; ?>",
     "alternateName": "Family Tree Foundation",
     "url": "<?php echo SITE_URL; ?>",
-    "logo": "<?php echo SITE_URL; ?>/img/logo.png",
+    "logo": "<?php echo SITE_URL; ?>/img/new-familytreeindia-logo.svg",
     "description": "<?php echo htmlspecialchars($site['meta_description'] ?? 'An environmental non-profit building permanent green cover through schools and communities in India.'); ?>",
     "address": {
       "@type": "PostalAddress",
@@ -126,9 +126,9 @@
   <?php endforeach; endif; ?>
   
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo SITE_URL; ?>/img/favicon.png?v=2" />
-  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo SITE_URL; ?>/img/favicon.png?v=2" />
-  <link rel="apple-touch-icon" href="<?php echo SITE_URL; ?>/img/favicon.png?v=2" />
+  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo SITE_URL; ?>/img/favicon-new.png?v=2" />
+  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo SITE_URL; ?>/img/favicon-new.png?v=2" />
+  <link rel="apple-touch-icon" href="<?php echo SITE_URL; ?>/img/favicon-new.png?v=2" />
   <script>const SITE_URL = "<?php echo SITE_URL; ?>";</script>
 </head>
 
@@ -144,7 +144,7 @@
   <!-- NAV -->
   <nav class="main-nav <?php echo isset($navClass) ? $navClass : ''; ?>">
     <a href="<?php echo SITE_URL; ?>" class="nav-logo">
-      <img src="<?php echo SITE_URL; ?>/img/logo.png" alt="Family Tree" class="logo-img">
+      <img src="<?php echo SITE_URL; ?>/img/new-familytreeindia-logo.svg" alt="Family Tree" class="logo-img">
     </a>
     <div class="nav-right">
       <div class="nav-item has-dropdown">
@@ -196,7 +196,7 @@
 
   <div class="mob-menu" id="mobMenu">
     <div class="mm-head">
-      <img src="<?php echo SITE_URL; ?>/img/logo.png" alt="Family Tree" class="logo-img">
+      <img src="<?php echo SITE_URL; ?>/img/new-familytreeindia-logo.svg" alt="Family Tree" class="logo-img">
       <button class="mm-close" id="mmClose">✕</button>
     </div>
     <div class="mm-links">

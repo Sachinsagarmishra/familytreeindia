@@ -173,10 +173,6 @@ include_once 'includes/header.php';
     <div class="abt-promise-inner">
       <div class="abt-promise-img abt-reveal">
         <img src="<?php echo SITE_URL; ?>/img/Uma-Shankar-Jha.png" alt="Uma Shankar Jha, Joint Advisor in NHAI, Retd. Indian Forest Service Officer" loading="lazy" />
-        <div class="abt-promise-overlay">
-          <div class="abt-founder-name">Uma Shankar Jha</div>
-          <div class="abt-founder-org">Joint Advisor in NHAI, Retd. IFS</div>
-        </div>
       </div>
       <div class="abt-promise-body abt-reveal">
         <p class="abt-eyebrow">ADVISOR</p>
@@ -194,10 +190,6 @@ include_once 'includes/header.php';
     <div class="abt-promise-inner">
       <div class="abt-promise-img abt-reveal">
         <img src="<?php echo SITE_URL; ?>/img/<?php echo $site['about_leader_img'] ?? 'founderimage.jpg'; ?>" alt="Leadership team at Family Tree Foundation" loading="lazy" />
-        <div class="abt-promise-overlay">
-          <div class="abt-founder-name"><?php echo htmlspecialchars($site['about_leader_name'] ?? ''); ?></div>
-          <div class="abt-founder-org"><?php echo htmlspecialchars($site['about_leader_designation'] ?? ''); ?></div>
-        </div>
       </div>
       <div class="abt-promise-body abt-reveal">
         <p class="abt-eyebrow"><?php echo htmlspecialchars($site['about_leader_eyebrow'] ?? 'LEADERSHIP'); ?></p>
@@ -206,6 +198,9 @@ include_once 'includes/header.php';
           <i><?php echo ($site['about_leader_title_highlight'] ?? 'Impact'); ?></i> 
           <?php echo ($site['about_leader_title_end'] ?? ''); ?>
         </h2>
+        <p class="abt-promise-subtitle" style="font-style: italic; color: var(--green-mid); margin-bottom: 20px; font-size: 1.1rem; font-weight: 500;">
+          <?php echo htmlspecialchars($site['about_leader_name'] ?? ''); ?> — <?php echo htmlspecialchars($site['about_leader_designation'] ?? ''); ?>
+        </p>
         <div class="abt-promise-p"><?php echo ($site['about_leader_text1'] ?? ''); ?></div>
         <div class="abt-promise-p"><?php echo ($site['about_leader_text2'] ?? ''); ?></div>
       </div>
