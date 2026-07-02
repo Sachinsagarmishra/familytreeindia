@@ -53,7 +53,7 @@
     "name": "<?php echo $site['site_title']; ?>",
     "alternateName": "Family Tree Foundation",
     "url": "<?php echo SITE_URL; ?>",
-    "logo": "<?php echo SITE_URL; ?>/img/new-familytreeindia-logo.svg",
+    "logo": "<?php echo SITE_URL; ?>/img/new-logo.svg",
     "description": "<?php echo htmlspecialchars($site['meta_description'] ?? 'An environmental non-profit building permanent green cover through schools and communities in India.'); ?>",
     "address": {
       "@type": "PostalAddress",
@@ -144,7 +144,7 @@
   <!-- NAV -->
   <nav class="main-nav <?php echo isset($navClass) ? $navClass : ''; ?>">
     <a href="<?php echo SITE_URL; ?>" class="nav-logo">
-      <img src="<?php echo SITE_URL; ?>/img/new-familytreeindia-logo.svg" alt="Family Tree" class="logo-img">
+      <img src="<?php echo SITE_URL; ?>/img/new-logo.svg" alt="Family Tree" class="logo-img">
     </a>
     <div class="nav-right">
       <div class="nav-item has-dropdown">
@@ -196,7 +196,7 @@
 
   <div class="mob-menu" id="mobMenu">
     <div class="mm-head">
-      <img src="<?php echo SITE_URL; ?>/img/new-familytreeindia-logo.svg" alt="Family Tree" class="logo-img">
+      <img src="<?php echo SITE_URL; ?>/img/new-logo.svg" alt="Family Tree" class="logo-img">
       <button class="mm-close" id="mmClose">✕</button>
     </div>
     <div class="mm-links">
