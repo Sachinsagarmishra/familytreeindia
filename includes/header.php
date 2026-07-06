@@ -138,9 +138,6 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <div class="cursor" id="cur"></div>
-  <div class="cursor-ring" id="curRing"></div>
-
   <!-- NAV -->
   <nav class="main-nav <?php echo isset($navClass) ? $navClass : ''; ?>">
     <a href="<?php echo SITE_URL; ?>" class="nav-logo">

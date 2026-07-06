@@ -32,33 +32,6 @@ body {
   font-family: "Instrument Sans", sans-serif;
   background: var(--white);
   color: var(--black);
-  cursor: none;
-}
-
-/* CURSOR */
-.cursor {
-  position: fixed;
-  width: 10px;
-  height: 10px;
-  background: var(--yellow);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s;
-  mix-blend-mode: difference;
-}
-
-.cursor-ring {
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  border: 1px solid rgba(240, 193, 50, 0.5);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9998;
-  transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s, border-color 0.3s;
 }
 
 /* NAV */
@@ -433,7 +406,6 @@ body {
   text-decoration: none;
   transition: all 0.2s;
   display: inline-block;
-  cursor: none;
 }
 
 .btn-y:hover {
@@ -454,7 +426,6 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   transition: all 0.2s;
-  cursor: none;
   display: inline-block;
 }
 
@@ -578,7 +549,6 @@ body {
   padding: 52px 44px;
   border-right: 1px solid rgba(0, 0, 0, 0.09);
   transition: background 0.3s;
-  cursor: none;
 }
 
 .stat-cell:last-child {
@@ -921,7 +891,6 @@ body {
   background: var(--black);
   padding: 44px 28px;
   transition: background 0.35s;
-  cursor: none;
   position: relative;
   overflow: hidden;
 }
@@ -1352,7 +1321,6 @@ body {
   position: relative;
   aspect-ratio: 1 / 1.2;
   overflow: hidden;
-  cursor: none;
 }
 
 .pc-bg {
@@ -1669,7 +1637,6 @@ body {
   border-radius: 3px;
   overflow: hidden;
   transition: transform 0.35s, box-shadow 0.35s;
-  cursor: none;
 }
 
 .upd-card:hover {
@@ -1777,7 +1744,6 @@ body {
   text-transform: uppercase;
   text-decoration: none;
   transition: all 0.2s;
-  cursor: none;
   display: inline-block;
 }
 
@@ -2388,14 +2354,6 @@ footer {
     padding-right: 28px;
   }
 
-  .cursor,
-  .cursor-ring {
-    display: none !important;
-  }
-
-  body {
-    cursor: auto !important;
-  }
 }
 
 @media (max-width: 900px) {

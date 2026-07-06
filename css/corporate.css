@@ -175,7 +175,6 @@
   padding: 44px 36px;
   overflow: hidden;
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  cursor: none;
 }
 
 .corp-card-accent {
@@ -366,7 +365,6 @@
   align-items: center;
   gap: 18px;
   transition: background 0.3s;
-  cursor: none;
 }
 
 .corp-addon-item:hover {
@@ -482,7 +480,6 @@
   position: relative;
   overflow: hidden;
   transition: all 0.4s;
-  cursor: none;
 }
 
 .corp-cert-card::after {
