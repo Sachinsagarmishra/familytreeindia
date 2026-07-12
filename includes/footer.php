@@ -70,23 +70,34 @@
   <div id="donateModal" class="modal">
     <div class="modal-content">
       <button class="modal-close" id="closeDonate">&times;</button>
-        <div class="modal-header">
+      <div class="modal-brand">
+        <img src="<?php echo SITE_URL; ?>/img/new-familytreeindia-logo.svg" alt="Family Tree India">
+      </div>
+      <div class="modal-header">
         <h2>Make a Donation</h2>
         <p>Your support helps us plant and care for more trees with student guardians.</p>
       </div>
       <form id="donateForm" class="cont-form">
         <div class="form-group">
           <label>Full Name</label>
-          <input type="text" name="billing_name" placeholder="Full name" required>
+          <div class="donate-input-field">
+            <i class="fa-regular fa-user"></i>
+            <input type="text" name="billing_name" placeholder="Full name" required>
+          </div>
         </div>
         <div class="form-group">
           <label>Address</label>
-          <textarea name="billing_address" rows="3" placeholder="Billing address" required></textarea>
+          <div class="donate-input-field textarea-field">
+            <i class="fa-solid fa-location-dot"></i>
+            <textarea name="billing_address" rows="3" placeholder="Billing address" required></textarea>
+          </div>
         </div>
         <div class="form-row">
           <div class="form-group">
             <label>Mobile Number</label>
-            <div class="phone-field">
+            <div class="donate-input-field phone-input-field">
+              <i class="fa-solid fa-phone"></i>
+              <div class="phone-field">
               <select name="billing_country_code" id="billingCountryCode" aria-label="Country code" required>
                 <option value="+93">🇦🇫 +93</option>
                 <option value="+355">🇦🇱 +355</option>
@@ -330,54 +341,81 @@
                 <option value="+263">🇿🇼 +263</option>
               </select>
               <input type="tel" name="billing_phone_number" id="billingPhoneNumber" placeholder="XXXXX XXXXX" inputmode="numeric" maxlength="10" pattern="[0-9]{10}" required>
+              </div>
             </div>
             <input type="hidden" name="billing_mobile" id="billingMobileFull" value="">
           </div>
           <div class="form-group">
             <label>Amount (INR)</label>
-            <input type="number" name="amount" placeholder="1000" min="1" step="1" required>
+            <div class="donate-input-field">
+              <i class="fa-solid fa-indian-rupee-sign"></i>
+              <input type="number" name="amount" placeholder="1000" min="1" step="1" required>
+            </div>
           </div>
         </div>
         <input type="hidden" name="source" value="donation_popup">
         <button type="submit" class="btn-y" style="width: 100%;">Proceed to Payment</button>
+        <div class="payment-methods">
+          <div class="accept-title"><span></span><strong>We Accept</strong><span></span></div>
+          <img src="<?php echo SITE_URL; ?>/img/paymentsmethods.svg" alt="Accepted payment methods">
+          <p><i class="fa-solid fa-lock"></i> Your payment is encrypted and secure.<br>Accepted: UPI • Visa • Mastercard • RuPay</p>
+        </div>
         <div id="donateFeedback" style="margin-top: 15px; font-size: 0.9rem; padding: 12px; border-radius: 6px; display: none;"></div>
       </form>
     </div>
   </div>
 
   <style>
-    .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(10, 25, 12, 0.5); backdrop-filter: blur(3px); align-items: center; justify-content: center; padding: 20px; }
+    .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(10, 25, 12, 0.56); backdrop-filter: blur(5px); align-items: center; justify-content: center; padding: 20px; }
     .modal.active { display: flex; }
-    .modal-content { background: #fff; width: 100%; max-width: 580px; padding: 48px 40px; border-radius: 24px; position: relative; max-height: 90vh; overflow-y: auto; box-shadow: 0 32px 64px rgba(0,0,0,0.4); }
-    .modal-close { position: absolute; right: 24px; top: 24px; background: rgba(0,0,0,0.05); border: none; font-size: 1.2rem; cursor: pointer; color: #000; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; z-index: 10; }
-    .modal-close:hover { background: rgba(0,0,0,0.1); transform: rotate(90deg); }
-    .modal-header { margin-bottom: 28px; text-align: center; }
-    .modal-header h2 { font-family: 'Fraunces', serif; font-size: 2.2rem; font-weight: 900; margin-bottom: 8px; color: #0f2310; letter-spacing: -0.02em; }
-    .modal-header p { color: rgba(0,0,0,0.5); font-size: 0.95rem; line-height: 1.5; max-width: 400px; margin: 0 auto; }
+    .modal-content { background-color: #fffdf7; background-image: url('<?php echo SITE_URL; ?>/img/popupbg.png'); background-size: 100% 100%; background-position: center; background-repeat: no-repeat; width: 100%; max-width: 640px; padding: 38px 58px 28px; border-radius: 22px; position: relative; max-height: 92vh; overflow-y: auto; box-shadow: 0 32px 80px rgba(0,0,0,0.42); }
+    .modal-close { position: absolute; right: 22px; top: 22px; background: rgba(15,35,16,0.08); border: 1px solid rgba(15,35,16,0.1); font-size: 1.25rem; cursor: pointer; color: #163515; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; z-index: 10; font-weight: 800; }
+    .modal-close:hover { background: rgba(15,35,16,0.14); transform: rotate(90deg); }
+    .modal-brand { display: flex; justify-content: center; margin-bottom: 20px; }
+    .modal-brand img { width: min(280px, 70%); height: auto; display: block; }
+    .modal-header { margin-bottom: 24px; text-align: center; }
+    .modal-header h2 { font-family: 'Fraunces', serif; font-size: 2.65rem; font-weight: 900; margin-bottom: 8px; color: #163515; letter-spacing: 0; line-height: 1; }
+    .modal-header p { color: rgba(0,0,0,0.64); font-size: 1.05rem; line-height: 1.45; max-width: 470px; margin: 0 auto; }
     
     /* FORM STYLES */
-    .modal .cont-form { gap: 16px !important; }
-    .modal .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 0; }
+    .modal .cont-form { gap: 14px !important; }
+    .modal .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 0; }
     .modal .form-group { margin-bottom: 0; display: flex; flex-direction: column; gap: 6px; }
-    .modal .form-group label { font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: #0f2310; opacity: 0.5; }
+    .modal .form-group label { font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #214d20; opacity: 0.92; }
     .modal .form-group input, 
     .modal .form-group select, 
-    .modal .form-group textarea { width: 100%; padding: 12px 16px; border: 1.5px solid rgba(0,0,0,0.08); border-radius: 10px; font-family: inherit; font-size: 0.95rem; background: #f9f9f9; transition: all 0.3s; color: #000; }
+    .modal .form-group textarea { width: 100%; padding: 0; border: none; border-radius: 0; font-family: inherit; font-size: 0.95rem; background: transparent; transition: all 0.3s; color: #000; }
+    .modal .form-group select { appearance: none; cursor: pointer; }
     .modal .form-group input:focus, 
     .modal .form-group select:focus, 
-    .modal .form-group textarea:focus { outline: none; border-color: #2d6b35; background: #fff; box-shadow: 0 0 0 4px rgba(45, 107, 53, 0.1); }
-    .modal .phone-field { display: grid; grid-template-columns: 116px 1fr; gap: 8px; }
-    .modal .phone-field select { padding-left: 10px; padding-right: 8px; }
+    .modal .form-group textarea:focus { outline: none; }
+    .modal .donate-input-field { min-height: 54px; display: flex; align-items: center; gap: 14px; padding: 0 16px; border: 1.5px solid rgba(33,77,32,0.22); border-radius: 10px; background: rgba(255,255,255,0.78); box-shadow: inset 0 1px 0 rgba(255,255,255,0.7); transition: 0.25s; }
+    .modal .donate-input-field:focus-within { border-color: #2d6b35; background: rgba(255,255,255,0.96); box-shadow: 0 0 0 4px rgba(45,107,53,0.1); }
+    .modal .donate-input-field i { width: 22px; color: #214d20; font-size: 1.1rem; text-align: center; flex: 0 0 auto; }
+    .modal .textarea-field { align-items: flex-start; padding-top: 16px; min-height: 88px; }
+    .modal .textarea-field textarea { min-height: 58px; resize: vertical; }
+    .modal .phone-input-field { gap: 10px; }
+    .modal .phone-field { display: grid; grid-template-columns: 88px 1fr; gap: 8px; width: 100%; align-items: center; }
+    .modal .phone-field select { min-width: 0; color: rgba(0,0,0,0.72); }
     .modal .phone-field input { min-width: 0; }
-    .modal .btn-y { background: #f0c132; color: #000; border: none; padding: 16px; border-radius: 10px; font-weight: 700; font-size: 1rem; cursor: pointer; transition: 0.3s; margin-top: 8px; }
-    .modal .btn-y:hover { background: #e0b020; transform: translateY(-2px); box-shadow: 0 8px 20px rgba(240, 193, 50, 0.3); }
+    .modal .btn-y { background: linear-gradient(180deg, #47752c 0%, #1f4a18 100%); color: #fff; border: 1px solid rgba(10,45,8,0.18); padding: 16px; border-radius: 10px; font-weight: 800; font-size: 1rem; cursor: pointer; transition: 0.3s; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.08em; box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 8px 20px rgba(31,74,24,0.22); }
+    .modal .btn-y::before { content: "🌿"; margin-right: 12px; font-size: 0.95rem; }
+    .modal .btn-y:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 12px 26px rgba(31,74,24,0.3); }
+    .payment-methods { margin-top: 10px; text-align: center; }
+    .accept-title { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; color: #315b28; text-transform: uppercase; font-size: 0.76rem; letter-spacing: 0.08em; font-weight: 800; margin-bottom: 10px; }
+    .accept-title span { height: 1px; background: rgba(33,77,32,0.16); }
+    .payment-methods img { width: min(420px, 82%); height: auto; display: block; margin: 0 auto 10px; }
+    .payment-methods p { color: rgba(0,0,0,0.7); font-size: 0.86rem; line-height: 1.35; margin: 0; }
+    .payment-methods p i { color: #214d20; margin-right: 8px; }
 
     @media (max-width: 600px) {
-      .modal-content { padding: 36px 20px; border-radius: 16px; }
-      .modal-header h2 { font-size: 1.8rem; }
+      .modal-content { padding: 34px 20px 24px; border-radius: 16px; background-size: cover; }
+      .modal-brand img { width: min(240px, 72%); }
+      .modal-header h2 { font-size: 2rem; }
       .modal-header p { font-size: 0.88rem; }
       .modal .form-row { grid-template-columns: 1fr; gap: 16px; }
-      .modal .phone-field { grid-template-columns: 110px 1fr; }
+      .modal .phone-field { grid-template-columns: 88px 1fr; }
+      .payment-methods img { width: 100%; }
     }
   </style>
 
