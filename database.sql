@@ -62,6 +62,8 @@ CREATE TABLE IF NOT EXISTS `donations` (
   `donor_name` varchar(150) NOT NULL,
   `donor_address` text NOT NULL,
   `donor_mobile` varchar(30) NOT NULL,
+  `donor_state` varchar(100) DEFAULT NULL,
+  `ip_address` varchar(45) DEFAULT NULL,
   `amount` decimal(12,2) NOT NULL,
   `currency` varchar(10) NOT NULL DEFAULT 'INR',
   `razorpay_mode` enum('test','live') NOT NULL DEFAULT 'test',

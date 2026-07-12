@@ -7,6 +7,8 @@ $queries = [
         donor_name varchar(150) NOT NULL,
         donor_address text NOT NULL,
         donor_mobile varchar(30) NOT NULL,
+        donor_state varchar(100) DEFAULT NULL,
+        ip_address varchar(45) DEFAULT NULL,
         amount decimal(12,2) NOT NULL,
         currency varchar(10) NOT NULL DEFAULT 'INR',
         razorpay_mode enum('test','live') NOT NULL DEFAULT 'test',
@@ -57,6 +59,23 @@ foreach ($queries as $query) {
         echo "Success: table migration complete.<br>";
     } else {
         echo "Error: " . htmlspecialchars($conn->error) . "<br>";
+    }
+}
+
+$columns = [
+    'donor_state' => "ALTER TABLE donations ADD COLUMN donor_state varchar(100) DEFAULT NULL AFTER donor_mobile",
+    'ip_address' => "ALTER TABLE donations ADD COLUMN ip_address varchar(45) DEFAULT NULL AFTER donor_state",
+];
+
+foreach ($columns as $column => $query) {
+    $safeColumn = $conn->real_escape_string($column);
+    $check = $conn->query("SHOW COLUMNS FROM donations LIKE '$safeColumn'");
+    if ($check && $check->num_rows == 0) {
+        if ($conn->query($query)) {
+            echo "Added column: " . htmlspecialchars($column) . "<br>";
+        } else {
+            echo "Error adding column " . htmlspecialchars($column) . ": " . htmlspecialchars($conn->error) . "<br>";
+        }
     }
 }
 

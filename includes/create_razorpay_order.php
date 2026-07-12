@@ -15,6 +15,8 @@ $address = trim($_POST['billing_address'] ?? '');
 $mobile = trim($_POST['billing_mobile'] ?? '');
 $amount = trim($_POST['amount'] ?? '');
 $source = trim($_POST['source'] ?? 'website_donation');
+$ip = $_SERVER['REMOTE_ADDR'] ?? '';
+$state = 'Unknown';
 
 if ($name === '' || $address === '' || $mobile === '' || $amount === '') {
     http_response_code(422);
@@ -38,8 +40,18 @@ try {
     $amountPaise = (int) round($amountValue * 100);
     $receipt = 'FTI-' . date('ymdHis') . '-' . random_int(100, 999);
 
-    $stmt = $conn->prepare("INSERT INTO donations (donor_name, donor_address, donor_mobile, amount, currency, razorpay_mode, status, receipt, source) VALUES (?, ?, ?, ?, ?, ?, 'created', ?, ?)");
-    $stmt->bind_param('sssdssss', $name, $address, $mobile, $amountValue, $settings['currency'], $settings['mode'], $receipt, $source);
+    if ($ip !== '') {
+        $geo = @file_get_contents("http://ip-api.com/json/" . rawurlencode($ip) . "?fields=regionName");
+        if ($geo) {
+            $geoData = json_decode($geo, true);
+            if (!empty($geoData['regionName'])) {
+                $state = $geoData['regionName'];
+            }
+        }
+    }
+
+    $stmt = $conn->prepare("INSERT INTO donations (donor_name, donor_address, donor_mobile, donor_state, ip_address, amount, currency, razorpay_mode, status, receipt, source) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'created', ?, ?)");
+    $stmt->bind_param('sssssdssss', $name, $address, $mobile, $state, $ip, $amountValue, $settings['currency'], $settings['mode'], $receipt, $source);
     $stmt->execute();
     $donationId = $stmt->insert_id;
     $stmt->close();
