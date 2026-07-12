@@ -358,7 +358,7 @@
         <div class="payment-methods">
           <div class="accept-title"><span></span><strong>We Accept</strong><span></span></div>
           <img src="<?php echo SITE_URL; ?>/img/paymentsmethods.svg" alt="Accepted payment methods">
-          <p><i class="fa-solid fa-lock"></i> Your payment is encrypted and secure.<br>Accepted: UPI • Visa • Mastercard • RuPay</p>
+          <p><i class="fa-solid fa-lock"></i> Your payment is encrypted and secure.</p>
         </div>
         <div id="donateFeedback" style="margin-top: 15px; font-size: 0.9rem; padding: 12px; border-radius: 6px; display: none;"></div>
       </form>
