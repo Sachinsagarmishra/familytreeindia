@@ -148,7 +148,7 @@
         <a href="#" class="nav-link">Take Action <i class="fa-solid fa-chevron-down dropdown-icon"></i></a>
         <div class="dropdown-menu">
           <div class="dropdown-inner">
-            <a href="<?php echo SITE_URL; ?>/corporate" class="dropdown-link">
+            <a href="#" class="dropdown-link js-donate" data-donation-source="nav_sponsor_tree">
               <span class="dl-title">Sponsor a Tree</span>
               <span class="dl-desc">Direct environmental impact</span>
             </a>
@@ -184,7 +184,7 @@
       </div>
       <a href="<?php echo SITE_URL; ?>/contact" class="nav-link">Contact</a>
     </div>
-    <a href="mailto:<?php echo $site['contact_email']; ?>?subject=Donation Inquiry" class="nav-donate btn-donate">Donate</a>
+    <a href="#" class="nav-donate btn-donate" data-donation-source="nav_donate">Donate</a>
     <button class="nav-mob-btn" id="mobBtn">
       <div class="mob-line"></div>
       <div class="mob-line"></div>
@@ -200,6 +200,6 @@
       <a href="<?php echo SITE_URL; ?>/corporate" class="mm-link">Take Action</a>
       <a href="<?php echo SITE_URL; ?>/about" class="mm-link">About Us</a>
       <a href="<?php echo SITE_URL; ?>/contact" class="mm-link">Contact Us</a>
-      <a href="mailto:<?php echo $site['contact_email']; ?>?subject=Donation Inquiry" class="mm-donate btn-donate">Donate Now</a>
+      <a href="#" class="mm-donate btn-donate" data-donation-source="mobile_donate">Donate Now</a>
     </div>
   </div>

@@ -60,7 +60,7 @@ include_once 'includes/header.php';
           <?php echo htmlspecialchars($site['home_hero_sub'] ?? "We don't just plant trees — we assign each one to a student. 8 lakh trees. 15000 schools. One generation taking responsibility for the next."); ?>
         </p>
         <div class="hero-btns">
-          <a href="<?php echo SITE_URL; ?>/corporate" class="btn-y">Sponsor a Tree</a>
+          <a href="#" class="btn-y js-donate" data-donation-source="home_hero_sponsor_tree">Sponsor a Tree</a>
           <a href="<?php echo SITE_URL; ?>/about" class="btn-w">See Our Work</a>
         </div>
       </div>
@@ -280,7 +280,7 @@ include_once 'includes/header.php';
           <div class="pc-title">Donor Agency</div>
           <div class="pc-sub">Fund verified, geo-tagged plantation with full transparency and quarterly impact reports.
           </div>
-          <a href="<?php echo SITE_URL; ?>/contact" class="pc-link">Fund a Project</a>
+          <a href="#" class="pc-link js-donate" data-donation-source="home_fund_project">Fund a Project</a>
         </div>
       </div>
       <div class="part-card">
@@ -299,7 +299,7 @@ include_once 'includes/header.php';
         <div class="pc-body">
           <div class="pc-title">Individuals</div>
           <div class="pc-sub">Sponsor a tree. Track it growing. Know your guardian's name.</div>
-          <a href="<?php echo SITE_URL; ?>/contact" class="pc-link">Start Here</a>
+          <a href="#" class="pc-link js-donate" data-donation-source="home_individual_start">Start Here</a>
         </div>
       </div>
     </div>
@@ -368,8 +368,8 @@ include_once 'includes/header.php';
       <p class="donate-sub reveal"><?php echo htmlspecialchars($site['home_donate_sub'] ?? "Your support helps us reach more schools and empower more student guardians. Every contribution ensures a lasting green legacy for the next generation, where every tree is cared for and tracked for life."); ?></p>
     </div>
     <div class="donate-right reveal">
-      <a href="<?php echo SITE_URL; ?>/contact" class="btn-b">Donate Now</a>
-      <a href="<?php echo SITE_URL; ?>/contact" class="link-arr"
+      <a href="#" class="btn-b js-donate" data-donation-source="home_donate_now">Donate Now</a>
+      <a href="#" class="link-arr js-donate" data-donation-source="home_sponsor_school"
         style="font-size:0.73rem;color:rgba(0,0,0,0.45);border-color:rgba(0,0,0,0.18);margin-top:20px;display:inline-block">Or
         sponsor a school</a>
     </div>

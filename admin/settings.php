@@ -9,8 +9,14 @@ $msg = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['update_settings'])) {
     foreach($_POST['settings'] as $key => $value) {
+        $safeKey = $conn->real_escape_string($key);
         $val = $conn->real_escape_string($value);
-        $conn->query("UPDATE site_settings SET setting_value = '$val' WHERE setting_key = '$key'");
+        $check = $conn->query("SELECT id FROM site_settings WHERE setting_key = '$safeKey'");
+        if ($check && $check->num_rows > 0) {
+            $conn->query("UPDATE site_settings SET setting_value = '$val' WHERE setting_key = '$safeKey'");
+        } else {
+            $conn->query("INSERT INTO site_settings (setting_key, setting_value) VALUES ('$safeKey', '$val')");
+        }
     }
     $msg = "Settings updated successfully!";
 }
@@ -35,11 +41,28 @@ while($row = $res->fetch_assoc()) {
 }
 
 // Auto-insert missing keys for social/SEO if they don't exist
-$required_keys = ['facebook_url', 'instagram_url', 'linkedin_url', 'twitter_url', 'meta_description'];
+$required_keys = [
+    'facebook_url',
+    'instagram_url',
+    'linkedin_url',
+    'twitter_url',
+    'meta_description',
+    'razorpay_mode',
+    'razorpay_currency',
+    'razorpay_test_key_id',
+    'razorpay_test_key_secret',
+    'razorpay_test_webhook_secret',
+    'razorpay_live_key_id',
+    'razorpay_live_key_secret',
+    'razorpay_live_webhook_secret'
+];
 foreach($required_keys as $key) {
     if(!isset($settings[$key])) {
-        $conn->query("INSERT INTO site_settings (setting_key, setting_value) VALUES ('$key', '')");
-        $settings[$key] = '';
+        $default = '';
+        if ($key == 'razorpay_mode') $default = 'test';
+        if ($key == 'razorpay_currency') $default = 'INR';
+        $conn->query("INSERT INTO site_settings (setting_key, setting_value) VALUES ('$key', '$default')");
+        $settings[$key] = $default;
     }
 }
 ?>
@@ -144,6 +167,54 @@ foreach($required_keys as $key) {
           </div>
         </div>
         <p style="font-size: 0.8rem; color: rgba(0,0,0,0.4); margin-top: 12px;">Tip: For Gmail, use an "App Password" if 2FA is enabled.</p>
+      </div>
+
+      <div class="settings-card" style="grid-column: span 2;">
+        <h3 style="margin-bottom: 24px;">Razorpay Donation Settings</h3>
+        <div class="form-row-grid">
+          <div class="form-group">
+            <label>Active Mode</label>
+            <select name="settings[razorpay_mode]" class="form-control">
+              <option value="test" <?php echo (($settings['razorpay_mode'] ?? 'test') == 'test') ? 'selected' : ''; ?>>Test Mode</option>
+              <option value="live" <?php echo (($settings['razorpay_mode'] ?? 'test') == 'live') ? 'selected' : ''; ?>>Production / Live Mode</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Currency</label>
+            <input type="text" name="settings[razorpay_currency]" class="form-control" value="<?php echo htmlspecialchars($settings['razorpay_currency'] ?? 'INR'); ?>" placeholder="INR">
+          </div>
+        </div>
+
+        <div class="form-row-grid">
+          <div class="form-group">
+            <label>Test Key ID</label>
+            <input type="text" name="settings[razorpay_test_key_id]" class="form-control" value="<?php echo htmlspecialchars($settings['razorpay_test_key_id'] ?? ''); ?>" placeholder="rzp_test_xxxxx">
+          </div>
+          <div class="form-group">
+            <label>Test Key Secret</label>
+            <input type="password" name="settings[razorpay_test_key_secret]" class="form-control" value="<?php echo htmlspecialchars($settings['razorpay_test_key_secret'] ?? ''); ?>" placeholder="Test secret">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Test Webhook Secret</label>
+          <input type="password" name="settings[razorpay_test_webhook_secret]" class="form-control" value="<?php echo htmlspecialchars($settings['razorpay_test_webhook_secret'] ?? ''); ?>" placeholder="Webhook secret from Razorpay test mode">
+        </div>
+
+        <div class="form-row-grid">
+          <div class="form-group">
+            <label>Production Key ID</label>
+            <input type="text" name="settings[razorpay_live_key_id]" class="form-control" value="<?php echo htmlspecialchars($settings['razorpay_live_key_id'] ?? ''); ?>" placeholder="rzp_live_xxxxx">
+          </div>
+          <div class="form-group">
+            <label>Production Key Secret</label>
+            <input type="password" name="settings[razorpay_live_key_secret]" class="form-control" value="<?php echo htmlspecialchars($settings['razorpay_live_key_secret'] ?? ''); ?>" placeholder="Live secret">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Production Webhook Secret</label>
+          <input type="password" name="settings[razorpay_live_webhook_secret]" class="form-control" value="<?php echo htmlspecialchars($settings['razorpay_live_webhook_secret'] ?? ''); ?>" placeholder="Webhook secret from Razorpay live mode">
+        </div>
+        <p style="font-size: 0.8rem; color: rgba(0,0,0,0.45); margin-top: 12px;">Webhook URL: <strong><?php echo SITE_URL; ?>/razorpay-webhook.php</strong></p>
       </div>
 
       <div class="settings-actions">

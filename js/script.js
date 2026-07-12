@@ -169,11 +169,14 @@
   const donateForm = document.getElementById("donateForm");
   const donateFeedback = document.getElementById("donateFeedback");
 
-  document.querySelectorAll('a[href*="Donate"], a[href*="donate"], .btn-donate').forEach(btn => {
+  document.querySelectorAll('a[href*="Donate"], a[href*="donate"], .btn-donate, .js-donate').forEach(btn => {
     btn.addEventListener("click", (e) => {
       const href = btn.getAttribute("href");
-      if (href && (href.includes("mailto") || href === "#" || href === "")) {
+      if (btn.classList.contains("js-donate") || btn.classList.contains("btn-donate") || (href && (href.includes("mailto") || href === "#" || href === ""))) {
         e.preventDefault();
+        const source = btn.getAttribute("data-donation-source");
+        const sourceInput = donateForm ? donateForm.querySelector('input[name="source"]') : null;
+        if (source && sourceInput) sourceInput.value = source;
         if (donateModal) donateModal.classList.add("active");
       }
     });
@@ -192,46 +195,99 @@
       e.preventDefault();
       const submitBtn = donateForm.querySelector('button[type="submit"]');
       const originalBtnText = submitBtn.innerText;
-      submitBtn.innerText = "Processing...";
+      submitBtn.innerText = "Creating Order...";
       submitBtn.disabled = true;
 
       const formData = new FormData(donateForm);
 
       try {
-        const response = await fetch(SITE_URL + "/includes/process_lead.php", {
+        const response = await fetch(SITE_URL + "/includes/create_razorpay_order.php", {
           method: "POST",
           body: formData
         });
         const result = await response.json();
 
-        if (donateFeedback) {
-          donateFeedback.style.display = "block";
-          donateFeedback.innerText = result.message;
-          donateFeedback.style.background = result.status === "success" ? "#dcfce7" : "#fee2e2";
-          donateFeedback.style.color = result.status === "success" ? "#166534" : "#991b1b";
+        if (result.status !== "success") {
+          throw new Error(result.message || "Could not create payment order.");
         }
 
-        if (result.status === "success") {
-          // Track conversion in GA4
-          if (typeof gtag === 'function') {
-            gtag('event', 'generate_lead', {
-              'event_category': 'Engagement',
-              'event_label': 'Donation Inquiry',
-              'value': 1,
-              'referrer_source': document.referrer || 'Direct'
-            });
-          }
+        if (typeof Razorpay === "undefined") {
+          throw new Error("Razorpay Checkout could not be loaded. Please refresh and try again.");
+        }
 
-          donateForm.reset();
-          setTimeout(() => {
-            if (donateModal) donateModal.classList.remove("active");
-            if (donateFeedback) donateFeedback.style.display = "none";
-          }, 3000);
+        const options = {
+          key: result.key_id,
+          amount: result.amount,
+          currency: result.currency,
+          name: result.name,
+          description: result.description,
+          order_id: result.order_id,
+          prefill: result.prefill,
+          notes: result.notes,
+          theme: { color: "#f0c132" },
+          handler: async function (paymentResponse) {
+            const verifyData = new FormData();
+            verifyData.append("donation_id", result.donation_id);
+            verifyData.append("razorpay_order_id", paymentResponse.razorpay_order_id);
+            verifyData.append("razorpay_payment_id", paymentResponse.razorpay_payment_id);
+            verifyData.append("razorpay_signature", paymentResponse.razorpay_signature);
+
+            const verifyResponse = await fetch(SITE_URL + "/includes/verify_razorpay_payment.php", {
+              method: "POST",
+              body: verifyData
+            });
+            const verifyResult = await verifyResponse.json();
+
+            if (donateFeedback) {
+              donateFeedback.style.display = "block";
+              donateFeedback.innerText = verifyResult.message || "Payment response received.";
+              donateFeedback.style.background = verifyResult.status === "success" ? "#dcfce7" : "#fee2e2";
+              donateFeedback.style.color = verifyResult.status === "success" ? "#166534" : "#991b1b";
+            }
+
+            if (verifyResult.status !== "success") return;
+
+            if (typeof gtag === 'function') {
+              gtag('event', 'purchase', {
+                'event_category': 'Donation',
+                'event_label': result.mode + ' donation',
+                'value': Number(result.display_amount),
+                'currency': result.currency,
+                'referrer_source': document.referrer || 'Direct'
+              });
+            }
+
+            donateForm.reset();
+            setTimeout(() => {
+              if (donateModal) donateModal.classList.remove("active");
+              if (donateFeedback) donateFeedback.style.display = "none";
+            }, 3000);
+          },
+          modal: {
+            ondismiss: function () {
+              if (donateFeedback) {
+                donateFeedback.style.display = "block";
+                donateFeedback.innerText = "Payment window closed. You can try again anytime.";
+                donateFeedback.style.background = "#fff7ed";
+                donateFeedback.style.color = "#9a3412";
+              }
+            }
+          }
+        };
+
+        const razorpay = new Razorpay(options);
+        razorpay.open();
+
+        if (donateFeedback) {
+          donateFeedback.style.display = "block";
+          donateFeedback.innerText = "Razorpay checkout opened for ₹" + result.display_amount + ".";
+          donateFeedback.style.background = "#eff6ff";
+          donateFeedback.style.color = "#1d4ed8";
         }
       } catch (err) {
         if (donateFeedback) {
           donateFeedback.style.display = "block";
-          donateFeedback.innerText = "Error connecting to server.";
+          donateFeedback.innerText = err.message || "Error connecting to payment server.";
           donateFeedback.style.background = "#fee2e2";
           donateFeedback.style.color = "#991b1b";
         }

@@ -46,7 +46,7 @@
       <nav class="foot-col" aria-label="Involvement links">
         <h5>Get Involved</h5>
         <ul>
-          <li><a href="mailto:<?php echo $site['contact_email']; ?>?subject=Donation Inquiry" class="btn-donate">Donate</a></li>
+          <li><a href="#" class="btn-donate" data-donation-source="footer_donate">Donate</a></li>
           <li><a href="mailto:<?php echo $site['contact_email']; ?>">Volunteer</a></li>
           <li><a href="<?php echo SITE_URL; ?>/corporate">Corporate CSR</a></li>
           <li><a href="<?php echo SITE_URL; ?>/corporate">Partner With Us</a></li>
@@ -66,54 +66,35 @@
   </footer>
 
 
-  <!-- DONATE MODAL -->
+  <!-- DONATION MODAL -->
   <div id="donateModal" class="modal">
     <div class="modal-content">
       <button class="modal-close" id="closeDonate">&times;</button>
       <div class="modal-header">
-        <h2>Support Our Mission</h2>
-        <p>Your contribution helps us grow more trees and secure a greener future for Bihar.</p>
+        <h2>Make a Donation</h2>
+        <p>Your support helps us plant and care for more trees with student guardians.</p>
       </div>
       <form id="donateForm" class="cont-form">
-        <div class="form-row">
-          <div class="form-group">
-            <label>Name</label>
-            <input type="text" name="name" placeholder="John Doe" required>
-          </div>
-          <div class="form-group">
-            <label>Email ID</label>
-            <input type="email" name="email" placeholder="john@example.com" required>
-          </div>
-        </div>
-        <div class="form-row">
-          <div class="form-group">
-            <label>Phone number</label>
-            <input type="tel" name="phone" placeholder="+91 XXXXX XXXXX" required>
-          </div>
-          <div class="form-group">
-            <label>Organization</label>
-            <input type="text" name="company" placeholder="Organization (Optional)">
-          </div>
+        <div class="form-group">
+          <label>Bill Name</label>
+          <input type="text" name="billing_name" placeholder="Full name" required>
         </div>
         <div class="form-group">
-          <label>Interest</label>
-          <select name="interest" required>
-            <option value="" disabled selected>Select an option</option>
-            <option value="CSR">CSR</option>
-            <option value="Employee Engagement">Employee Engagement</option>
-            <option value="Volunteer program">Volunteer program</option>
-            <option value="Partnership">Partnership</option>
-            <option value="Others">Others</option>
-          </select>
+          <label>Address</label>
+          <textarea name="billing_address" rows="3" placeholder="Billing address" required></textarea>
         </div>
-        <div class="form-group">
-          <label>Message (Optional)</label>
-          <textarea name="message" rows="3" placeholder="Tell us more..."></textarea>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Mobile Number</label>
+            <input type="tel" name="billing_mobile" placeholder="+91 XXXXX XXXXX" required>
+          </div>
+          <div class="form-group">
+            <label>Amount (INR)</label>
+            <input type="number" name="amount" placeholder="1000" min="1" step="1" required>
+          </div>
         </div>
-        <div class="form-group" style="margin-bottom: 15px;">
-          <div class="g-recaptcha" data-sitekey="<?php echo $site['recaptcha_site_key']; ?>"></div>
-        </div>
-        <button type="submit" class="btn-y" style="width: 100%;">Submit Inquiry</button>
+        <input type="hidden" name="source" value="donation_popup">
+        <button type="submit" class="btn-y" style="width: 100%;">Proceed to Payment</button>
         <div id="donateFeedback" style="margin-top: 15px; font-size: 0.9rem; padding: 12px; border-radius: 6px; display: none;"></div>
       </form>
     </div>
@@ -151,7 +132,7 @@
     }
   </style>
 
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
   <script src="<?php echo SITE_URL; ?>/js/script.js"></script>
   <?php if(isset($extraJS)): foreach($extraJS as $js): ?>
   <?php if(strpos($js, 'http') === 0): ?>
