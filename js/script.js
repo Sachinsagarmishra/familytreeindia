@@ -168,6 +168,29 @@
   const closeDonate = document.getElementById("closeDonate");
   const donateForm = document.getElementById("donateForm");
   const donateFeedback = document.getElementById("donateFeedback");
+  const billingCountryCode = document.getElementById("billingCountryCode");
+  const billingPhoneNumber = document.getElementById("billingPhoneNumber");
+  const billingMobileFull = document.getElementById("billingMobileFull");
+
+  function updatePhoneRules() {
+    if (!billingCountryCode || !billingPhoneNumber) return;
+    const isIndia = billingCountryCode.value === "+91";
+    billingPhoneNumber.maxLength = isIndia ? 10 : 15;
+    billingPhoneNumber.pattern = isIndia ? "[0-9]{10}" : "[0-9]{5,15}";
+    billingPhoneNumber.placeholder = isIndia ? "XXXXX XXXXX" : "Phone number";
+    if (isIndia && billingPhoneNumber.value.length > 10) {
+      billingPhoneNumber.value = billingPhoneNumber.value.slice(0, 10);
+    }
+  }
+
+  if (billingCountryCode && billingPhoneNumber) {
+    updatePhoneRules();
+    billingCountryCode.addEventListener("change", updatePhoneRules);
+    billingPhoneNumber.addEventListener("input", () => {
+      billingPhoneNumber.value = billingPhoneNumber.value.replace(/\D/g, "");
+      updatePhoneRules();
+    });
+  }
 
   document.querySelectorAll('a[href*="Donate"], a[href*="donate"], .btn-donate, .js-donate').forEach(btn => {
     btn.addEventListener("click", (e) => {
@@ -197,6 +220,27 @@
       const originalBtnText = submitBtn.innerText;
       submitBtn.innerText = "Creating Order...";
       submitBtn.disabled = true;
+
+      if (billingCountryCode && billingPhoneNumber && billingMobileFull) {
+        const phoneDigits = billingPhoneNumber.value.replace(/\D/g, "");
+        const isIndia = billingCountryCode.value === "+91";
+        if (isIndia && phoneDigits.length !== 10) {
+          billingPhoneNumber.setCustomValidity("Indian mobile number must be exactly 10 digits.");
+          billingPhoneNumber.reportValidity();
+          submitBtn.innerText = originalBtnText;
+          submitBtn.disabled = false;
+          return;
+        }
+        if (!isIndia && (phoneDigits.length < 5 || phoneDigits.length > 15)) {
+          billingPhoneNumber.setCustomValidity("Please enter a valid mobile number.");
+          billingPhoneNumber.reportValidity();
+          submitBtn.innerText = originalBtnText;
+          submitBtn.disabled = false;
+          return;
+        }
+        billingPhoneNumber.setCustomValidity("");
+        billingMobileFull.value = billingCountryCode.value.replace(/-/g, "") + phoneDigits;
+      }
 
       const formData = new FormData(donateForm);
 

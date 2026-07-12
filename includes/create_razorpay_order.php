@@ -12,15 +12,33 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 
 $name = trim($_POST['billing_name'] ?? '');
 $address = trim($_POST['billing_address'] ?? '');
+$countryCode = trim($_POST['billing_country_code'] ?? '+91');
+$phoneNumber = preg_replace('/\D+/', '', $_POST['billing_phone_number'] ?? '');
 $mobile = trim($_POST['billing_mobile'] ?? '');
 $amount = trim($_POST['amount'] ?? '');
 $source = trim($_POST['source'] ?? 'website_donation');
 $ip = $_SERVER['REMOTE_ADDR'] ?? '';
 $state = 'Unknown';
 
-if ($name === '' || $address === '' || $mobile === '' || $amount === '') {
+if ($mobile === '' && $phoneNumber !== '') {
+    $mobile = str_replace('-', '', $countryCode) . $phoneNumber;
+}
+
+if ($name === '' || $address === '' || $phoneNumber === '' || $amount === '') {
     http_response_code(422);
     echo json_encode(['status' => 'error', 'message' => 'Please fill name, address, mobile number and amount.']);
+    exit;
+}
+
+if ($countryCode === '+91' && strlen($phoneNumber) !== 10) {
+    http_response_code(422);
+    echo json_encode(['status' => 'error', 'message' => 'Indian mobile number must be exactly 10 digits.']);
+    exit;
+}
+
+if ($countryCode !== '+91' && (strlen($phoneNumber) < 5 || strlen($phoneNumber) > 15)) {
+    http_response_code(422);
+    echo json_encode(['status' => 'error', 'message' => 'Please enter a valid mobile number.']);
     exit;
 }
 
