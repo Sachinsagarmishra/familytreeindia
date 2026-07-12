@@ -68,8 +68,29 @@ try {
         }
     }
 
-    $stmt = $conn->prepare("INSERT INTO donations (donor_name, donor_address, donor_mobile, donor_state, ip_address, amount, currency, razorpay_mode, status, receipt, source) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'created', ?, ?)");
-    $stmt->bind_param('sssssdssss', $name, $address, $mobile, $state, $ip, $amountValue, $settings['currency'], $settings['mode'], $receipt, $source);
+    $hasDonorState = false;
+    $hasIpAddress = false;
+    $columnRes = $conn->query("SHOW COLUMNS FROM donations");
+    if ($columnRes) {
+        while ($column = $columnRes->fetch_assoc()) {
+            if ($column['Field'] === 'donor_state') $hasDonorState = true;
+            if ($column['Field'] === 'ip_address') $hasIpAddress = true;
+        }
+    }
+
+    if ($hasDonorState && $hasIpAddress) {
+        $stmt = $conn->prepare("INSERT INTO donations (donor_name, donor_address, donor_mobile, donor_state, ip_address, amount, currency, razorpay_mode, status, receipt, source) VALUES (?, ?, ?, ?, ?, ?, ?, ?, 'created', ?, ?)");
+        if (!$stmt) {
+            throw new Exception('Donation insert could not be prepared: ' . $conn->error);
+        }
+        $stmt->bind_param('sssssdssss', $name, $address, $mobile, $state, $ip, $amountValue, $settings['currency'], $settings['mode'], $receipt, $source);
+    } else {
+        $stmt = $conn->prepare("INSERT INTO donations (donor_name, donor_address, donor_mobile, amount, currency, razorpay_mode, status, receipt, source) VALUES (?, ?, ?, ?, ?, ?, 'created', ?, ?)");
+        if (!$stmt) {
+            throw new Exception('Donation insert could not be prepared. Please run scratch/migrate_razorpay_donations.php once. Database error: ' . $conn->error);
+        }
+        $stmt->bind_param('sssdssss', $name, $address, $mobile, $amountValue, $settings['currency'], $settings['mode'], $receipt, $source);
+    }
     $stmt->execute();
     $donationId = $stmt->insert_id;
     $stmt->close();
@@ -88,6 +109,9 @@ try {
 
     $orderId = $order['id'];
     $stmt = $conn->prepare("UPDATE donations SET razorpay_order_id = ?, status = 'order_created' WHERE id = ?");
+    if (!$stmt) {
+        throw new Exception('Donation order update could not be prepared: ' . $conn->error);
+    }
     $stmt->bind_param('si', $orderId, $donationId);
     $stmt->execute();
     $stmt->close();

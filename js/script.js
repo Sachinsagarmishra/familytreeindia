@@ -249,7 +249,13 @@
           method: "POST",
           body: formData
         });
-        const result = await response.json();
+        const responseText = await response.text();
+        let result;
+        try {
+          result = JSON.parse(responseText);
+        } catch (parseError) {
+          throw new Error(responseText ? responseText.replace(/<[^>]*>/g, "").trim().slice(0, 220) : "Payment server returned an invalid response.");
+        }
 
         if (result.status !== "success") {
           throw new Error(result.message || "Could not create payment order.");
