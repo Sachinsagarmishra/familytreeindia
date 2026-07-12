@@ -308,10 +308,11 @@
             }
 
             donateForm.reset();
-            setTimeout(() => {
-              if (donateModal) donateModal.classList.remove("active");
-              if (donateFeedback) donateFeedback.style.display = "none";
-            }, 3000);
+            const thankYouUrl = new URL(SITE_URL + "/thank-you");
+            thankYouUrl.searchParams.set("amount", result.display_amount);
+            thankYouUrl.searchParams.set("payment_id", paymentResponse.razorpay_payment_id);
+            thankYouUrl.searchParams.set("order_id", paymentResponse.razorpay_order_id);
+            window.location.href = thankYouUrl.toString();
           },
           modal: {
             ondismiss: function () {
