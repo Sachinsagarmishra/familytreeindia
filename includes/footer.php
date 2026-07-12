@@ -372,15 +372,15 @@
     .modal-close { position: absolute; right: 22px; top: 22px; background: rgba(15,35,16,0.08); border: 1px solid rgba(15,35,16,0.1); font-size: 1.25rem; cursor: pointer; color: #163515; width: 44px; height: 44px; border-radius: 50%; display: flex; align-items: center; justify-content: center; transition: 0.3s; z-index: 10; font-weight: 800; }
     .modal-close:hover { background: rgba(15,35,16,0.14); transform: rotate(90deg); }
     .modal-brand { display: flex; justify-content: center; margin-bottom: 20px; }
-    .modal-brand img { width: min(280px, 70%); height: auto; display: block; }
+    .modal-brand img { width: 150px; height: auto; display: block; }
     .modal-header { margin-bottom: 24px; text-align: center; }
     .modal-header h2 { font-family: 'Fraunces', serif; font-size: 2.65rem; font-weight: 900; margin-bottom: 8px; color: #163515; letter-spacing: 0; line-height: 1; }
     .modal-header p { color: rgba(0,0,0,0.64); font-size: 1.05rem; line-height: 1.45; max-width: 470px; margin: 0 auto; }
     
     /* FORM STYLES */
-    .modal .cont-form { gap: 14px !important; }
-    .modal .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 0; }
-    .modal .form-group { margin-bottom: 0; display: flex; flex-direction: column; gap: 6px; }
+    .modal .cont-form { gap: 22px !important; }
+    .modal .form-row { display: grid; grid-template-columns: 1fr 1fr; column-gap: 24px; row-gap: 22px; margin-bottom: 0; }
+    .modal .form-group { margin-bottom: 0; display: flex; flex-direction: column; gap: 10px; }
     .modal .form-group label { font-size: 0.76rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; color: #214d20; opacity: 0.92; }
     .modal .form-group input, 
     .modal .form-group select, 
@@ -398,7 +398,7 @@
     .modal .phone-field { display: grid; grid-template-columns: 88px 1fr; gap: 8px; width: 100%; align-items: center; }
     .modal .phone-field select { min-width: 0; color: rgba(0,0,0,0.72); }
     .modal .phone-field input { min-width: 0; }
-    .modal .btn-y { background: linear-gradient(180deg, #47752c 0%, #1f4a18 100%); color: #fff; border: 1px solid rgba(10,45,8,0.18); padding: 16px; border-radius: 10px; font-weight: 800; font-size: 1rem; cursor: pointer; transition: 0.3s; margin-top: 2px; text-transform: uppercase; letter-spacing: 0.08em; box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 8px 20px rgba(31,74,24,0.22); }
+    .modal .btn-y { background: linear-gradient(180deg, #47752c 0%, #1f4a18 100%); color: #fff; border: 1px solid rgba(10,45,8,0.18); padding: 16px; border-radius: 10px; font-weight: 800; font-size: 1rem; cursor: pointer; transition: 0.3s; margin-top: 10px; text-transform: uppercase; letter-spacing: 0.08em; box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 8px 20px rgba(31,74,24,0.22); }
     .modal .btn-y::before { content: "🌿"; margin-right: 12px; font-size: 0.95rem; }
     .modal .btn-y:hover { transform: translateY(-2px); box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 12px 26px rgba(31,74,24,0.3); }
     .payment-methods { margin-top: 10px; text-align: center; }
@@ -410,10 +410,10 @@
 
     @media (max-width: 600px) {
       .modal-content { padding: 34px 20px 24px; border-radius: 16px; background-size: cover; }
-      .modal-brand img { width: min(240px, 72%); }
+      .modal-brand img { width: 150px; }
       .modal-header h2 { font-size: 2rem; }
       .modal-header p { font-size: 0.88rem; }
-      .modal .form-row { grid-template-columns: 1fr; gap: 16px; }
+      .modal .form-row { grid-template-columns: 1fr; gap: 22px; }
       .modal .phone-field { grid-template-columns: 88px 1fr; }
       .payment-methods img { width: 100%; }
     }
