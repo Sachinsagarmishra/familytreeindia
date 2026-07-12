@@ -168,18 +168,9 @@ $payments = $conn->query("SELECT * FROM donations $where ORDER BY created_at DES
                   'mode' => strtoupper($row['razorpay_mode']),
                   'order_id' => $row['razorpay_order_id'] ?? 'Pending',
                   'payment_id' => $row['razorpay_payment_id'] ?? 'Pending',
-                  'signature' => $row['razorpay_signature'] ?? '',
                   'method' => $row['payment_method'] ?? '',
-                  'payer_email' => $row['payer_email'] ?? '',
                   'payer_contact' => $row['payer_contact'] ?? '',
-                  'receipt' => $row['receipt'] ?? '',
-                  'source' => $row['source'] ?? '',
                   'webhook' => !empty($row['webhook_event_id']) ? 'Synced' : 'Awaiting',
-                  'webhook_event_id' => $row['webhook_event_id'] ?? '',
-                  'created_at' => $row['created_at'] ?? '',
-                  'paid_at' => $row['paid_at'] ?? 'Pending',
-                  'updated_at' => $row['updated_at'] ?? '',
-                  'raw_payload' => $row['raw_payload'] ?? '',
               ];
             ?>
             <tr>
@@ -246,18 +237,9 @@ const paymentLabels = {
   mode: 'Mode',
   order_id: 'Razorpay Order ID',
   payment_id: 'Razorpay Payment ID',
-  signature: 'Razorpay Signature',
   method: 'Payment Method',
-  payer_email: 'Payer Email',
   payer_contact: 'Payer Contact',
-  receipt: 'Receipt',
-  source: 'Source',
-  webhook: 'Webhook Status',
-  webhook_event_id: 'Webhook Event ID',
-  created_at: 'Created At',
-  paid_at: 'Paid At',
-  updated_at: 'Updated At',
-  raw_payload: 'Raw Payload'
+  webhook: 'Webhook Status'
 };
 
 function escapeHtml(value) {
@@ -275,8 +257,8 @@ document.querySelectorAll('.view-payment-btn').forEach(button => {
     const data = JSON.parse(button.getAttribute('data-payment'));
     paymentDetailGrid.innerHTML = Object.keys(paymentLabels).map(key => {
       const value = data[key] || 'Not available';
-      const full = ['address', 'signature', 'raw_payload'].includes(key) ? ' full' : '';
-      const content = key === 'raw_payload' ? `<pre>${escapeHtml(value)}</pre>` : `<strong>${escapeHtml(value)}</strong>`;
+      const full = key === 'address' ? ' full' : '';
+      const content = `<strong>${escapeHtml(value)}</strong>`;
       return `<div class="payment-detail${full}"><span>${paymentLabels[key]}</span>${content}</div>`;
     }).join('');
     paymentModal.classList.add('active');
